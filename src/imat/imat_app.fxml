@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="150.0" prefWidth="1440.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="navbar-upper" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" styleClass="navbar-upper" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fitHeight="51.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,17 +25,35 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <TextField prefHeight="55.0" prefWidth="540.0" promptText="Sök...">
+                  <TextField prefHeight="55.0" prefWidth="540.0" promptText="Sök..." styleClass="rounded">
                      <HBox.margin>
-                        <Insets left="25.0" />
+                        <Insets />
                      </HBox.margin>
                      <font>
                         <Font name="Poppins Regular" size="24.0" />
                      </font>
                   </TextField>
-                  <Button mnemonicParsing="false" text="Varukorg" />
-                  <Button mnemonicParsing="false" text="Konto" />
-                  <Button mnemonicParsing="false" text="Hjälp" />
+                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="280.0" text="Varukorg">
+                     <styleClass>
+                        <String fx:value="color-primary" />
+                        <String fx:value="default-font" />
+                        <String fx:value="rounded" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Konto">
+                     <styleClass>
+                        <String fx:value="color-primary" />
+                        <String fx:value="default-font" />
+                        <String fx:value="rounded" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" text="Hjälp">
+                     <styleClass>
+                        <String fx:value="help-button" />
+                        <String fx:value="default-font" />
+                        <String fx:value="rounded" />
+                     </styleClass>
+                  </Button>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -43,7 +62,18 @@
                   <Insets left="25.0" />
                </padding>
             </HBox>
-            <AnchorPane prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0" styleClass="navbar-lower" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Start" textOverrun="CLIP" />
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Alla Kategorier" textOverrun="CLIP" />
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Recept" textOverrun="CLIP" />
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Inköpslistor" textOverrun="CLIP" />
+                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Om iMat" textOverrun="CLIP" />
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
          </children>
       </AnchorPane>
       <Label layoutX="569.0" layoutY="415.0" text="Programmet hämtar och sparar data här" />

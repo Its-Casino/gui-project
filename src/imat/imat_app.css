@@ -4,11 +4,37 @@
       -fx-font-weight: bold;
   }
 
-.default{
+.default-font {
     -fx-font-family: "Poppins";
-    -fx-font-size: 16px;
+    -fx-font-size: 24px;
 }
 
 .navbar-upper{
-    -fx-background-color: C8D3C6;
+    -fx-background-color: #C8D3C6;
+}
+
+.navbar-lower{
+    -fx-background-color: #DEE1DC;
+}
+
+.navbar-lower-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px 5px 0px 0px;
+}
+
+.rounded {
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+}
+
+.color-primary {
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+}
+
+.help-button {
+    -fx-background-color: #E2ECAD;
 }
