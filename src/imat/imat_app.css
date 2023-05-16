@@ -44,3 +44,11 @@
     -fx-background-color: #7C8E70;
     -fx-text-fill: #EEEEEE;
 }
+
+.secondaccount {
+    -fx-background-color: #7C8E70;
+}
+
+.dropshadow-default {
+    -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
+}
