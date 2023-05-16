@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="700.0" maxWidth="1000.0" minHeight="700.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
+<AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
       <Label layoutX="392.0" layoutY="126.0" text="Programmet hämtar och sparar data här" />
       <Label fx:id="pathLabel" alignment="CENTER" layoutX="115.0" layoutY="190.0" prefHeight="17.0" prefWidth="771.0" styleClass="text-sample" text="Label" />
