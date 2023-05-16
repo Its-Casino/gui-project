@@ -44,3 +44,8 @@
     -fx-background-color: #7C8E70;
     -fx-text-fill: #EEEEEE;
 }
+
+.dropshadow-default {
+    -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
+}
+
