@@ -67,6 +67,13 @@
                         <String fx:value="default-font" />
                         <String fx:value="rounded" />
                      </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../res/help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
                <opaqueInsets>
