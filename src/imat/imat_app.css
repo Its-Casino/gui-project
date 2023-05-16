@@ -44,3 +44,7 @@
     -fx-background-color: #7C8E70;
     -fx-text-fill: #EEEEEE;
 }
+
+.white-icon {
+    filter: invert();
+}
