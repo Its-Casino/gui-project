@@ -39,6 +39,13 @@
                         <String fx:value="default-font" />
                         <String fx:value="rounded" />
                      </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="32.04" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
+                           <image>
+                              <Image url="@../../res/shopping-cart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text="Konto">
                      <styleClass>
@@ -46,6 +53,13 @@
                         <String fx:value="default-font" />
                         <String fx:value="rounded" />
                      </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../res/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" text="Hjälp">
                      <styleClass>
