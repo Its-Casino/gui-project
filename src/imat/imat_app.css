@@ -35,6 +35,12 @@
     -fx-text-fill: #EEEEEE;
 }
 
-.help-button {
+.color-secondary {
     -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+}
+
+.account {
+    -fx-background-color: #7C8E70;
+    -fx-text-fill: #EEEEEE;
 }
