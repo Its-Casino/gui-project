@@ -10,7 +10,39 @@
 
 <AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
-      <ScrollPane layoutY="150.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <ScrollPane hbarPolicy="NEVER" layoutY="282.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="2481.0" prefWidth="1424.0">
+               <children>
+                  <AnchorPane layoutX="231.0" layoutY="79.0" prefHeight="182.0" prefWidth="980.0" styleClass="checkout-section-color">
+                     <children>
+                        <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Din varukorg" />
+                        <Label layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
+                        <Label layoutX="40.0" layoutY="127.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
+                        <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
+                           <styleClass>
+                              <String fx:value="color-primary" />
+                              <String fx:value="default-font-bold" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="230.0" layoutY="309.0" prefHeight="628.0" prefWidth="980.0" styleClass="checkout-section-color">
+                     <children>
+                        <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Leveransadress" />
+                        <Label layoutX="40.0" layoutY="82.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
+                        <Label layoutX="40.0" layoutY="127.0" styleClass="checkout-text-medium" text="Totalt: 205 kr" />
+                        <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
+                           <styleClass>
+                              <String fx:value="color-primary" />
+                              <String fx:value="default-font-bold" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content></ScrollPane>
       <AnchorPane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #C8D3C6;">
          <children>
             <Button layoutX="1270.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" text=" Hjälp">
@@ -31,7 +63,7 @@
             <Button layoutX="39.0" layoutY="22.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="180.0" text=" Tillbaka">
                <styleClass>
                   <String fx:value="color-primary" />
-                  <String fx:value="default-font" />
+                  <String fx:value="default-font-bold" />
                   <String fx:value="rounded" />
                   <String fx:value="dropshadow-default" />
                </styleClass>
@@ -51,7 +83,7 @@
             <Button layoutX="1091.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text=" Konto">
                <styleClass>
                   <String fx:value="color-primary" />
-                  <String fx:value="default-font" />
+                  <String fx:value="default-font-bold" />
                   <String fx:value="rounded" />
                   <String fx:value="dropshadow-default" />
                </styleClass>
@@ -108,5 +140,6 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <AnchorPane layoutX="1825.0" layoutY="409.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
