@@ -55,8 +55,8 @@
 
 .leveransadress-input {
     -fx-background-color: #FFFFFF;
-    -fx-stroke: black;
-    -fx-stroke-width: 5;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 22px;
 }
 
 .default-stroke {
