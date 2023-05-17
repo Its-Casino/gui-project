@@ -9,6 +9,11 @@
     -fx-font-size: 24px;
 }
 
+.default-font-bold {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 24px;
+}
+
 .navbar-upper{
     -fx-background-color: #C8D3C6;
 }
@@ -47,5 +52,10 @@
 
 .dropshadow-default {
     -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
+}
+
+.wizard-text {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 20;
 }
 
