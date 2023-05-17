@@ -60,6 +60,5 @@
 }
 
 .default-stroke {
-    -fx-stroke: black;
-    -fx-stroke-width: 5;
+    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
 }

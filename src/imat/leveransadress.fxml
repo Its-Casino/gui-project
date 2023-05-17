@@ -20,31 +20,51 @@
                   <Font name="Poppins ExtraBold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="179.0" layoutY="90.0" prefHeight="60.0" prefWidth="191.0" styleClass="leveransadress-input" />
+            <TextField layoutX="179.0" layoutY="90.0" prefHeight="60.0" prefWidth="191.0">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
             <Label alignment="CENTER" layoutX="423.0" layoutY="90.0" minHeight="60.0" minWidth="135.0" styleClass="color-primary" text="Efternamn">
                <font>
                   <Font name="Poppins ExtraBold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="558.0" layoutY="90.0" prefHeight="60.0" prefWidth="220.0" styleClass="leveransadress-input" />
+            <TextField layoutX="558.0" layoutY="90.0" prefHeight="60.0" prefWidth="220.0">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
             <Label alignment="CENTER" layoutX="60.0" layoutY="180.0" minHeight="60.0" minWidth="148.0" styleClass="color-primary" text="Gatuadress">
                <font>
                   <Font name="Poppins ExtraBold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="208.0" layoutY="180.0" prefHeight="60.0" prefWidth="569.0" styleClass="leveransadress-input" />
+            <TextField layoutX="208.0" layoutY="180.0" prefHeight="60.0" prefWidth="569.0">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
             <Label alignment="CENTER" layoutX="60.0" layoutY="270.0" minHeight="60.0" minWidth="164.0" styleClass="color-primary" text="Postnummer">
                <font>
                   <Font name="Poppins ExtraBold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="222.0" layoutY="270.0" prefHeight="60.0" prefWidth="148.0" styleClass="leveransadress-input" />
+            <TextField layoutX="222.0" layoutY="270.0" prefHeight="60.0" prefWidth="148.0">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
             <Label alignment="CENTER" layoutX="423.0" layoutY="270.0" minHeight="60.0" minWidth="104.0" styleClass="color-primary" text="Postort">
                <font>
                   <Font name="Poppins ExtraBold" size="20.0" />
                </font>
             </Label>
-            <TextField layoutX="526.0" layoutY="270.0" prefHeight="60.0" prefWidth="252.0" styleClass="leveransadress-input" />
+            <TextField layoutX="526.0" layoutY="270.0" prefHeight="60.0" prefWidth="252.0">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
             <Label alignment="CENTER" layoutX="60.0" layoutY="360.0" minHeight="60.0" minWidth="176.0" styleClass="color-primary" text="Mobilnummer">
                <font>
                   <Font name="Poppins ExtraBold" size="20.0" />
