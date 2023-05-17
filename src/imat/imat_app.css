@@ -59,3 +59,27 @@
     -fx-font-size: 20;
 }
 
+.checkout-section-color {
+    -fx-background-color: #E3E3E3;
+}
+
+.checkout-title-font {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 40;
+}
+
+.checkout-text-big {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 26;
+}
+
+.checkout-text-medium {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24;
+}
+
+.checkout-text-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20
+}
+
