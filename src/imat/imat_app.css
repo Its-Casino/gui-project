@@ -40,6 +40,11 @@
     -fx-text-fill: #000000;
 }
 
+.color-tertiary {
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: #000000;
+}
+
 .account {
     -fx-background-color: #7C8E70;
     -fx-text-fill: #EEEEEE;
