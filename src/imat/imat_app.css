@@ -49,3 +49,12 @@
     -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
 }
 
+.accountsettings-input {
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 22px;
+}
+
+.default-stroke {
+    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
