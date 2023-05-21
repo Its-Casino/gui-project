@@ -98,3 +98,9 @@
     -fx-font-size: 20
 }
 
+.checkout-leverans-text-input {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+    -fx-text-fill: #00000050;
+    -fx-background-color: #E3E3E3;
+}
