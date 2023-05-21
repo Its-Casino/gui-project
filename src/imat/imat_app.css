@@ -9,9 +9,24 @@
     -fx-font-size: 24px;
 }
 
-.default-font-bold {
+.default-font-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+}
+
+.default-font-bold-big {
     -fx-font-family: "Poppins ExtraBold";
     -fx-font-size: 24px;
+}
+
+.default-font-bold-medium {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 22px;
+}
+
+.default-font-bold-small {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 20px;
 }
 
 .navbar-upper{

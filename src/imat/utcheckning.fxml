@@ -4,11 +4,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
+<AnchorPane maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
       <ScrollPane hbarPolicy="NEVER" layoutY="282.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
@@ -22,7 +24,7 @@
                         <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
                            <styleClass>
                               <String fx:value="color-primary" />
-                              <String fx:value="default-font-bold" />
+                              <String fx:value="default-font-bold-big" />
                            </styleClass>
                         </Button>
                      </children>
@@ -31,13 +33,13 @@
                      <children>
                         <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Leveransadress" />
                         <Label layoutX="40.0" layoutY="82.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
-                        <Label layoutX="40.0" layoutY="127.0" styleClass="checkout-text-medium" text="Totalt: 205 kr" />
-                        <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
-                           <styleClass>
-                              <String fx:value="color-primary" />
-                              <String fx:value="default-font-bold" />
-                           </styleClass>
-                        </Button>
+                        <TextField layoutX="40.0" layoutY="130.0" prefHeight="60.0" prefWidth="220.0" />
+                        <TextField layoutX="290.0" layoutY="130.0" prefHeight="60.0" prefWidth="220.0" />
+                        <TextField layoutX="40.0" layoutY="230.0" prefHeight="60.0" prefWidth="470.0" />
+                        <TextField layoutX="40.0" layoutY="330.0" prefHeight="60.0" prefWidth="220.0" />
+                        <TextField layoutX="290.0" layoutY="330.0" prefHeight="60.0" prefWidth="220.0" />
+                        <TextField layoutX="40.0" layoutY="430.0" prefHeight="60.0" prefWidth="220.0" />
+                        <TextField layoutX="290.0" layoutY="430.0" prefHeight="60.0" prefWidth="220.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -48,7 +50,7 @@
             <Button layoutX="1270.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" text=" Hjälp">
                <styleClass>
                   <String fx:value="color-secondary" />
-                  <String fx:value="default-font-bold" />
+                  <String fx:value="default-font-bold-big" />
                   <String fx:value="rounded" />
                   <String fx:value="dropshadow-default" />
                </styleClass>
@@ -63,7 +65,7 @@
             <Button layoutX="39.0" layoutY="22.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="180.0" text=" Tillbaka">
                <styleClass>
                   <String fx:value="color-primary" />
-                  <String fx:value="default-font-bold" />
+                  <String fx:value="default-font-bold-big" />
                   <String fx:value="rounded" />
                   <String fx:value="dropshadow-default" />
                </styleClass>
@@ -83,7 +85,7 @@
             <Button layoutX="1091.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text=" Konto">
                <styleClass>
                   <String fx:value="color-primary" />
-                  <String fx:value="default-font-bold" />
+                  <String fx:value="default-font-bold-big" />
                   <String fx:value="rounded" />
                   <String fx:value="dropshadow-default" />
                </styleClass>
@@ -140,6 +142,80 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1825.0" layoutY="409.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="1458.0" prefHeight="3000.0" prefWidth="980.0">
+         <children>
+            <AnchorPane prefHeight="182.0" prefWidth="980.0" styleClass="checkout-section-color">
+               <children>
+                  <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Din varukorg" />
+                  <Label layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
+                  <Label layoutX="40.0" layoutY="127.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
+                  <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
+                     <styleClass>
+                        <String fx:value="color-primary" />
+                        <String fx:value="default-font-bold-big" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="232.0" prefHeight="695.0" prefWidth="980.0" styleClass="checkout-section-color">
+               <children>
+                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
+                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
+                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*" />
+                  <TextField layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*" />
+                  <TextField layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*" />
+                  <TextField layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*" />
+                  <TextField layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*" />
+                  <TextField layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*" />
+                  <TextField layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon" />
+                  <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
+                  <Label layoutX="550.0" layoutY="144.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
+                  <Label layoutX="550.0" layoutY="265.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
+                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true" />
+                  <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
+                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="974.0" prefHeight="695.0" prefWidth="980.0" styleClass="checkout-section-color">
+               <children>
+                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
+                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
+                  <Label layoutX="40.0" layoutY="148.0" styleClass="checkout-text-small" text="Tillgängliga leveransdatum de närmsta dagarna" />
+                  <Label layoutX="588.0" layoutY="148.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
+                  <Button layoutX="577.0" layoutY="546.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
+                     <styleClass>
+                        <String fx:value="color-primary" />
+                        <String fx:value="default-font-bold-small" />
+                     </styleClass>
+                  </Button>
+                  <Label layoutX="640.0" layoutY="245.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
+                  <Label layoutX="40.0" layoutY="361.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="1728.0" prefHeight="695.0" prefWidth="980.0" styleClass="checkout-section-color">
+               <children>
+                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
+                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
+                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*" />
+                  <TextField layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*" />
+                  <TextField layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*" />
+                  <TextField layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*" />
+                  <TextField layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*" />
+                  <TextField layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*" />
+                  <TextField layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon" />
+                  <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
+                  <Label layoutX="550.0" layoutY="144.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
+                  <Label layoutX="550.0" layoutY="265.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
+                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true" />
+                  <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
+                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
