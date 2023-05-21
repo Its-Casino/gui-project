@@ -2,13 +2,17 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
@@ -161,21 +165,74 @@
                <children>
                   <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
                   <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
-                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*" />
-                  <TextField layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*" />
-                  <TextField layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*" />
-                  <TextField layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*" />
-                  <TextField layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*" />
-                  <TextField layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*" />
-                  <TextField layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon" />
+                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
+                  <TextField layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon">
+                     <styleClass>
+                        <String fx:value="default-stroke" />
+                        <String fx:value="checkout-leverans-text-input" />
+                     </styleClass>
+                  </TextField>
                   <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
-                  <Label layoutX="550.0" layoutY="144.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="144.0" prefHeight="60.0" prefWidth="390.0" styleClass="default-stroke" text="Ja, spara min adress i framtiden">
+                     <font>
+                        <Font name="Poppins ExtraBold" size="16.0" />
+                     </font>
+                  </Label>
                   <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
-                  <Label layoutX="550.0" layoutY="265.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
+                  <Label layoutX="550.0" layoutY="265.0" prefHeight="60.0" prefWidth="390.0" styleClass="default-stroke" text="Ja, ställ kassorna utanför dörren">
+                     <font>
+                        <Font name="Poppins ExtraBold" size="16.0" />
+                     </font>
+                  </Label>
                   <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
-                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true" />
+                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true">
+                     <styleClass>
+                        <String fx:value="checkout-leverans-text-input" />
+                        <String fx:value="default-stroke" />
+                     </styleClass>
+                  </TextArea>
                   <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
-                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true" />
+                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true">
+                     <styleClass>
+                        <String fx:value="checkout-leverans-text-input" />
+                        <String fx:value="default-stroke" />
+                     </styleClass>
+                  </TextArea>
                </children>
             </AnchorPane>
             <AnchorPane layoutY="974.0" prefHeight="695.0" prefWidth="980.0" styleClass="checkout-section-color">
@@ -184,35 +241,118 @@
                   <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
                   <Label layoutX="40.0" layoutY="148.0" styleClass="checkout-text-small" text="Tillgängliga leveransdatum de närmsta dagarna" />
                   <Label layoutX="588.0" layoutY="148.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
-                  <Button layoutX="577.0" layoutY="546.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
+                  <Button layoutX="577.0" layoutY="489.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
                      <styleClass>
                         <String fx:value="color-primary" />
                         <String fx:value="default-font-bold-small" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="640.0" layoutY="245.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
-                  <Label layoutX="40.0" layoutY="361.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
+                  <Label layoutX="618.0" layoutY="266.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
+                  <Label layoutX="40.0" layoutY="376.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
+                  <ComboBox layoutX="605.0" layoutY="195.0" prefHeight="50.0" prefWidth="105.0" promptText="18">
+                     <styleClass>
+                        <String fx:value="default-font-small" />
+                        <String fx:value="text-allignment-right" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox layoutX="732.0" layoutY="195.0" prefHeight="50.0" prefWidth="170.0" promptText="Augusti" styleClass="default-font-small" />
+                  <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="856.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/Checked%20Circle.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="619.0" layoutY="404.0" styleClass="default-font-bold-small" text="Leverans den 18:e Augusti" />
+                  <Label layoutX="668.0" layoutY="443.0" styleClass="default-font-bold-small" text="Tid: 09:00 - 13:00" />
+                  <HBox layoutX="40.0" layoutY="195.0" prefHeight="150.0" prefWidth="490.0" styleClass="account" />
+                  <AnchorPane layoutX="40.0" layoutY="418.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
+                     <children>
+                        <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                           <children>
+                              <RadioButton layoutX="11.0" layoutY="8.0" mnemonicParsing="false" />
+                              <Label layoutX="46.0" layoutY="4.0" text="07:00 - 11:00">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                 <font>
+                                    <Font name="Poppins Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="99.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
+                           <children>
+                              <RadioButton layoutX="11.0" layoutY="8.0" mnemonicParsing="false" />
+                              <Label layoutX="46.0" layoutY="4.0" prefHeight="28.0" prefWidth="112.0" text="10:00 - 14:00">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                 <font>
+                                    <Font name="Poppins Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="132.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                           <children>
+                              <RadioButton layoutX="11.0" layoutY="8.0" mnemonicParsing="false" />
+                              <Label layoutX="46.0" layoutY="4.0" prefHeight="28.0" prefWidth="112.0" text="11:00 - 15:00">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                 <font>
+                                    <Font name="Poppins Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="33.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
+                           <children>
+                              <RadioButton layoutX="11.0" layoutY="8.0" mnemonicParsing="false" />
+                              <Label layoutX="46.0" layoutY="4.0" text="08:00 - 12:00">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="357.0" layoutY="7.0" text="Fullbokat">
+                                 <font>
+                                    <Font name="Poppins Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="66.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                           <children>
+                              <RadioButton layoutX="11.0" layoutY="8.0" mnemonicParsing="false" />
+                              <Label layoutX="46.0" layoutY="4.0" text="09:00 - 13:00">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                 <font>
+                                    <Font name="Poppins Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <AnchorPane layoutY="1728.0" prefHeight="695.0" prefWidth="980.0" styleClass="checkout-section-color">
                <children>
-                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
-                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
-                  <TextField layoutX="40.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*" />
-                  <TextField layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*" />
-                  <TextField layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*" />
-                  <TextField layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*" />
-                  <TextField layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*" />
-                  <TextField layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*" />
-                  <TextField layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon" />
-                  <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
-                  <Label layoutX="550.0" layoutY="144.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
-                  <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
-                  <Label layoutX="550.0" layoutY="265.0" prefHeight="60.0" prefWidth="390.0" text="Label" />
-                  <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
-                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true" />
-                  <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
-                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true" />
+                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Betalning" />
+                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Ange dina kortuppgifter" />
+                  <TextField layoutX="40.0" layoutY="220.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*" />
+                  <TextField layoutX="290.0" layoutY="220.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*" />
+                  <TextField layoutX="40.0" layoutY="160.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*" />
+                  <Label layoutX="40.0" layoutY="535.0" styleClass="checkout-text-medium" text="Spara kortuppgifter för framtida köp?" />
                </children>
             </AnchorPane>
          </children>
