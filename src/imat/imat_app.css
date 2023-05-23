@@ -80,7 +80,8 @@
 }
 
 .default-stroke {
-    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+    -fx-effect: innershadow(one-pass-box, black, 2, 0, 0, 0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
 
 .wizard-text {
     -fx-font-family: "Poppins SemiBold";

@@ -18,7 +18,7 @@
    <children>
       <ScrollPane hbarPolicy="NEVER" layoutY="282.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <AnchorPane prefHeight="2481.0" prefWidth="1424.0">
+            <AnchorPane prefHeight="2481.0" prefWidth="1424.0" stylesheets="@imat_app.css">
                <children>
                   <AnchorPane layoutX="222.0" layoutY="32.0" prefHeight="2113.0" prefWidth="980.0">
                      <children>
@@ -340,7 +340,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
                      <image>
-                        <Image url="@../../res/return.png" />
+                        <Image url="@resources/return.png" />
                      </image>
                   </ImageView>
                </graphic>
