@@ -35,7 +35,6 @@ public class MainViewController implements Initializable {
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
-    Map<Product, Integer> shoppingCart = new HashMap<>();
 
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
@@ -86,7 +85,9 @@ public class MainViewController implements Initializable {
     @FXML
     public void openProducts(ProductCategory category) {
         productFlow.getChildren().clear();
-        productFlow.getChildren().add(new ProductCard(iMatDataHandler.findProducts("Äpple").get(0), this));
+        for (Product product : iMatDataHandler.getProducts(category)) {
+            productFlow.getChildren().add(new ProductCard(product, this));
+        }
         paneProducts.toFront();
     }
 
@@ -96,12 +97,5 @@ public class MainViewController implements Initializable {
         currentUser.setUserName("Rune");
         currentUser.setPassword("123");
         openStart();
-    }
-
-    @FXML
-    public void demoClickThing() {
-        Product purchaseProduct = iMatDataHandler.findProducts("Äpple").get(0);
-        iMatDataHandler.getShoppingCart().addProduct(purchaseProduct);
-        System.out.println(iMatDataHandler.getShoppingCart().getTotal());
     }
 }
