@@ -45,6 +45,30 @@
     -fx-background-radius: 5px 5px 0px 0px;
 }
 
+.navbar-lower-button:hover{
+    -fx-background-color: #263b27;
+}
+.navbar-upper-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px;
+}
+.navbar-upper-button:hover{
+    -fx-background-color: #263b27;
+}
+.navbar-upper-help{
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px;
+}
+.navbar-upper-help:hover{
+    -fx-background-color: #b2bb85;
+}
+
 .rounded {
     -fx-background-radius: 5px;
     -fx-corner-radius: 5px;
