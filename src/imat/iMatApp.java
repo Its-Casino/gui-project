@@ -1,6 +1,5 @@
 package imat;
 
-
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,20 +13,19 @@ import javafx.stage.Stage;
  * and open the template in the editor.
  */
 public class iMatApp extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        
+
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("imat/resources/iMat");
-        
+
         Parent root = FXMLLoader.load(getClass().getResource("imat_app.fxml"), bundle);
-        
-        Scene scene = new Scene(root, 1000, 700);
-        
+
+        Scene scene = new Scene(root, 1440, 1024);
+
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
-
     }
 
     /**
@@ -36,5 +34,4 @@ public class iMatApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
