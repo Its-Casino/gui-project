@@ -9,6 +9,26 @@
     -fx-font-size: 24px;
 }
 
+.default-font-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+}
+
+.default-font-bold-big {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 24px;
+}
+
+.default-font-bold-medium {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 22px;
+}
+
+.default-font-bold-small {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 20px;
+}
+
 .navbar-upper{
     -fx-background-color: #C8D3C6;
 }
@@ -57,6 +77,46 @@
     -fx-background-color: #FFFFFF;
     -fx-font-family: "Poppins Medium";
     -fx-font-size: 22px;
+}
+
+.default-stroke {
+    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+
+.wizard-text {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 20;
+
+}
+
+.checkout-section-color {
+    -fx-background-color: #E3E3E3;
+}
+
+.checkout-title-font {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 40;
+}
+
+.checkout-text-big {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 26;
+}
+
+.checkout-text-medium {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24;
+}
+
+.checkout-text-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20
+}
+
+.checkout-leverans-text-input {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+    -fx-text-fill: #00000085;
+    -fx-background-color: #E3E3E3;
 }
 
 .default-stroke {
