@@ -24,6 +24,8 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneHelp;
 
+    @FXML
+    AnchorPane paneProducts;
     User currentUser;
 
     Map<Pages, AnchorPane> webPanes = new HashMap<>();
@@ -66,5 +68,9 @@ public class MainViewController implements Initializable {
     @FXML
     public void openHelp() {
         paneHelp.toFront();
+    }
+    @FXML
+    public void openProducts() {
+        paneProducts.toFront();
     }
 }
