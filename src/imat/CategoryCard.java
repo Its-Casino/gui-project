@@ -17,6 +17,7 @@ public class CategoryCard extends AnchorPane {
     ImageView imageCategory;
 
     private ProductCategory category;
+    private MainViewController parentController;
 
     public CategoryCard(ProductCategory category, MainViewController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category_card.fxml"));
@@ -30,7 +31,13 @@ public class CategoryCard extends AnchorPane {
             e.printStackTrace();
         }
         this.category = category;
+        this.parentController = parentController;
         setProps();
+    }
+
+    @FXML
+    public void openProductPage() {
+        this.parentController.openProducts(category);
     }
 
     private void setProps() {
