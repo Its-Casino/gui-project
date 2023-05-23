@@ -22,7 +22,7 @@ public class ProductPane extends AnchorPane {
         fxmlLoader.setController(this);
         // TODO Auto-generated constructor stub
         refreshProductList(category);
-
+        loadFromMap();
     }
 
     private void refreshProductList(ProductCategory category) {
