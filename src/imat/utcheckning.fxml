@@ -61,7 +61,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/help.png" />
+                        <Image url="@resources/help.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -83,7 +83,7 @@
             </Button>
             <ImageView fitHeight="51.0" fitWidth="155.0" layoutX="643.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/iMat_logo_png.png" />
+                  <Image url="@resources/iMat_logo_png.png" />
                </image>
             </ImageView>
             <Button layoutX="1091.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text=" Konto">
@@ -96,7 +96,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/account.png" />
+                        <Image url="@resources/account.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -111,37 +111,37 @@
             <Label layoutX="1063.0" layoutY="58.0" styleClass="wizard-text" text="Betalning" />
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-box-active.png" />
+                  <Image url="@resources/wizard-box-active.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-box-inactive.png" />
+                  <Image url="@resources/wizard-box-inactive.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-box-inactive.png" />
+                  <Image url="@resources/wizard-box-inactive.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-box-inactive.png" />
+                  <Image url="@resources/wizard-box-inactive.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-line.png" />
+                  <Image url="@resources/wizard-line.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-line.png" />
+                  <Image url="@resources/wizard-line.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/wizard-line.png" />
+                  <Image url="@resources/wizard-line.png" />
                </image>
             </ImageView>
          </children>
