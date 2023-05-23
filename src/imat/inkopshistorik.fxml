@@ -18,12 +18,12 @@
             </Label>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/drop-down-arrow-white.png" />
+                  <Image url="@resources/drop-down-arrow-white.png" />
                </image>
             </ImageView>
          </children>
          <styleClass>
-            <String fx:value="inkopshistorik-panes" />
+            <String fx:value="account" />
             <String fx:value="rounded" />
             <String fx:value="dropshadow-default" />
          </styleClass>
@@ -37,12 +37,12 @@
             </Label>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/drop-down-arrow-white.png" />
+                  <Image url="@resources/drop-down-arrow-white.png" />
                </image>
             </ImageView>
          </children>
          <styleClass>
-            <String fx:value="inkopshistorik-panes" />
+            <String fx:value="account" />
             <String fx:value="rounded" />
             <String fx:value="dropshadow-default" />
          </styleClass>
@@ -56,12 +56,12 @@
             </Label>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../res/drop-down-arrow-white.png" />
+                  <Image url="@resources/drop-down-arrow-white.png" />
                </image>
             </ImageView>
          </children>
          <styleClass>
-            <String fx:value="inkopshistorik-panes" />
+            <String fx:value="account" />
             <String fx:value="rounded" />
             <String fx:value="dropshadow-default" />
          </styleClass>
