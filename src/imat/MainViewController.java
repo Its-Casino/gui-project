@@ -35,7 +35,6 @@ public class MainViewController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
-        populateProductPageMap();
         openStart();
     }
 

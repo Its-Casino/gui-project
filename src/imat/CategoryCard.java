@@ -33,8 +33,4 @@ public class CategoryCard extends AnchorPane {
         this.parentController = parentController;
         labelCategory.setText(category.name());
     }
-
-    public void onClick(Event e) {
-        parentController.openProducts(category);
-    }
 }
