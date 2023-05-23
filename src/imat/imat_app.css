@@ -24,6 +24,31 @@
     -fx-font-family: "Poppins";
     -fx-background-radius: 5px 5px 0px 0px;
 }
+.navbar-lower-button:hover{
+    -fx-background-color: #203522;
+}
+.navbar-upper-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+}
+.navbar-upper-button:hover{
+    -fx-background-color: #203522;
+}
+.navbar-upper-help{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+}
+.navbar-upper-help:hover{
+    -fx-background-color: #bdc98b;
+}
 
 .rounded {
     -fx-background-radius: 5px;
@@ -40,6 +65,15 @@
     -fx-text-fill: #000000;
 }
 
+.color-tertiary {
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: #000000;
+}
+
+.transparent-primary {
+    -fx-background-color: #354C37E6;
+}
+
 .account {
     -fx-background-color: #7C8E70;
     -fx-text-fill: #EEEEEE;
@@ -53,4 +87,3 @@
     -fx-background-color: #7C8E70;
     -fx-text-fill: #000000;
 }
-

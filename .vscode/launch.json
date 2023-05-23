@@ -8,7 +8,7 @@
             "type": "java",
             "name": "Project",
             "request": "launch",
-            "mainClass": "main.iMatApp",
+            "mainClass": "imat.iMatApp",
             "vmArgs": "--module-path /home/casino/Programming/GUI/javafx/lib/ --add-modules javafx.controls,javafx.fxml"
         },
         {
