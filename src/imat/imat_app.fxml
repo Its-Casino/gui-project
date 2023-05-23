@@ -56,7 +56,7 @@
                         <Cursor fx:constant="CLOSED_HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="navbar-upper-button" text="Konto">
+                  <Button mnemonicParsing="false" onMouseClicked="#openAccount" prefHeight="55.0" prefWidth="150.0" styleClass="navbar-upper-button" text="Konto">
                      <graphic>
                         <ImageView fitHeight="32.04" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
                            <image>
@@ -517,6 +517,50 @@
                   </VBox>
                </children>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneAccount" maxHeight="1024.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="-880.0" layoutY="2.0" onMouseClicked="#closeAccount" prefHeight="1024.0" prefWidth="878.0" style="-fx-background-color: #00000040;" />
+            <Label layoutX="218.0" layoutY="25.0" text="Konto" textFill="WHITE">
+               <font>
+                  <Font name="Poppins ExtraBold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="71.0" fitWidth="67.0" layoutX="483.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER" layoutX="62.0" layoutY="155.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" stylesheets="@imat_app.css" text="Kontoinställningar" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label alignment="CENTER" layoutX="62.0" layoutY="280.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Inköpshistorik" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="62.0" layoutY="405.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Leveransadress" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="61.0" layoutY="530.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Favoriter" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="131.0" layoutY="668.0" prefHeight="70.0" prefWidth="300.0" styleClass="color-secondary" text="Logga ut">
+               <font>
+                  <Font name="Poppins SemiBold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="507.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/Close-White.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

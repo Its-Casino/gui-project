@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
@@ -25,6 +26,8 @@ public class MainViewController implements Initializable {
     AnchorPane paneHelp;
     @FXML
     AnchorPane paneCategories;
+    @FXML
+    AnchorPane paneAccount;
     @FXML
     FlowPane flowCategories;
 
@@ -92,10 +95,25 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void openAccount() {
+        paneAccount.toFront();
+    }
+
+    @FXML
+    public void closeAccount() {
+        paneAccount.toBack();
+    }
+
+    @FXML
     public void logIn() {
         currentUser = new User();
         currentUser.setUserName("Rune");
         currentUser.setPassword("123");
         openStart();
+    }
+
+    @FXML
+    public void mouseTrap(Event e) {
+        e.consume();
     }
 }
