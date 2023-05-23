@@ -26,7 +26,6 @@ public class iMatApp extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
-
     }
 
     /**
@@ -35,5 +34,4 @@ public class iMatApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
