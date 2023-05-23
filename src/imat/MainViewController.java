@@ -28,6 +28,8 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCategories;
 
+    @FXML
+    AnchorPane paneProducts;
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
@@ -76,5 +78,10 @@ public class MainViewController implements Initializable {
             }
         }
         flowCategories.getChildren().addAll(categoryPanes.values());
+    }
+
+    @FXML
+    public void openProducts() {
+        paneProducts.toFront();
     }
 }
