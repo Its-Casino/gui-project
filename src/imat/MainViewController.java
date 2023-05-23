@@ -35,6 +35,7 @@ public class MainViewController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
+        refreshCategories();
         openStart();
     }
 
@@ -65,8 +66,8 @@ public class MainViewController implements Initializable {
 
     private void refreshCategories() {
         flowCategories.getChildren().clear();
-        if (categoryPanes.size() == 0) {
-            for (ProductCategory category : ProductCategory.values()) {
+        for (ProductCategory category : ProductCategory.values()) {
+            if (!categoryPanes.containsKey(category)) {
                 System.out.println(category.name());
                 categoryPanes.put(category, new CategoryCard(category, this));
             }
