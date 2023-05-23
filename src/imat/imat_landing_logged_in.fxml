@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="874.0" prefWidth="1444.0">
+               <children>
+                  <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
+                           <children>
+                              <Label prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
+                                 <styleClass>
+                                    <String fx:value="default-font" />
+                                    <String fx:value="color-primary" />
+                                 </styleClass>
+                              </Label>
+                              <Label layoutX="68.0" layoutY="131.0" prefHeight="65.0" prefWidth="659.0" style="-fx-font-size: 20;" text="Bläddra bland våra kategorier och erbjudanden eller använd vår sökfunktion för att hitta det du söker." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="143.0">
+                                 <styleClass>
+                                    <String fx:value="default-font" />
+                                    <String fx:value="color-primary" />
+                                 </styleClass>
+                              </Label>
+                              <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Logga in" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
+                                 <styleClass>
+                                    <String fx:value="color-tertiary" />
+                                    <String fx:value="dropshadow-default" />
+                                    <String fx:value="rounded" />
+                                    <String fx:value="default-font" />
+                                 </styleClass>
+                              </Button>
+                              <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../res/Senior.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
+                           <children>
+                              <Label styleClass="default-font" text="Våra bästa erbjudanden denna veckan!">
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <HBox prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
+                           <children>
+                              <Label styleClass="default-font" text="Dina favoriter">
+                                 <padding>
+                                    <Insets left="10.0" top="10.0" />
+                                 </padding>
+                              </Label>
+                              <HBox prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
