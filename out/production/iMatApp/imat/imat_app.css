@@ -3,3 +3,88 @@
       -fx-font-family: "Arial";
       -fx-font-weight: bold;
   }
+
+.default-font {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+}
+
+.navbar-upper{
+    -fx-background-color: #C8D3C6;
+}
+
+.navbar-lower{
+    -fx-background-color: #DEE1DC;
+}
+
+.navbar-lower-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px 5px 0px 0px;
+}
+.navbar-lower-button:hover{
+    -fx-background-color: #203522;
+}
+.navbar-upper-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+}
+.navbar-upper-button:hover{
+    -fx-background-color: #203522;
+}
+.navbar-upper-help{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+}
+.navbar-upper-help:hover{
+    -fx-background-color: #bdc98b;
+}
+
+.rounded {
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+}
+
+.color-primary {
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+}
+
+.color-secondary {
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+}
+
+.color-tertiary {
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: #000000;
+}
+
+.transparent-primary {
+    -fx-background-color: #354C37E6;
+    -fx-text-fill: #EEEEEE;
+}
+
+.account {
+    -fx-background-color: #7C8E70;
+    -fx-text-fill: #EEEEEE;
+}
+
+.dropshadow-default {
+    -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
+}
+
+.inkopshistorik-panes {
+    -fx-background-color: #7C8E70;
+    -fx-text-fill: #000000;
+}

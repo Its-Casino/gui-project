@@ -2,6 +2,7 @@ package imat;
 
 import java.io.IOException;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -19,6 +20,7 @@ public class CategoryCard extends AnchorPane {
 
     public CategoryCard(ProductCategory category, MainViewController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category_card.fxml"));
+        fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
         try {
@@ -29,5 +31,10 @@ public class CategoryCard extends AnchorPane {
         }
         this.category = category;
         this.parentController = parentController;
+        labelCategory.setText(category.name());
+    }
+
+    public void onClick(Event e) {
+        parentController.openProducts(category);
     }
 }

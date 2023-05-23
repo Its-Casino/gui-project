@@ -72,6 +72,7 @@
 
 .transparent-primary {
     -fx-background-color: #354C37E6;
+    -fx-text-fill: #EEEEEE;
 }
 
 .account {
