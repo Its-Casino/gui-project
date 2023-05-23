@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.User;
 
@@ -37,6 +38,9 @@ public class MainViewController implements Initializable {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
         openStart();
+        for (ProductCategory cat : ProductCategory.values()) {
+            System.out.println(cat.name());
+        }
     }
 
     public void goLanding(Boolean loggedIn) {
@@ -68,11 +72,9 @@ public class MainViewController implements Initializable {
         flowCategories.getChildren().clear();
         for (ProductCategory category : ProductCategory.values()) {
             if (!categoryPanes.containsKey(category)) {
-                System.out.println(category.name());
                 categoryPanes.put(category, new CategoryCard(category, this));
             }
         }
         flowCategories.getChildren().addAll(categoryPanes.values());
-        System.out.println(flowCategories.getChildren());
     }
 }
