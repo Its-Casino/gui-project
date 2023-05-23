@@ -39,6 +39,7 @@ public class MainViewController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
+        populateProductPageMap();
         openStart();
     }
 
@@ -53,11 +54,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openStart() {
-        if (currentUser != null) {
-            goLanding(true);
-        } else {
-            goLanding(false);
-        }
+        goLanding(currentUser != null);
     }
 
     @FXML
@@ -89,7 +86,7 @@ public class MainViewController implements Initializable {
         flowCategories.getChildren().addAll(categoryPanes.values());
         System.out.println(flowCategories.getChildren());
     }
-    private void populateProducts() {
+    private void populateProductPageMap() {
         for (ProductCategory category : ProductCategory.values()) {
             productPages.put(category, new ProductPane(category, this));
         }
