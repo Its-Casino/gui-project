@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;" stylesheets="@../IdeaProjects/gui-project/src/imat/Produkt.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;" stylesheets="@products.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" layoutX="653.0" layoutY="40.0" styleClass="header-text" text="Frukt">
+      <Label alignment="CENTER" layoutX="653.0" layoutY="40.0" style="-fx-text-fill: black;" styleClass="header-text" text="Frukt">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -33,7 +33,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../IdeaProjects/gui-project/src/imat/resources/mer.png" />
+                  <Image url="@resources/mer.png" />
                </image>
             </ImageView>
          </graphic>
@@ -52,7 +52,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../IdeaProjects/gui-project/src/imat/resources/mer.png" />
+                  <Image url="@resources/mer.png" />
                </image>
             </ImageView>
          </graphic>
@@ -718,9 +718,9 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="34.0" styleClass="category-header" text="Kategorier" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="34.0" text="Kategorier" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font size="36.0" />
+                        <Font name="Poppins SemiBold" size="36.0" />
                      </font>
                   </Label>
                </children>

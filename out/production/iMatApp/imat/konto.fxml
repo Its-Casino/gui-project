@@ -16,7 +16,7 @@
    <children>
       <Label layoutX="218.0" layoutY="25.0" text="Konto" textFill="WHITE">
          <font>
-            <Font name="Poppins ExtraBold" size="40.0" />
+            <Font name="Poppins Bold" size="40.0" />
          </font>
       </Label>
       <ImageView fitHeight="71.0" fitWidth="67.0" layoutX="483.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />

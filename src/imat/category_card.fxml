@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <fx:root onMouseClicked="#openProductPage" prefHeight="260.0" prefWidth="250.0" stylesheets="@imat_app.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -14,14 +16,20 @@
             <Image url="@resources/Senior.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelCategory" alignment="CENTER" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
-         <styleClass>
-            <String fx:value="transparent-primary" />
-            <String fx:value="default-font" />
-         </styleClass>
+      <Label fx:id="labelCategory" alignment="CENTER" styleClass="transparent-primary" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font name="Poppins Bold" size="28.0" />
+         </font>
       </Label>
    </children>
    <cursor>
-      <Cursor fx:constant="CLOSED_HAND" />
+      <Cursor fx:constant="HAND" />
    </cursor>
+   <effect>
+      <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+         <color>
+            <Color opacity="0.25" />
+         </color>
+      </DropShadow>
+   </effect>
 </fx:root>

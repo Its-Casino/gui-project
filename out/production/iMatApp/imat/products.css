@@ -3,8 +3,7 @@
 }
 .sort-button{
     -fx-font-size: 32px;
-    -fx-font-weight: Bold;
-    -fx-font-family: "Poppins";
+    -fx-font-family: "Poppins semibold";
 }
 .item-text{
     -fx-font-family: "Poppins";

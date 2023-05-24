@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="paneShoppingCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="560.0" styleClass="shopping-cart" stylesheets="@shopping-cart.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -35,10 +35,13 @@
       </ScrollPane>
       <Line endX="554.0" layoutX="280.0" layoutY="579.0" strokeWidth="6.0" style="-fx-fill: white;" styleClass="scroll-divider" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <Label layoutX="97.0" layoutY="616.0" styleClass="shipping-label" text="Frakt" AnchorPane.leftAnchor="120.0" />
-      <Label layoutX="357.0" layoutY="616.0" styleClass="shipping-cost-label" text="xx kr" AnchorPane.rightAnchor="120.0" />
+      <Label layoutX="357.0" layoutY="616.0" styleClass="shipping-cost-label" text="0 kr" AnchorPane.rightAnchor="120.0" />
       <Label layoutX="97.0" layoutY="665.0" styleClass="total-label" text="Total" AnchorPane.leftAnchor="120.0" />
-      <Label layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="xx kr" AnchorPane.rightAnchor="120.0" />
-      <Button layoutX="115.0" layoutY="754.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="330.0" styleClass="checkout-button" text="Gå till kassan" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0">
+      <Label layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" AnchorPane.rightAnchor="120.0" />
+      <Label alignment="CENTER" layoutX="120.0" layoutY="753.0" prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #E2ECAD; -fx-text-fill: black;" text="Gå till kassan" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="Poppins SemiBold" size="40.0" />
+         </font>
          <effect>
             <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
                <color>
@@ -46,6 +49,6 @@
                </color>
             </DropShadow>
          </effect>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>
