@@ -1,0 +1,125 @@
+.text-sample{
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+.default-font {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+}
+
+.default-font-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+}
+
+.default-font-bold-big {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 24px;
+}
+
+.default-font-bold-medium {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 22px;
+}
+
+.default-font-bold-small {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 20px;
+}
+
+.navbar-upper{
+    -fx-background-color: #C8D3C6;
+}
+
+.navbar-lower{
+    -fx-background-color: #DEE1DC;
+}
+
+.navbar-lower-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px 5px 0px 0px;
+}
+
+.rounded {
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+}
+
+.color-primary {
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+}
+
+.color-secondary {
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+}
+
+.account {
+    -fx-background-color: #7C8E70;
+    -fx-text-fill: #EEEEEE;
+}
+
+.dropshadow-default {
+    -fx-effect: dropshadow(gaussian,#00000025,5,0,0,5);
+}
+
+.leveransadress {
+    -fx-background-color: #FFFFFF;
+}
+
+.leveransadress-input {
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 22px;
+}
+
+.default-stroke {
+    -fx-effect: innershadow(one-pass-box, black, 2, 0, 0, 0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
+
+.wizard-text {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 20;
+
+}
+
+.checkout-section-color {
+    -fx-background-color: #E3E3E3;
+}
+
+.checkout-title-font {
+    -fx-font-family: "Poppins ExtraBold";
+    -fx-font-size: 40;
+}
+
+.checkout-text-big {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 26;
+}
+
+.checkout-text-medium {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24;
+}
+
+.checkout-text-small {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20
+}
+
+.checkout-leverans-text-input {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 20;
+    -fx-text-fill: #00000085;
+    -fx-background-color: #E3E3E3;
+}
+
+.default-stroke {
+    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
