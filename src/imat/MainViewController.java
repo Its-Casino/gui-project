@@ -17,6 +17,8 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.User;
 
+import javax.swing.text.html.ImageView;
+
 public class MainViewController implements Initializable {
 
     @FXML
@@ -52,6 +54,8 @@ public class MainViewController implements Initializable {
     AnchorPane paneShoppingHistory;
     @FXML
     AnchorPane paneDeliveryInfo;
+    @FXML
+    ImageView helpArrow;
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
@@ -83,11 +87,19 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
+        paneAccount.toBack();
+        paneShoppingCart.toBack();
     }
 
     @FXML
     public void openHelp() {
         paneHelp.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
+        paneAccount.toBack();
+        paneShoppingCart.toBack();
     }
 
     @FXML
@@ -98,6 +110,8 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toFront();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
+        paneAccount.toBack();
+        paneShoppingCart.toBack();
     }
 
     private void refreshCategories() {
@@ -122,6 +136,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openAccount() {
         paneAccount.toFront();
+        paneShoppingCart.toBack();
     }
 
     @FXML
@@ -132,6 +147,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openShoppingCart(){
         paneShoppingCart.toFront();
+        paneAccount.toBack();
     }
     @FXML
     public void closeShoppingCart(){
@@ -145,6 +161,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void closeCheckOut(){
         paneCheckOut.toBack();
+        paneShoppingCart.toBack();
     }
     @FXML
     public void openShoppingHistory(){
@@ -153,6 +170,7 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
+        paneAccount.toBack();
     }
     @FXML
     public void openDeliveryInfo(){
@@ -161,6 +179,7 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
+        paneAccount.toBack();
     }
 
 

@@ -9,7 +9,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -756,25 +755,6 @@
                   </ScrollPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label alignment="CENTER" style="-fx-font-weight: bold; -fx-font-size: 48; -fx-underline: true;" styleClass="default-font" text="Hjälp" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                  <SplitPane dividerPositions="0.29797979797979796" layoutX="118.0" layoutY="182.0" prefHeight="693.0" prefWidth="1191.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="140.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                           <children>
-                              <ScrollPane prefHeight="548.0" prefWidth="328.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <content>
-                                    <FlowPane columnHalignment="CENTER" prefHeight="633.0" prefWidth="350.0" prefWrapLength="350.0" rowValignment="TOP" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="paneLoggedIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -841,6 +821,179 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneCategories" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="176.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="806.0" prefWidth="1440.0" style="-fx-border-color: transparent; -fx-background-color: efefef;" vbarPolicy="ALWAYS">
+                           <content>
+                              <FlowPane fx:id="flowCategories" alignment="TOP_CENTER" hgap="40.0" prefWidth="1424.0" prefWrapLength="1400.0" rowValignment="TOP" style="-fx-background-color: efefef;" vgap="40.0">
+                                 <padding>
+                                    <Insets left="40.0" right="40.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Alla Kategorier" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="40.0" />
+                  <Line endX="360.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="108.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneDeliveryInfo" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" styleClass="leveransadress" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="303.0" layoutY="173.0" prefHeight="529.0" prefWidth="834.0">
+                     <children>
+                        <Label layoutX="182.0" layoutY="13.0" text="Dina leveransuppgifter">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="39.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="60.0" layoutY="90.0" minHeight="60.0" minWidth="119.0" styleClass="color-primary" text="Förnamn">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="179.0" layoutY="90.0" prefHeight="60.0" prefWidth="191.0" text="Rune">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                           <font>
+                              <Font name="Poppins ExtraLight" size="22.0" />
+                           </font>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="423.0" layoutY="90.0" minHeight="60.0" minWidth="135.0" styleClass="color-primary" text="Efternamn">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="558.0" layoutY="90.0" prefHeight="60.0" prefWidth="220.0" text="Gerdsås">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="60.0" layoutY="180.0" minHeight="60.0" minWidth="148.0" styleClass="color-primary" text="Gatuadress">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="208.0" layoutY="180.0" prefHeight="60.0" prefWidth="569.0" text="Elektrogården 1">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="60.0" layoutY="270.0" minHeight="60.0" minWidth="164.0" styleClass="color-primary" text="Postnummer">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="222.0" layoutY="270.0" prefHeight="60.0" prefWidth="148.0" text="421 58">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="423.0" layoutY="270.0" minHeight="60.0" minWidth="104.0" styleClass="color-primary" text="Postort">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="526.0" layoutY="270.0" prefHeight="60.0" prefWidth="252.0" text="Göteborg">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="60.0" layoutY="360.0" minHeight="60.0" minWidth="176.0" styleClass="color-primary" text="Mobilnummer">
+                           <font>
+                              <Font name="Poppins ExtraBold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="236.0" layoutY="360.0" prefHeight="60.0" prefWidth="191.0" text="076 726 52 86">
+                           <styleClass>
+                              <String fx:value="leveransadress-input" />
+                              <String fx:value="default-stroke" />
+                           </styleClass>
+                        </TextField>
+                        <Button layoutX="311.0" layoutY="450.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="212.0" styleClass="color-primary" text="Spara Uppgifter">
+                           <font>
+                              <Font name="Poppins SemiBold" size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="color-secondary" />
+                        <String fx:value="dropshadow-default" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneShoppingHistory" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="91.0" layoutY="180.0" prefHeight="120.0" prefWidth="1258.0">
+                     <children>
+                        <Label layoutX="29.0" layoutY="38.0" text="mån 15 maj" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Medium" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/drop-down-arrow-white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="account" />
+                        <String fx:value="rounded" />
+                        <String fx:value="dropshadow-default" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="91.0" layoutY="380.0" prefHeight="120.0" prefWidth="1258.0">
+                     <children>
+                        <Label layoutX="29.0" layoutY="38.0" text="fre 12 maj" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Medium" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/drop-down-arrow-white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="account" />
+                        <String fx:value="rounded" />
+                        <String fx:value="dropshadow-default" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="91.0" layoutY="580.0" prefHeight="120.0" prefWidth="1258.0">
+                     <children>
+                        <Label layoutX="29.0" layoutY="38.0" text="tis 9 maj" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Medium" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/drop-down-arrow-white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="account" />
+                        <String fx:value="rounded" />
+                        <String fx:value="dropshadow-default" />
+                     </styleClass>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="555.0" layoutY="60.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Inköpshistorik" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="40.0" />
+                  <Line endX="354.0" layoutX="555.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="108.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;" stylesheets="@products.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -913,7 +1066,7 @@
                         </DropShadow>
                      </effect>
                      <children>
-                        <AnchorPane prefHeight="85.0" prefWidth="300.0" style="-fx-background-color: #6B6B6B; -fx-background-radius: 5 5 0 0;">
+                        <AnchorPane prefHeight="85.0" prefWidth="300.0" style="-fx-background-color: #6B6B6B; -fx-background-radius: 5 5 0 0;" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
                            <effect>
                               <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
                                  <color>
@@ -929,7 +1082,8 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutY="85.0" prefHeight="495.0" prefWidth="300.0" styleClass="category-scroll-pane">
+                        <Line endX="48.5" layoutX="10.0" layoutY="10.0" startX="48.5" startY="464.0" stroke="#efefef" strokeLineCap="ROUND" strokeWidth="4.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0" />
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" layoutY="85.0" prefHeight="495.0" prefWidth="300.0" styleClass="category-scroll-pane">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="284.0">
                                  <children>
@@ -1123,177 +1277,151 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneCategories" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="176.0">
+                  <Label alignment="CENTER" layoutX="643.0" layoutY="50.0" style="-fx-text-fill: black;" styleClass="header-text" text="Hjälp" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="40.0">
+                     <font>
+                        <Font name="Poppins Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Line endX="120.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="654.0" AnchorPane.topAnchor="108.0" />
+                  <ScrollPane fitToWidth="true" layoutX="187.0" layoutY="290.0" prefHeight="509.0" prefWidth="329.0" style="-fx-border-color: efefef;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="217.0">
+                     <content>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: transparent;" vgap="22.0">
+                           <children>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur loggar man in?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Medium" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@resources/help-arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                           </children>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="100.0" layoutY="160.0" text="Nedan finns svar på våra vanligaste frågor:" underline="true">
+                     <font>
+                        <Font name="Poppins Medium" size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="574.0" layoutY="285.0" prefHeight="509.0" prefWidth="200.0" style="-fx-background-radius: 5px;" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="217.0">
                      <children>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="806.0" prefWidth="1440.0" style="-fx-border-color: transparent; -fx-background-color: efefef;" vbarPolicy="ALWAYS">
-                           <content>
-                              <FlowPane fx:id="flowCategories" alignment="TOP_CENTER" hgap="40.0" prefWidth="1424.0" prefWrapLength="1400.0" rowValignment="TOP" style="-fx-background-color: efefef;" vgap="40.0">
-                                 <padding>
-                                    <Insets left="40.0" right="40.0" />
-                                 </padding>
-                              </FlowPane>
-                           </content>
-                        </ScrollPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: d9d9d9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
-                  </VBox>
-                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Alla Kategorier" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="40.0" />
-                  <Line endX="360.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="108.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="paneDeliveryInfo" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" styleClass="leveransadress" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <AnchorPane layoutX="303.0" layoutY="173.0" prefHeight="529.0" prefWidth="834.0">
-                     <children>
-                        <Label layoutX="182.0" layoutY="13.0" text="Dina leveransuppgifter">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="39.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="60.0" layoutY="90.0" minHeight="60.0" minWidth="119.0" styleClass="color-primary" text="Förnamn">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="179.0" layoutY="90.0" prefHeight="60.0" prefWidth="191.0" text="Rune">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                           <font>
-                              <Font name="Poppins ExtraLight" size="22.0" />
-                           </font>
-                        </TextField>
-                        <Label alignment="CENTER" layoutX="423.0" layoutY="90.0" minHeight="60.0" minWidth="135.0" styleClass="color-primary" text="Efternamn">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="558.0" layoutY="90.0" prefHeight="60.0" prefWidth="220.0" text="Gerdsås">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                        </TextField>
-                        <Label alignment="CENTER" layoutX="60.0" layoutY="180.0" minHeight="60.0" minWidth="148.0" styleClass="color-primary" text="Gatuadress">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="208.0" layoutY="180.0" prefHeight="60.0" prefWidth="569.0" text="Elektrogården 1">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                        </TextField>
-                        <Label alignment="CENTER" layoutX="60.0" layoutY="270.0" minHeight="60.0" minWidth="164.0" styleClass="color-primary" text="Postnummer">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="222.0" layoutY="270.0" prefHeight="60.0" prefWidth="148.0" text="421 58">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                        </TextField>
-                        <Label alignment="CENTER" layoutX="423.0" layoutY="270.0" minHeight="60.0" minWidth="104.0" styleClass="color-primary" text="Postort">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="526.0" layoutY="270.0" prefHeight="60.0" prefWidth="252.0" text="Göteborg">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                        </TextField>
-                        <Label alignment="CENTER" layoutX="60.0" layoutY="360.0" minHeight="60.0" minWidth="176.0" styleClass="color-primary" text="Mobilnummer">
-                           <font>
-                              <Font name="Poppins ExtraBold" size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="236.0" layoutY="360.0" prefHeight="60.0" prefWidth="191.0" text="076 726 52 86">
-                           <styleClass>
-                              <String fx:value="leveransadress-input" />
-                              <String fx:value="default-stroke" />
-                           </styleClass>
-                        </TextField>
-                        <Button layoutX="311.0" layoutY="450.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="212.0" styleClass="color-primary" text="Spara Uppgifter">
-                           <font>
-                              <Font name="Poppins SemiBold" size="22.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <styleClass>
-                        <String fx:value="color-secondary" />
-                        <String fx:value="dropshadow-default" />
-                     </styleClass>
                   </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="paneShoppingHistory" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <AnchorPane layoutX="91.0" layoutY="180.0" prefHeight="120.0" prefWidth="1258.0">
-                     <children>
-                        <Label layoutX="29.0" layoutY="38.0" text="mån 15 maj" textFill="WHITE">
-                           <font>
-                              <Font name="Poppins Medium" size="36.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/drop-down-arrow-white.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <styleClass>
-                        <String fx:value="account" />
-                        <String fx:value="rounded" />
-                        <String fx:value="dropshadow-default" />
-                     </styleClass>
-                  </AnchorPane>
-                  <AnchorPane layoutX="91.0" layoutY="380.0" prefHeight="120.0" prefWidth="1258.0">
-                     <children>
-                        <Label layoutX="29.0" layoutY="38.0" text="fre 12 maj" textFill="WHITE">
-                           <font>
-                              <Font name="Poppins Medium" size="36.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/drop-down-arrow-white.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <styleClass>
-                        <String fx:value="account" />
-                        <String fx:value="rounded" />
-                        <String fx:value="dropshadow-default" />
-                     </styleClass>
-                  </AnchorPane>
-                  <AnchorPane layoutX="91.0" layoutY="580.0" prefHeight="120.0" prefWidth="1258.0">
-                     <children>
-                        <Label layoutX="29.0" layoutY="38.0" text="tis 9 maj" textFill="WHITE">
-                           <font>
-                              <Font name="Poppins Medium" size="36.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="1137.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/drop-down-arrow-white.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <styleClass>
-                        <String fx:value="account" />
-                        <String fx:value="rounded" />
-                        <String fx:value="dropshadow-default" />
-                     </styleClass>
-                  </AnchorPane>
-                  <Label alignment="CENTER" layoutX="555.0" layoutY="60.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Inköpshistorik" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="40.0" />
-                  <Line endX="354.0" layoutX="555.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="108.0" />
                </children>
             </AnchorPane>
          </children>
