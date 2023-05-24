@@ -96,10 +96,13 @@ public class CheckoutPage extends AnchorPane {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("utcheckning.fxml"));
         fxmlLoader.setController(this);
 
+        for(int i = 0; i <= 31; i++){
+            String dag = Integer.toString(i);
+            leveranstid_dag.getItems().addAll("dag");
+        }
+        leveranstid_dag.getSelectionModel().select("18");
 
-
-
-
+        leveranstid_manad.getItems().addAll("Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December");
 
 
 
