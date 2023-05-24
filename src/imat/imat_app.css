@@ -40,9 +40,8 @@
 .navbar-lower-button{
     -fx-background-color: #354C37;
     -fx-text-fill: #EEEEEE;
-    -fx-font-size: 22px;
+    -fx-font-size: 24px;
     -fx-font-family: "Poppins";
-    -fx-background-radius: 5px 5px 0px 0px;
 }
 .navbar-upper-button{
     -fx-background-color: #354C37;
@@ -190,7 +189,13 @@
 .default-stroke {
     -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
 }
+.navbar-lower-button-entered{
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+}
 
-
-
-
+.close-account-button{
+    -fx-background-color: #7C8E70;
+}

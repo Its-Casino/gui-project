@@ -67,7 +67,13 @@
 .shopping-cart-card-info-label{
   -fx-font-size: 16 px;
   -fx-text-fill: black;
-  -fx-font-style: 
+  -fx-font-style:   ;
+}
+.shopping-card-amount{
+  -fx-font-family: "poppins";
+  -fx-font-size: 20 px;
+  -fx-font-weight: bold;
+  -fx-text-fill: black;
 }
 
 

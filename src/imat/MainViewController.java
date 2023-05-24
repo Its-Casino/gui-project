@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
@@ -30,16 +31,22 @@ public class MainViewController implements Initializable {
     AnchorPane paneAccount;
     @FXML
     FlowPane flowCategories;
-
     @FXML
     AnchorPane paneProducts;
     @FXML
     FlowPane productFlow;
     @FXML
     AnchorPane paneShoppingCart;
-
     @FXML
     AnchorPane paneCheckOut;
+    @FXML
+    AnchorPane anchorPaneStart;
+    @FXML
+    AnchorPane anchorPaneCategory;
+    @FXML
+    AnchorPane anchorPaneLists;
+    @FXML
+    AnchorPane anchorPaneAbout;
 
     User currentUser;
 
@@ -68,6 +75,10 @@ public class MainViewController implements Initializable {
     @FXML
     public void openStart() {
         goLanding(currentUser != null);
+        anchorPaneStart.toFront();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
@@ -79,6 +90,10 @@ public class MainViewController implements Initializable {
     public void openCategories() {
         refreshCategories();
         paneCategories.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toFront();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     private void refreshCategories() {
@@ -127,6 +142,8 @@ public class MainViewController implements Initializable {
     public void closeCheckOut(){
         paneCheckOut.toBack();
     }
+
+
 
     @FXML
     public void logIn() {

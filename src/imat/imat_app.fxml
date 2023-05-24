@@ -469,50 +469,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneAccount" maxHeight="1024.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane layoutX="-880.0" layoutY="2.0" onMouseClicked="#closeAccount" prefHeight="1024.0" prefWidth="878.0" style="-fx-background-color: #00000040;" />
-            <Label layoutX="218.0" layoutY="25.0" text="Konto" textFill="WHITE">
-               <font>
-                  <Font name="Poppins ExtraBold" size="40.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="71.0" fitWidth="67.0" layoutX="483.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="CENTER" layoutX="62.0" layoutY="155.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" stylesheets="@imat_app.css" text="Kontoinställningar" textFill="WHITE">
-               <font>
-                  <Font name="Poppins Regular" size="36.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Label>
-            <Label alignment="CENTER" layoutX="62.0" layoutY="280.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Inköpshistorik" textFill="WHITE">
-               <font>
-                  <Font name="Poppins Regular" size="36.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="62.0" layoutY="405.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Leveransadress" textFill="WHITE">
-               <font>
-                  <Font name="Poppins Regular" size="36.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="61.0" layoutY="530.0" prefHeight="65.0" prefWidth="438.0" styleClass="color-primary" text="Favoriter" textFill="WHITE">
-               <font>
-                  <Font name="Poppins Regular" size="36.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="131.0" layoutY="668.0" prefHeight="70.0" prefWidth="300.0" styleClass="color-secondary" text="Logga ut">
-               <font>
-                  <Font name="Poppins SemiBold" size="40.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="507.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../res/Close-White.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
             <AnchorPane fx:id="paneLoggedOut" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -919,19 +875,75 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="anchorPaneStart" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Start" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+            <Line endX="60.0" layoutX="75.0" layoutY="36.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneCategory" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Alla kategorier" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneLists" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Inköpslistor" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneAbout" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="645.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Om iMat" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
       <VBox maxHeight="1024.0" maxWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" scaleShape="false" AnchorPane.bottomAnchor="874.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox alignment="CENTER_LEFT" maxHeight="100.0" minHeight="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="1440.0" spacing="25.0" styleClass="navbar-upper">
                <children>
                   <ImageView fitHeight="51.0" fitWidth="155.0" onMouseClicked="#openStart" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@resources/iMat_logo_png.png" />
+                        <Image url="@resources/imat-logo.png" />
                      </image>
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <cursor>
-                        <Cursor fx:constant="CLOSED_HAND" />
+                        <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
                   <TextField prefHeight="55.0" prefWidth="540.0" promptText="Sök...">
@@ -945,6 +957,9 @@
                         <String fx:value="rounded" />
                         <String fx:value="search-bar" />
                      </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </TextField>
                   <Button graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#openShoppingCart" prefHeight="55.0" prefWidth="280.0" styleClass="navbar-upper-button" text="Varukorg">
                      <graphic>
@@ -1013,39 +1028,217 @@
             </HBox>
             <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0" styleClass="navbar-lower">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#openStart" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Start" textOverrun="CLIP">
+                  <AnchorPane accessibleRole="BUTTON" onMouseClicked="#openStart" prefHeight="44.0" prefWidth="210.0" styleClass="navbar-lower-button">
+                     <children>
+                        <Label alignment="CENTER" onMouseClicked="#openStart" styleClass="navbar-lower-button" text="Start" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#openCategories" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Alla Kategorier" textOverrun="CLIP">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" onMouseClicked="#openCategories" prefHeight="44.0" prefWidth="210.0" styleClass="navbar-lower-button">
+                     <children>
+                        <Label alignment="CENTER" onMouseClicked="#openCategories" styleClass="navbar-lower-button" text="Alla kategorier" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Inköpslistor" textOverrun="CLIP">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" prefHeight="44.0" prefWidth="210.0" styleClass="navbar-lower-button">
+                     <children>
+                        <Label alignment="CENTER" styleClass="navbar-lower-button" text="Inköpslistor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="navbar-lower-button" text="Om iMat" textOverrun="CLIP">
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" prefHeight="44.0" prefWidth="210.0" styleClass="navbar-lower-button">
+                     <children>
+                        <Label alignment="CENTER" styleClass="navbar-lower-button" text="Om iMat" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                  </Button>
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
                </children>
-               <padding>
-                  <Insets top="5.0" />
-               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
          </children>
-         <effect>
-            <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
       </VBox>
+      <AnchorPane fx:id="paneAccount" maxHeight="874.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="218.0" layoutY="25.0" text="Konto" textFill="WHITE">
+               <font>
+                  <Font name="Poppins ExtraBold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="71.0" fitWidth="67.0" layoutX="483.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutX="61.0" layoutY="164.0" vgap="60.0">
+               <children>
+                  <AnchorPane style="-fx-background-radius: 5px;" styleClass="color-primary">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="65.0" stylesheets="@imat_app.css" text="Kontoinställningar" textFill="WHITE" AnchorPane.leftAnchor="80.0">
+                           <font>
+                              <Font name="Poppins Regular" size="36.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@resources/settings.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane style="-fx-background-radius: 5px;" styleClass="color-primary">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="65.0" stylesheets="@imat_app.css" text="Inköpshistorik" textFill="WHITE" AnchorPane.leftAnchor="80.0">
+                           <font>
+                              <Font name="Poppins Regular" size="36.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@resources/order-history.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane style="-fx-background-radius: 5px;" styleClass="color-primary">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="65.0" stylesheets="@imat_app.css" text="Leveransadress" textFill="WHITE" AnchorPane.leftAnchor="80.0">
+                           <font>
+                              <Font name="Poppins Regular" size="36.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@resources/location.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane style="-fx-background-radius: 5px;" styleClass="color-primary">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="65.0" stylesheets="@imat_app.css" text="Favoriter" textFill="WHITE" AnchorPane.leftAnchor="80.0">
+                           <font>
+                              <Font name="Poppins Regular" size="36.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="9.0">
+                           <image>
+                              <Image url="@resources/favorite.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </children>
+            </FlowPane>
+            <Label alignment="CENTER" layoutX="131.0" layoutY="668.0" prefHeight="70.0" prefWidth="300.0" styleClass="color-secondary" text="Logga ut">
+               <font>
+                  <Font name="Poppins SemiBold" size="40.0" />
+               </font>
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Button layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#closeAccount" prefHeight="70.0" prefWidth="70.0" styleClass="close-account-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@resources/icon-close-shopping-cart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

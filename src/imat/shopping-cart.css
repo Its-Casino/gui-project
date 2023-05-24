@@ -1,11 +1,11 @@
 .shopping-cart{
-    -fx-font-family: "poppins";
     -fx-background-color: #7C8E70;
 }
 .header{
      -fx-font-size: 40px;
      -fx-font-weight: bold;
      -fx-text-fill: white;
+     -fx-font-family: "poppins";
 }
 .close-shopping-cart-button{
     -fx-background-color: #7C8E70;
@@ -21,29 +21,33 @@
 }
 .shipping-label{
     -fx-font-size: 32 px;
-    -fx-font-weight: bold;
     -fx-text-fill: white;
+    -fx-font-family: "poppins semibold";
 }
 .total-label{
     -fx-font-size: 32 px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
+    -fx-font-family: "poppins semibold";
 }
 .shipping-cost-label{
     -fx-font-size: 32 px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
+    -fx-font-family: "poppins semibold";
 }
 .total-cost-label{
     -fx-font-size: 32 px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
+    -fx-font-family: "poppins semibold";
 }
 .checkout-button{
     -fx-font-size: 40px;
     -fx-font-weight: bold;
     -fx-background-color: #E2ECAD;
     -fx-text-fill: black;
+    -fx-font-family: "poppins semibold";
 }
 .shopping-card{
     -fx-background-color: #E5F5C4;
@@ -67,7 +71,13 @@
 .shopping-cart-card-info-label{
   -fx-font-size: 16 px;
   -fx-text-fill: black;
-  -fx-font-style: 
+  -fx-font-style:   ;
+}
+.shopping-card-amount{
+  -fx-font-family: "poppins";
+  -fx-font-size: 20 px;
+  -fx-font-weight: bold;
+  -fx-text-fill: black;
 }
 
 
