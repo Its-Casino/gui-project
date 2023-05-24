@@ -5,9 +5,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
+<AnchorPane maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
       <AnchorPane layoutX="91.0" layoutY="180.0" prefHeight="120.0" prefWidth="1258.0">
          <children>
@@ -66,5 +67,7 @@
             <String fx:value="dropshadow-default" />
          </styleClass>
       </AnchorPane>
+      <Label alignment="CENTER" layoutX="555.0" layoutY="60.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Inköpshistorik" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="40.0" />
+      <Line endX="354.0" layoutX="555.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="543.0" AnchorPane.rightAnchor="543.0" AnchorPane.topAnchor="108.0" />
    </children>
 </AnchorPane>

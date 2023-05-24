@@ -27,12 +27,13 @@
 .category-scroll-pane{
     -fx-background-color: transparent;
 }
+
 .category-pane{
     -fx-background-color: #354C37;
 }
 .scroll-bar:horizontal .track,
 .scroll-bar:vertical .track{
-    -fx-background-color :transparent;
+    -fx-background-color:transparent;
     -fx-border-color :transparent;
     -fx-background-radius : 0.0em;
     -fx-border-radius :2.0em;

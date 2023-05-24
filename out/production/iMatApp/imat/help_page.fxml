@@ -4,10 +4,11 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" style="-fx-font-weight: bold; -fx-font-size: 48; -fx-underline: true;" styleClass="default-font" text="Hjälp" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
       <SplitPane dividerPositions="0.29797979797979796" layoutX="118.0" layoutY="182.0" prefHeight="693.0" prefWidth="1191.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="140.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -22,5 +23,11 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
+      <Label alignment="CENTER" layoutX="643.0" layoutY="50.0" style="-fx-text-fill: black;" styleClass="header-text" text="Hjälp" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="Poppins Bold" size="48.0" />
+         </font>
+      </Label>
+      <Line endX="120.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="654.0" AnchorPane.topAnchor="108.0" />
    </children>
 </AnchorPane>

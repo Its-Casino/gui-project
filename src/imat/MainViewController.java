@@ -48,6 +48,10 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane anchorPaneAbout;
 
+    @FXML
+    AnchorPane paneShoppingHistory;
+    @FXML
+    AnchorPane paneDeliveryInfo;
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
@@ -142,7 +146,22 @@ public class MainViewController implements Initializable {
     public void closeCheckOut(){
         paneCheckOut.toBack();
     }
-
+    @FXML
+    public void openShoppingHistory(){
+        paneShoppingHistory.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
+    }
+    @FXML
+    public void openDeliveryInfo(){
+        paneDeliveryInfo.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
+    }
 
 
     @FXML
