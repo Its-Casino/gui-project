@@ -9,10 +9,11 @@ import java.util.ResourceBundle;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.User;
 
 public class MainViewController implements Initializable {
@@ -23,28 +24,36 @@ public class MainViewController implements Initializable {
     AnchorPane paneLoggedOut;
     @FXML
     AnchorPane paneHelp;
+    @FXML
+    AnchorPane paneCategories;
+    @FXML
+    AnchorPane paneAccount;
+    @FXML
+    FlowPane flowCategories;
 
     @FXML
     AnchorPane paneProducts;
+    @FXML
+    FlowPane productFlow;
+    @FXML
+    AnchorPane paneShoppingCart;
+
+    @FXML
+    AnchorPane paneCheckOut;
+
     User currentUser;
 
-    Map<Pages, AnchorPane> webPanes = new HashMap<>();
+    Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
 
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
-    enum Pages {
-        LANDING_PAGE_LOGGED_IN,
-        LANDING_PAGE_LOGGED_OUT,
-        HELP_PAGE,
-        CATEGORY_PAGE,
-    };
-
     public void initialize(URL url, ResourceBundle rb) {
-        webPanes.put(Pages.LANDING_PAGE_LOGGED_OUT, new LandingPage(this, false));
-        webPanes.put(Pages.LANDING_PAGE_LOGGED_IN, new LandingPage(this, true));
-        webPanes.put(Pages.HELP_PAGE, new HelpPage(this));
         String iMatDirectory = iMatDataHandler.imatDirectory();
-        goLanding(false);
+        refreshCategories();
+        openStart();
+        for (ProductCategory cat : ProductCategory.values()) {
+            System.out.println(cat.name());
+        }
     }
 
     public void goLanding(Boolean loggedIn) {
@@ -58,19 +67,77 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openStart() {
-        if (currentUser != null) {
-            goLanding(true);
-        } else {
-            goLanding(false);
-        }
+        goLanding(currentUser != null);
     }
 
     @FXML
     public void openHelp() {
         paneHelp.toFront();
     }
+
     @FXML
-    public void openProducts() {
+    public void openCategories() {
+        refreshCategories();
+        paneCategories.toFront();
+    }
+
+    private void refreshCategories() {
+        flowCategories.getChildren().clear();
+        for (ProductCategory category : ProductCategory.values()) {
+            if (!categoryPanes.containsKey(category)) {
+                categoryPanes.put(category, new CategoryCard(category, this));
+            }
+        }
+        flowCategories.getChildren().addAll(categoryPanes.values());
+    }
+
+    @FXML
+    public void openProducts(ProductCategory category) {
+        productFlow.getChildren().clear();
+        for (Product product : iMatDataHandler.getProducts(category)) {
+            productFlow.getChildren().add(new ProductCard(product, this));
+        }
         paneProducts.toFront();
+    }
+
+    @FXML
+    public void openAccount() {
+        paneAccount.toFront();
+    }
+
+    @FXML
+    public void closeAccount() {
+        paneAccount.toBack();
+    }
+
+    @FXML
+    public void openShoppingCart(){
+        paneShoppingCart.toFront();
+    }
+    @FXML
+    public void closeShoppingCart(){
+        paneShoppingCart.toBack();
+    }
+
+    @FXML
+    public void openCheckOut(){
+        paneCheckOut.toFront();
+    }
+    @FXML
+    public void closeCheckOut(){
+        paneCheckOut.toBack();
+    }
+
+    @FXML
+    public void logIn() {
+        currentUser = new User();
+        currentUser.setUserName("Rune");
+        currentUser.setPassword("123");
+        openStart();
+    }
+
+    @FXML
+    public void mouseTrap(Event e) {
+        e.consume();
     }
 }

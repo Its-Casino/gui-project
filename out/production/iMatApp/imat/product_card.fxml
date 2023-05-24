@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="315.0" prefWidth="254.0" stylesheets="@imat_app.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="62.0" layoutY="34.0" maxHeight="130.0" maxWidth="130.0" minHeight="130.0" minWidth="130.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-width: 4px; -fx-border-color: #E9E6E6; -fx-border-radius: 5px;">
+         <children>
+            <ImageView fx:id="productImage" fitHeight="130.0" fitWidth="130.0" layoutY="4.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@resources/Senior.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow height="2.5" offsetY="4.0" radius="0.125" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+      <Label fx:id="productName" layoutX="89.0" layoutY="172.0" styleClass="default-font" text="Äpple" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="productPrice" layoutX="94.0" layoutY="207.0" styleClass="item-price" text="6 kr/st" textFill="#efac01">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="32.0" layoutY="247.0" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+         <effect>
+            <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="8.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../IdeaProjects/gui-project/src/imat/resources/minus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#demoThing" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../IdeaProjects/gui-project/src/imat/resources/plus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+         <color>
+            <Color opacity="0.0" />
+         </color>
+      </DropShadow>
+   </effect>
+   <styleClass>
+      <String fx:value="rounded" />
+      <String fx:value="color-primary" />
+   </styleClass>
+</fx:root>
