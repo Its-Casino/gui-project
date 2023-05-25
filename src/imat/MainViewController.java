@@ -29,9 +29,7 @@ import se.chalmers.cse.dat216.project.User;
 public class MainViewController implements Initializable {
 
     @FXML
-    AnchorPane paneLoggedIn;
-    @FXML
-    AnchorPane paneLoggedOut;
+    AnchorPane paneStart;
     @FXML
     AnchorPane paneHelp;
     @FXML
@@ -74,14 +72,9 @@ public class MainViewController implements Initializable {
         openStart();
     }
 
+    @FXML
     public void openStart() {
-        lastPane = "Start";
-        if (currentUser != null) {
-            paneLoggedIn.toFront();
-            return;
-        }
-        paneLoggedOut.toFront();
-        return;
+        paneStart.toFront();
     }
 
     @FXML
@@ -137,20 +130,6 @@ public class MainViewController implements Initializable {
     @FXML
     public void closeAccount() {
         paneAccount.toBack();
-    }
-
-    @FXML
-    public void logIn() {
-        currentUser = new User();
-        currentUser.setUserName("Rune");
-        currentUser.setPassword("123");
-        openStart();
-    }
-
-    @FXML
-    public void logOut() {
-        iMatDataHandler.reset();
-        openStart();
     }
 
     @FXML
