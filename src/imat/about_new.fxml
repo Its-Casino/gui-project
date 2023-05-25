@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="590.0" layoutY="60.0" style="-fx-text-fill: black;" styleClass="header-text" text="Om iMat" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <font>
+            <Font name="Poppins Bold" size="48.0" />
+         </font>
+      </Label>
+      <Line endX="206.0" layoutX="593.0" layoutY="127.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="616.0" />
+      <AnchorPane layoutX="672.0" layoutY="355.0" prefHeight="500.0" prefWidth="1140.0" style="-fx-background-color: #E2ECAD;" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Label alignment="CENTER" layoutX="423.0" layoutY="176.0" prefWidth="1000.0" text="iMat är en hemsida gjord av studenter med målet att underlätta att onlinehandla, specifikt för seniorer. Vi har försökt anpassa hemsidan efter vad seniorers behov skulle kunna vara, för att göra så att processen blir så frustrationsfri som möjligt. I dagens samhälle där allting är digitaliserat kan det vara svårt att hänga med vilket är därför vi skapar hemsidan. Vi vill förenkla vardagen för seniorer en process i taget. " textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font name="Poppins Medium" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
