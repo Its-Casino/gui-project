@@ -233,16 +233,17 @@ public class MainViewController implements Initializable {
     private Label betalning_moms;
     @FXML
     private Label betalning_total_kostnad;
-    @FXML private AnchorPane checked_image_anchorpane;
+    @FXML
+    private AnchorPane checked_image_anchorpane;
 
     private String vald_leveranstid;
     private String vald_leveransdag;
 
     private List<String> list_of_weekends = Arrays.asList("6", "7", "13", "14", "20", "21", "27", "28");
 
-    private List<String> list_of_months_31 = Arrays.asList("Juli","Augusti","Oktober","December");
+    private List<String> list_of_months_31 = Arrays.asList("Juli", "Augusti", "Oktober", "December");
 
-    private List<String> list_of_months_30 = Arrays.asList("Juni","September","November");
+    private List<String> list_of_months_30 = Arrays.asList("Juni", "September", "November");
 
     private String vald_leveransmanad;
 
@@ -258,7 +259,6 @@ public class MainViewController implements Initializable {
         leveranstid_manad.getItems().addAll("Maj", "Juni", "Juli", "Augusti",
                 "September", "Oktober", "November", "December");
         leveranstid_manad.getSelectionModel().select("Maj");
-
 
         if (iMatDataHandler.getCustomer().getFirstName() != "") {
             leveransadress_fornamn.setText(iMatDataHandler.getCustomer().getFirstName());
@@ -289,12 +289,12 @@ public class MainViewController implements Initializable {
         leveranstid_10_14_button.setToggleGroup(leveranstidToggleGroup);
         leveranstid_11_15_button.setToggleGroup(leveranstidToggleGroup);
 
-
         leveranstid_dag.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransdag = newValue;
-                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                leveranstid_vald_datum
+                        .setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
                 datum_tillgangligt_state.setText("Datumet är tillgängligt");
                 checked_image_anchorpane.setLayoutX(326);
                 checked_image_anchorpane.setLayoutY(281);
@@ -317,17 +317,16 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransmanad = newValue;
-                if(vald_leveransmanad == "Maj") {
+                if (vald_leveransmanad == "Maj") {
                     leveranstid_dag.getItems().clear();
                     for (int i = 29; i <= 31; i++) {
                         String dag = Integer.toString(i);
                         leveranstid_dag.getItems().addAll(dag);
                     }
-                } else if () {
-
                 }
 
-                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(),newValue));
+                leveranstid_vald_datum
+                        .setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
             }
         });
 
