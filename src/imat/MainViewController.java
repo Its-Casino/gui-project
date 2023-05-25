@@ -42,7 +42,7 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneAccount;
     @FXML
-    AnchorPane checkout;
+    AnchorPane paneCheckout;
     @FXML
     FlowPane flowCategories;
     @FXML
@@ -133,7 +133,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void closeCheckout() {
-        checkout.toBack();
+        paneCheckout.toBack();
     }
 
     @FXML
