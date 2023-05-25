@@ -219,18 +219,22 @@ public class MainViewController implements Initializable {
 
     private List<String> list_of_weekends = Arrays.asList("6", "7", "13", "14", "20", "21", "27", "28");
 
+    private List<String> list_of_months_31 = Arrays.asList("Juli","Augusti","Oktober","December");
+
+    private List<String> list_of_months_30 = Arrays.asList("Juni","September","November");
+
     private String vald_leveransmanad;
 
     void generateCheckout() {
 
-        for (int i = 1; i <= 31; i++) {
+        for (int i = 29; i <= 31; i++) {
             String dag = Integer.toString(i);
             leveranstid_dag.getItems().addAll(dag);
         }
 
         leveranstid_dag.getSelectionModel().select("29");
 
-        leveranstid_manad.getItems().addAll("Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti",
+        leveranstid_manad.getItems().addAll("Maj", "Juni", "Juli", "Augusti",
                 "September", "Oktober", "November", "December");
         leveranstid_manad.getSelectionModel().select("Maj");
 
@@ -269,7 +273,8 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransdag = newValue;
-                datum_tillgangligt_state.setText("Datumet är tillgängligt!");
+                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                datum_tillgangligt_state.setText("Datumet är tillgängligt");
                 checked_image_anchorpane.setLayoutX(326);
                 checked_image_anchorpane.setLayoutY(281);
                 datum_tillgangligt_state_image.setLayoutX(326);
@@ -278,12 +283,11 @@ public class MainViewController implements Initializable {
                 for (String listItem : list_of_weekends) {
                     if (newValue.contains(listItem)) {
                         datum_tillgangligt_state.setText("Datumet är INTE tillgängligt!");
-                        checked_image_anchorpane.setLayoutX(197);
+                        checked_image_anchorpane.setLayoutX(196);
                         checked_image_anchorpane.setLayoutY(335);
-                        datum_tillgangligt_state_image.setLayoutX(197);
+                        datum_tillgangligt_state_image.setLayoutX(196);
                         datum_tillgangligt_state_image.setLayoutY(335);
                         checked_image_anchorpane.toFront();
-
                     }
                 }
             }
@@ -292,6 +296,17 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransmanad = newValue;
+                if(vald_leveransmanad == "Maj") {
+                    leveranstid_dag.getItems().clear();
+                    for (int i = 29; i <= 31; i++) {
+                        String dag = Integer.toString(i);
+                        leveranstid_dag.getItems().addAll(dag);
+                    }
+                } else if () {
+
+                }
+
+                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(),newValue));
             }
         });
 

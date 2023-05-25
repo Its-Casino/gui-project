@@ -573,7 +573,7 @@
                <content>
                   <AnchorPane prefHeight="2481.0" prefWidth="1424.0" stylesheets="@imat_app.css">
                      <children>
-                        <AnchorPane layoutX="227.0" layoutY="-850.0" prefHeight="2113.0" prefWidth="980.0">
+                        <AnchorPane layoutX="227.0" layoutY="50.0" prefHeight="2113.0" prefWidth="980.0">
                            <children>
                               <AnchorPane prefHeight="182.0" prefWidth="980.0">
                                  <children>
@@ -700,8 +700,8 @@
                                           <Image url="@resources/Checked%20Circle.png" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="leveranstid_vald_datum" layoutX="285.0" layoutY="414.0" styleClass="default-font-bold-small" text="Vald leverans:  " />
-                                    <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="447.0" styleClass="default-font-bold-small" text="Tid: " />
+                                    <Label fx:id="leveranstid_vald_datum" layoutX="263.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: 29 Maj" />
+                                    <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid: 07:00 - 11:00 " />
                                     <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
                                        <children>
                                           <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
