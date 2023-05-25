@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -46,25 +47,31 @@
             </DropShadow>
          </effect>
          <children>
-            <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="8.0">
+            <AnchorPane layoutX="10.0" layoutY="8.0" onMouseClicked="#removeCurrentFromCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="8.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
-                        <Image url="@../IdeaProjects/gui-project/src/imat/resources/minus.png" />
+                        <Image url="@resources/minus.png" />
                      </image>
                   </ImageView>
                </children>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </AnchorPane>
-            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0">
+            <AnchorPane layoutX="20.0" layoutY="18.0" onMouseClicked="#addCurrentToCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0">
                <children>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#demoThing" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
-                        <Image url="@../IdeaProjects/gui-project/src/imat/resources/plus.png" />
+                        <Image url="@resources/plus.png" />
                      </image>
                   </ImageView>
                </children>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </AnchorPane>
-            <Label alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
+            <Label fx:id="productCount" alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="20.0" />
                </font>

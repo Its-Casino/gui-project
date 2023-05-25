@@ -32,7 +32,7 @@ public class CategoryCard extends AnchorPane {
         }
         this.category = category;
         this.parentController = parentController;
-        setProps();
+        this.labelCategory.setText(convertToText(category));
     }
 
     @FXML
@@ -40,74 +40,74 @@ public class CategoryCard extends AnchorPane {
         this.parentController.openProducts(category);
     }
 
-    private void setProps() {
-        Image fxImage;
+    public static String convertToText(ProductCategory category) {
         switch (category) {
             case POD:
-                labelCategory.setText("Baljväxter");
-                break;
+                return ("Baljväxter");
+
             case BREAD:
-                labelCategory.setText("Bröd");
-                break;
+                return ("Bröd");
+
             case BERRY:
-                labelCategory.setText("Bär");
-                break;
+                return ("Bär");
+
             case CITRUS_FRUIT:
-                labelCategory.setText("Citrusfrukter");
-                break;
+                return ("Citrusfrukter");
+
             case HOT_DRINKS:
-                labelCategory.setText("Varm dryck");
-                break;
+                return ("Varm dryck");
+
             case COLD_DRINKS:
-                labelCategory.setText("Kall dryck");
-                break;
+                return ("Kall dryck");
+
             case EXOTIC_FRUIT:
-                labelCategory.setText("Exotisk frukt");
-                break;
+                return ("Exotisk frukt");
+
             case FISH:
-                labelCategory.setText("Fisk");
-                break;
+                return ("Fisk");
+
             case VEGETABLE_FRUIT:
-                labelCategory.setText("Grönsaker");
-                break;
+                return ("Grönsaker");
+
             case CABBAGE:
-                labelCategory.setText("Sallad");
-                break;
+                return ("Sallad");
+
             case MEAT:
-                labelCategory.setText("Kött");
-                break;
+                return ("Kött");
+
             case DAIRIES:
-                labelCategory.setText("Mjölkprodukter");
-                break;
+                return ("Mjölkprodukter");
+
             case MELONS:
-                labelCategory.setText("Melon");
-                break;
+                return ("Melon");
+
             case FLOUR_SUGAR_SALT:
-                labelCategory.setText("Skafferivaror");
-                break;
+                return ("Skafferivaror");
+
             case NUTS_AND_SEEDS:
-                labelCategory.setText("Nötter och frön");
-                break;
+                return ("Nötter och frön");
+
             case PASTA:
-                labelCategory.setText("Pasta");
-                break;
+                return ("Pasta");
+
             case POTATO_RICE:
-                labelCategory.setText("Potatis och ris");
-                break;
+                return ("Potatis och ris");
+
             case ROOT_VEGETABLE:
-                labelCategory.setText("Rotfrukter");
-                break;
+                return ("Rotfrukter");
+
             case FRUIT:
-                labelCategory.setText("Frukt");
-                break;
+                return ("Frukt");
+
             case SWEET:
-                labelCategory.setText("Sötsaker");
-                break;
+                return ("Sötsaker");
+
             case HERB:
-                labelCategory.setText("Örter");
-                break;
+                return ("Örter");
+
             default:
-                break;
+                return ("UNEXPECTED ERROR");
+
         }
     }
 }

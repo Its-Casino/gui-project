@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
@@ -29,12 +30,16 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneAccount;
     @FXML
+    AnchorPane paneCheckout;
+    @FXML
     FlowPane flowCategories;
-
     @FXML
     AnchorPane paneProducts;
     @FXML
     FlowPane productFlow;
+    @FXML
+    Label labelProductCategory;
+
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
@@ -67,6 +72,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openHelp() {
         paneHelp.toFront();
+        closeCheckout();
     }
 
     @FXML
@@ -91,6 +97,7 @@ public class MainViewController implements Initializable {
         for (Product product : iMatDataHandler.getProducts(category)) {
             productFlow.getChildren().add(new ProductCard(product, this));
         }
+        labelProductCategory.setText(CategoryCard.convertToText(category));
         paneProducts.toFront();
     }
 
@@ -110,6 +117,11 @@ public class MainViewController implements Initializable {
         currentUser.setUserName("Rune");
         currentUser.setPassword("123");
         openStart();
+    }
+
+    @FXML
+    public void closeCheckout() {
+        paneCheckout.toBack();
     }
 
     @FXML
