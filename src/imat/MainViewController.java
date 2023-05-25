@@ -336,8 +336,7 @@ public class MainViewController implements Initializable {
                     button_confirm_delivery.setDisable(false);
                     datum_available = true;
                     datum_tillgangligt_state.setLayoutX(86);
-                    leveranstid_vald_datum.setText(
-                            String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                    leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
                     datum_tillgangligt_state.setText("Datumet är tillgängligt");
                     checked_image_anchorpane.setLayoutX(326);
                     checked_image_anchorpane.setLayoutY(281);
@@ -391,8 +390,7 @@ public class MainViewController implements Initializable {
                         newValue = oldValue;
                     }
                     if (!newValue.contains(listItem) && datum_available) {
-                        leveranstid_vald_datum.setText(
-                                String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
+                        leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
                         leveranstidcoverpane.toBack();
                     }
                 }
