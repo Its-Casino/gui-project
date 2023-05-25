@@ -60,10 +60,13 @@
                   <Font name="Poppins Regular" size="36.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="131.0" layoutY="668.0" prefHeight="70.0" prefWidth="300.0" styleClass="color-secondary" text="Logga ut">
+            <Label alignment="CENTER" layoutX="131.0" layoutY="668.0" onMouseClicked="#logOut" prefHeight="70.0" prefWidth="300.0" styleClass="color-secondary" text="Logga ut">
                <font>
                   <Font name="Poppins SemiBold" size="40.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
             </Label>
             <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="507.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -1029,5 +1032,6 @@
             </HBox>
          </children>
       </VBox>
+      <AnchorPane onMouseClicked="#closeLogin" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

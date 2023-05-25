@@ -48,6 +48,8 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneCheckout;
     @FXML
+    AnchorPane paneLogin;
+    @FXML
     FlowPane flowCategories;
     @FXML
     VBox vboxCart;
@@ -147,11 +149,18 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void openLogin() {
+        paneLogin.toFront();
+    }
+
+    @FXML
+    public void closeLogin() {
+        paneLogin.toBack();
+    }
+
+    @FXML
     public void logIn() {
-        currentUser = new User();
-        currentUser.setUserName("Rune");
-        currentUser.setPassword("123");
-        openStart();
+
     }
 
     @FXML
