@@ -144,7 +144,7 @@
                               <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="306.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
                   </ImageView>
                               <Label fx:id="leveranstid_vald_datum" layoutX="319.0" layoutY="410.0" styleClass="default-font-bold-small" text="Vald leverans:  den 18:e Augusti" />
-                              <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="447.0" styleClass="default-font-bold-small" text="Tid: 09:00 - 13:00" />
+                              <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="447.0" styleClass="default-font-bold-small" text="Tid:  09:00 - 13:00" />
                               <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
                                  <children>
                                     <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">

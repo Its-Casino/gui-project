@@ -710,32 +710,32 @@
                               </AnchorPane>
                               <AnchorPane layoutY="1010.0" prefHeight="593.0" prefWidth="980.0">
                                  <children>
-                                    <AnchorPane fx:id="checked_image_anchorpane" layoutX="196.0" layoutY="335.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
-                                    <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
-                                    <Label layoutX="46.0" layoutY="108.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
-                                    <Label layoutX="48.0" layoutY="163.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
-                                    <Button layoutX="306.0" layoutY="494.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
-                                       <styleClass>
-                                          <String fx:value="color-primary" />
-                                          <String fx:value="default-font-bold-small" />
-                                       </styleClass>
-                                    </Button>
-                                    <Label fx:id="datum_tillgangligt_state" layoutX="86.0" layoutY="282.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
-                                    <Label layoutX="445.0" layoutY="163.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
-                                    <ComboBox fx:id="leveranstid_dag" layoutX="65.0" layoutY="210.0" prefHeight="50.0" prefWidth="105.0" promptText="18">
-                                       <styleClass>
-                                          <String fx:value="default-font-small" />
-                                          <String fx:value="text-allignment-right" />
-                                       </styleClass>
-                                    </ComboBox>
-                                    <ComboBox fx:id="leveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="188.0" promptText="Augusti" styleClass="default-font-small" />
                                     <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="326.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@resources/Checked%20Circle.png" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="leveranstid_vald_datum" layoutX="263.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: 29 Maj" />
-                                    <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid: 07:00 - 11:00 " />
+                                    <AnchorPane fx:id="checked_image_anchorpane" layoutX="325.0" layoutY="280.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
+                                    <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
+                                    <Label layoutX="46.0" layoutY="108.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
+                                    <Label layoutX="48.0" layoutY="163.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
+                                    <Button fx:id="button_confirm_delivery" layoutX="306.0" layoutY="494.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
+                                       <styleClass>
+                                          <String fx:value="color-primary" />
+                                          <String fx:value="default-font-bold-small" />
+                                       </styleClass>
+                                    </Button>
+                                    <Label fx:id="datum_tillgangligt_state" layoutX="130.0" layoutY="283.0" styleClass="checkout-text-small" text="Välj datum ovan" />
+                                    <Label layoutX="445.0" layoutY="163.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
+                                    <ComboBox fx:id="leveranstid_dag" layoutX="57.0" layoutY="210.0" prefHeight="50.0" prefWidth="113.0" promptText="Dag">
+                                       <styleClass>
+                                          <String fx:value="default-font-small" />
+                                          <String fx:value="text-allignment-right" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <ComboBox fx:id="leveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="188.0" promptText="Månad" styleClass="default-font-small" />
+                                    <Label fx:id="leveranstid_vald_datum" layoutX="292.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: " />
+                                    <Label fx:id="leveranstid_vald_tid" layoutX="426.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid:" />
                                     <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
                                        <children>
                                           <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
@@ -792,6 +792,7 @@
                                                       <Font name="Poppins Regular" size="16.0" />
                                                    </font>
                                                 </Label>
+                                                <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane layoutY="66.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
@@ -808,6 +809,7 @@
                                                 </Label>
                                              </children>
                                           </AnchorPane>
+                                          <AnchorPane fx:id="leveranstidcoverpane" prefHeight="165.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
                                        </children>
                                     </AnchorPane>
                                  </children>
