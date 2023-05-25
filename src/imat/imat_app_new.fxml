@@ -1279,7 +1279,7 @@
             </AnchorPane>
             <AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label alignment="CENTER" layoutX="643.0" layoutY="50.0" style="-fx-text-fill: black;" styleClass="header-text" text="Hjälp" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="40.0">
+                  <Label alignment="CENTER" layoutX="655.0" layoutY="39.0" style="-fx-text-fill: black;" styleClass="header-text" text="Hjälp" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="39.0">
                      <font>
                         <Font name="Poppins Bold" size="48.0" />
                      </font>
