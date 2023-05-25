@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.function.Function;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,7 +15,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -59,6 +59,8 @@ public class MainViewController implements Initializable {
     @FXML
     Label labelProductCategory;
 
+    String lastPane;
+
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
@@ -70,13 +72,35 @@ public class MainViewController implements Initializable {
         refreshCategories();
         openStart();
         generateCheckout();
-        for (ProductCategory cat : ProductCategory.values()) {
-            System.out.println(cat.name());
+    }
+
+    public void resume() {
+        switch (lastPane) {
+            case "Start":
+                openStart();
+                break;
+            case "Help":
+                openHelp();
+                break;
+            case "Categories":
+                openCategories();
+                break;
+            case "Cart":
+                openCart();
+                break;
+            case "Checkout":
+                openCheckout();
+                break;
+            case "History":
+                openHistory();
+                break;
+
         }
     }
 
-    public void goLanding(Boolean loggedIn) {
-        if (loggedIn) {
+    public void openStart() {
+        lastPane = "Start";
+        if (currentUser != null) {
             paneLoggedIn.toFront();
             return;
         }
@@ -85,18 +109,15 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    public void openStart() {
-        goLanding(currentUser != null);
-    }
-
-    @FXML
     public void openHelp() {
+        lastPane = "Help";
         paneHelp.toFront();
         closeCheckout();
     }
 
     @FXML
     public void openCategories() {
+        lastPane = "Categories";
         refreshCategories();
         paneCategories.toFront();
     }
@@ -123,6 +144,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCart() {
+        lastPane = "Cart";
         vboxCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             vboxCart.getChildren().add(new CartCard(shoppingItem, this));
@@ -162,6 +184,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCheckout() {
+        lastPane = "Checkout";
         paneCheckout.toFront();
     }
 
@@ -172,6 +195,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openHistory() {
+        lastPane = "History";
         vboxHistoryOverview.getChildren().clear();
         for (Order order : iMatDataHandler.getOrders()) {
             vboxHistoryOverview.getChildren().add(new OrderOverview(order, this));
