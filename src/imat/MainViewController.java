@@ -68,6 +68,7 @@ public class MainViewController implements Initializable {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
         openStart();
+        generateCheckout();
         for (ProductCategory cat : ProductCategory.values()) {
             System.out.println(cat.name());
         }
@@ -232,45 +233,52 @@ public class MainViewController implements Initializable {
     private Label betalning_moms;
     @FXML
     private Label betalning_total_kostnad;
+    @FXML private AnchorPane checked_image_anchorpane;
 
     private String vald_leveranstid;
     private String vald_leveransdag;
 
     private List<String> list_of_weekends = Arrays.asList("6", "7", "13", "14", "20", "21", "27", "28");
 
+    private List<String> list_of_months_31 = Arrays.asList("Juli","Augusti","Oktober","December");
+
+    private List<String> list_of_months_30 = Arrays.asList("Juni","September","November");
+
     private String vald_leveransmanad;
 
     void generateCheckout() {
 
-        for (int i = 0; i <= 31; i++) {
+        for (int i = 29; i <= 31; i++) {
             String dag = Integer.toString(i);
-            leveranstid_dag.getItems().addAll("dag");
+            leveranstid_dag.getItems().addAll(dag);
         }
+
         leveranstid_dag.getSelectionModel().select("29");
 
-        leveranstid_manad.getItems().addAll("Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti",
+        leveranstid_manad.getItems().addAll("Maj", "Juni", "Juli", "Augusti",
                 "September", "Oktober", "November", "December");
         leveranstid_manad.getSelectionModel().select("Maj");
 
-        if (iMatDataHandler.getCustomer().getFirstName() != null) {
+
+        if (iMatDataHandler.getCustomer().getFirstName() != "") {
             leveransadress_fornamn.setText(iMatDataHandler.getCustomer().getFirstName());
         }
-        if (iMatDataHandler.getCustomer().getLastName() != null) {
+        if (iMatDataHandler.getCustomer().getLastName() != "") {
             leveransadress_efternamn.setText(iMatDataHandler.getCustomer().getLastName());
         }
-        if (iMatDataHandler.getCustomer().getAddress() != null) {
+        if (iMatDataHandler.getCustomer().getAddress() != "") {
             leveransadress_gatuadress.setText(iMatDataHandler.getCustomer().getAddress());
         }
-        if (iMatDataHandler.getCustomer().getPostCode() != null) {
+        if (iMatDataHandler.getCustomer().getPostCode() != "") {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostCode());
         }
-        if (iMatDataHandler.getCustomer().getPostAddress() != null) {
+        if (iMatDataHandler.getCustomer().getPostAddress() != "") {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostAddress());
         }
-        if (iMatDataHandler.getCustomer().getMobilePhoneNumber() != null) {
+        if (iMatDataHandler.getCustomer().getMobilePhoneNumber() != "") {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
         }
-        if (iMatDataHandler.getCustomer().getPhoneNumber() != null) {
+        if (iMatDataHandler.getCustomer().getPhoneNumber() != "") {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getPhoneNumber());
         }
 
@@ -281,13 +289,26 @@ public class MainViewController implements Initializable {
         leveranstid_10_14_button.setToggleGroup(leveranstidToggleGroup);
         leveranstid_11_15_button.setToggleGroup(leveranstidToggleGroup);
 
+
         leveranstid_dag.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransdag = newValue;
+                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                datum_tillgangligt_state.setText("Datumet är tillgängligt");
+                checked_image_anchorpane.setLayoutX(326);
+                checked_image_anchorpane.setLayoutY(281);
+                datum_tillgangligt_state_image.setLayoutX(326);
+                datum_tillgangligt_state_image.setLayoutY(281);
+                checked_image_anchorpane.toBack();
                 for (String listItem : list_of_weekends) {
                     if (newValue.contains(listItem)) {
-                        datum_tillgangligt_state_image.setImage(new Image(""));
+                        datum_tillgangligt_state.setText("Datumet är INTE tillgängligt!");
+                        checked_image_anchorpane.setLayoutX(196);
+                        checked_image_anchorpane.setLayoutY(335);
+                        datum_tillgangligt_state_image.setLayoutX(196);
+                        datum_tillgangligt_state_image.setLayoutY(335);
+                        checked_image_anchorpane.toFront();
                     }
                 }
             }
@@ -296,6 +317,17 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransmanad = newValue;
+                if(vald_leveransmanad == "Maj") {
+                    leveranstid_dag.getItems().clear();
+                    for (int i = 29; i <= 31; i++) {
+                        String dag = Integer.toString(i);
+                        leveranstid_dag.getItems().addAll(dag);
+                    }
+                } else if () {
+
+                }
+
+                leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(),newValue));
             }
         });
 

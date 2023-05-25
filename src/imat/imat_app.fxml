@@ -630,43 +630,43 @@
                                  <children>
                                     <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
                                     <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
-                                    <TextField fx:id="leveransadress_fornamn" layoutX="40.0" layoutY="145.0" prefHeight="60.0" prefWidth="220.0" text="Förnamn*">
+                                    <TextField fx:id="leveransadress_fornamn" layoutX="40.0" layoutY="145.0" prefHeight="60.0" prefWidth="220.0" promptText="Förnamn*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_efternamn" layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" text="Efternamn*">
+                                    <TextField fx:id="leveransadress_efternamn" layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" promptText="Efternamn*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_gatuadress" layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" text="Gatuadress*">
+                                    <TextField fx:id="leveransadress_gatuadress" layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" promptText="Gatuadress*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_postnummer" layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postnummer*">
+                                    <TextField fx:id="leveransadress_postnummer" layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postnummer*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_postort" layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" text="Postort*">
+                                    <TextField fx:id="leveransadress_postort" layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postort*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_mobilnummer" layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Mobilnummer*">
+                                    <TextField fx:id="leveransadress_mobilnummer" layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Mobilnummer*">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="leveransadress_hemtelefon" layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" text="Hemtelefon">
+                                    <TextField fx:id="leveransadress_hemtelefon" layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Hemtelefon">
                                        <styleClass>
                                           <String fx:value="default-stroke" />
                                           <String fx:value="checkout-leverans-text-input" />
@@ -685,7 +685,7 @@
                                        </font>
                                     </Label>
                                     <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
-                                    <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" text="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till&#10;" wrapText="true">
+                                    <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" promptText="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till" wrapText="true">
                                        <styleClass>
                                           <String fx:value="checkout-leverans-text-input" />
                                           <String fx:value="default-stroke" />
@@ -693,7 +693,7 @@
                                        </styleClass>
                                     </TextArea>
                                     <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
-                                    <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" text="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true">
+                                    <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" promptText="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true">
                                        <styleClass>
                                           <String fx:value="checkout-leverans-text-input" />
                                           <String fx:value="default-stroke" />
@@ -710,6 +710,7 @@
                               </AnchorPane>
                               <AnchorPane layoutY="1010.0" prefHeight="593.0" prefWidth="980.0">
                                  <children>
+                                    <AnchorPane fx:id="checked_image_anchorpane" layoutX="196.0" layoutY="335.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
                                     <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
                                     <Label layoutX="46.0" layoutY="108.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
                                     <Label layoutX="48.0" layoutY="163.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
@@ -719,7 +720,7 @@
                                           <String fx:value="default-font-bold-small" />
                                        </styleClass>
                                     </Button>
-                                    <Label fx:id="datum_tillgangligt_state" layoutX="65.0" layoutY="286.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
+                                    <Label fx:id="datum_tillgangligt_state" layoutX="86.0" layoutY="282.0" styleClass="checkout-text-small" text="Datumet är tillgängligt" />
                                     <Label layoutX="445.0" layoutY="163.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
                                     <ComboBox fx:id="leveranstid_dag" layoutX="65.0" layoutY="210.0" prefHeight="50.0" prefWidth="105.0" promptText="18">
                                        <styleClass>
@@ -727,11 +728,14 @@
                                           <String fx:value="text-allignment-right" />
                                        </styleClass>
                                     </ComboBox>
-                                    <ComboBox fx:id="getLeveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="170.0" promptText="Augusti" styleClass="default-font-small" />
-                                    <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="306.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
-                  </ImageView>
-                                    <Label fx:id="leveranstid_vald_datum" layoutX="319.0" layoutY="410.0" styleClass="default-font-bold-small" text="Vald leverans:  den 18:e Augusti" />
-                                    <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="447.0" styleClass="default-font-bold-small" text="Tid: 09:00 - 13:00" />
+                                    <ComboBox fx:id="leveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="188.0" promptText="Augusti" styleClass="default-font-small" />
+                                    <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="326.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@resources/Checked%20Circle.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="leveranstid_vald_datum" layoutX="263.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: 29 Maj" />
+                                    <Label fx:id="leveranstid_vald_tid" layoutX="397.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid: 07:00 - 11:00 " />
                                     <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
                                        <children>
                                           <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
@@ -794,7 +798,7 @@
                                              <children>
                                                 <RadioButton fx:id="leveranstid_09_13_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="09:00 - 13:00">
                                                    <font>
-                                                      <Font name="Poppins ExtraBold" size="18.0" />
+                                                      <Font name="Poppins Regular" size="18.0" />
                                                    </font>
                                                 </RadioButton>
                                                 <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
@@ -816,19 +820,19 @@
                                  <children>
                                     <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Betalning" />
                                     <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Ange dina kortuppgifter" />
-                                    <TextField fx:id="betalning_manad_ar" layoutX="40.0" layoutY="207.0" prefHeight="60.0" prefWidth="226.0" text="MM/ÅÅ">
+                                    <TextField fx:id="betalning_manad_ar" layoutX="40.0" layoutY="207.0" prefHeight="60.0" prefWidth="226.0" promptText="MM/ÅÅ">
                                        <styleClass>
                                           <String fx:value="checkout-leverans-text-input" />
                                           <String fx:value="default-stroke" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="betalning_cvc" layoutX="266.0" layoutY="207.0" prefHeight="60.0" prefWidth="244.0" text="CVC">
+                                    <TextField fx:id="betalning_cvc" layoutX="266.0" layoutY="207.0" prefHeight="60.0" prefWidth="244.0" promptText="CVC">
                                        <styleClass>
                                           <String fx:value="checkout-leverans-text-input" />
                                           <String fx:value="default-stroke" />
                                        </styleClass>
                                     </TextField>
-                                    <TextField fx:id="betalning_kortnummer" layoutX="40.0" layoutY="147.0" prefHeight="60.0" prefWidth="470.0" text="Kortnummer">
+                                    <TextField fx:id="betalning_kortnummer" layoutX="40.0" layoutY="147.0" prefHeight="60.0" prefWidth="470.0" promptText="Kortnummer">
                                        <styleClass>
                                           <String fx:value="checkout-leverans-text-input" />
                                           <String fx:value="default-stroke" />
