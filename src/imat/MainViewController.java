@@ -20,12 +20,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -52,7 +52,13 @@ public class MainViewController implements Initializable {
     @FXML
     VBox vboxCart;
     @FXML
+    VBox vboxHistoryOverview;
+    @FXML
+    VBox vboxHistoryDetailed;
+    @FXML
     AnchorPane paneProducts;
+    @FXML
+    AnchorPane paneHistory;
     @FXML
     FlowPane productFlow;
     @FXML
@@ -149,6 +155,12 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void logOut() {
+        iMatDataHandler.reset();
+        openStart();
+    }
+
+    @FXML
     public void closeCheckout() {
         paneCheckout.toBack();
     }
@@ -161,6 +173,28 @@ public class MainViewController implements Initializable {
     @FXML
     public void mouseTrap(Event e) {
         e.consume();
+    }
+
+    @FXML
+    public void openHistory() {
+        vboxHistoryOverview.getChildren().clear();
+        for (Order order : iMatDataHandler.getOrders()) {
+            vboxHistoryOverview.getChildren().add(new OrderOverview(order, this));
+        }
+        paneHistory.toFront();
+    }
+
+    public void openHistoryDetailed(Order order) {
+        vboxHistoryDetailed.getChildren().clear();
+        for (ShoppingItem item : order.getItems()) {
+            vboxHistoryDetailed.getChildren().add(new HistoryDetailed(item, this));
+        }
+    }
+
+    @FXML
+    public void createFauxOrder() {
+        iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.findProducts("Äpple").get(0));
+        iMatDataHandler.placeOrder(false);
     }
 
     @FXML

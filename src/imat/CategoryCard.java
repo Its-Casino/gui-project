@@ -40,73 +40,96 @@ public class CategoryCard extends AnchorPane {
     }
 
     public static String convertToText(ProductCategory category) {
+        String val;
         switch (category) {
             case POD:
-                return ("Baljväxter");
+                val = ("Baljväxter");
+                break;
 
             case BREAD:
-                return ("Bröd");
+                val = ("Bröd");
+                break;
 
             case BERRY:
-                return ("Bär");
+                val = ("Bär");
+                break;
 
             case CITRUS_FRUIT:
-                return ("Citrusfrukter");
+                val = ("Citrusfrukter");
+                break;
 
             case HOT_DRINKS:
-                return ("Varm dryck");
+                val = ("Varm dryck");
+                break;
 
             case COLD_DRINKS:
-                return ("Kall dryck");
+                val = ("Kall dryck");
+                break;
 
             case EXOTIC_FRUIT:
-                return ("Exotisk frukt");
+                val = ("Exotisk frukt");
+                break;
 
             case FISH:
-                return ("Fisk");
+                val = ("Fisk");
+                break;
 
             case VEGETABLE_FRUIT:
-                return ("Grönsaker");
+                val = ("Grönsaker");
+                break;
 
             case CABBAGE:
-                return ("Sallad");
+                val = ("Sallad");
+                break;
 
             case MEAT:
-                return ("Kött");
+                val = ("Kött");
+                break;
 
             case DAIRIES:
-                return ("Mjölkprodukter");
+                val = ("Mjölkprodukter");
+                break;
 
             case MELONS:
-                return ("Melon");
+                val = ("Melon");
+                break;
 
             case FLOUR_SUGAR_SALT:
-                return ("Skafferivaror");
+                val = ("Skafferivaror");
+                break;
 
             case NUTS_AND_SEEDS:
-                return ("Nötter och frön");
+                val = ("Nötter och frön");
+                break;
 
             case PASTA:
-                return ("Pasta");
+                val = ("Pasta");
+                break;
 
             case POTATO_RICE:
-                return ("Potatis och ris");
+                val = ("Potatis och ris");
+                break;
 
             case ROOT_VEGETABLE:
-                return ("Rotfrukter");
+                val = ("Rotfrukter");
+                break;
 
             case FRUIT:
-                return ("Frukt");
+                val = ("Frukt");
+                break;
 
             case SWEET:
-                return ("Sötsaker");
+                val = ("Sötsaker");
+                break;
 
             case HERB:
-                return ("Örter");
+                val = ("Örter");
+                break;
 
             default:
-                return ("UNEXPECTED ERROR");
-
+                val = ("UNEXPECTED ERROR");
+                break;
         }
+        return val;
     }
 }

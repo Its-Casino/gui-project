@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="150.0" prefWidth="600.0" stylesheets="@imat_app.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <ImageView fx:id="imageItem" blendMode="SRC_ATOP" fitHeight="144.0" fitWidth="144.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="6.0">
+         <image>
+            <Image url="@resources/Senior.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelProductName" layoutX="168.0" layoutY="14.0" style="-fx-text-fill: ffffff;" styleClass="default-font-small" text="Grönkål" AnchorPane.leftAnchor="168.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="labelProductCount" layoutX="172.0" layoutY="108.0" prefHeight="28.0" prefWidth="144.0" style="-fx-text-fill: FFFFFF;" styleClass="default-font-small" text="8" AnchorPane.leftAnchor="172.0" />
+      <Label fx:id="labelProductCost" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="106.0" prefHeight="32.0" prefWidth="178.0" style="-fx-text-fill: FFFFFF;" styleClass="default-font-bold-medium" text="1337 kr" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="14.0" />
+   </children>
+   <styleClass>
+      <String fx:value="color-primary" />
+      <String fx:value="rounded" />
+   </styleClass>
+</fx:root>
