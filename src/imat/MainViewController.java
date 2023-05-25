@@ -62,6 +62,7 @@ public class MainViewController implements Initializable {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
         openStart();
+        generateCheckout();
         for (ProductCategory cat : ProductCategory.values()) {
             System.out.println(cat.name());
         }
@@ -211,6 +212,7 @@ public class MainViewController implements Initializable {
     private Label betalning_moms;
     @FXML
     private Label betalning_total_kostnad;
+    @FXML private AnchorPane checked_image_anchorpane;
 
     private String vald_leveranstid;
     private String vald_leveransdag;
@@ -221,35 +223,37 @@ public class MainViewController implements Initializable {
 
     void generateCheckout() {
 
-        for (int i = 0; i <= 31; i++) {
+        for (int i = 1; i <= 31; i++) {
             String dag = Integer.toString(i);
-            leveranstid_dag.getItems().addAll("dag");
+            leveranstid_dag.getItems().addAll(dag);
         }
+
         leveranstid_dag.getSelectionModel().select("29");
 
         leveranstid_manad.getItems().addAll("Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti",
                 "September", "Oktober", "November", "December");
         leveranstid_manad.getSelectionModel().select("Maj");
 
-        if (iMatDataHandler.getCustomer().getFirstName() != null) {
+
+        if (iMatDataHandler.getCustomer().getFirstName() != "") {
             leveransadress_fornamn.setText(iMatDataHandler.getCustomer().getFirstName());
         }
-        if (iMatDataHandler.getCustomer().getLastName() != null) {
+        if (iMatDataHandler.getCustomer().getLastName() != "") {
             leveransadress_efternamn.setText(iMatDataHandler.getCustomer().getLastName());
         }
-        if (iMatDataHandler.getCustomer().getAddress() != null) {
+        if (iMatDataHandler.getCustomer().getAddress() != "") {
             leveransadress_gatuadress.setText(iMatDataHandler.getCustomer().getAddress());
         }
-        if (iMatDataHandler.getCustomer().getPostCode() != null) {
+        if (iMatDataHandler.getCustomer().getPostCode() != "") {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostCode());
         }
-        if (iMatDataHandler.getCustomer().getPostAddress() != null) {
+        if (iMatDataHandler.getCustomer().getPostAddress() != "") {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostAddress());
         }
-        if (iMatDataHandler.getCustomer().getMobilePhoneNumber() != null) {
+        if (iMatDataHandler.getCustomer().getMobilePhoneNumber() != "") {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
         }
-        if (iMatDataHandler.getCustomer().getPhoneNumber() != null) {
+        if (iMatDataHandler.getCustomer().getPhoneNumber() != "") {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getPhoneNumber());
         }
 
@@ -260,13 +264,26 @@ public class MainViewController implements Initializable {
         leveranstid_10_14_button.setToggleGroup(leveranstidToggleGroup);
         leveranstid_11_15_button.setToggleGroup(leveranstidToggleGroup);
 
+
         leveranstid_dag.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 vald_leveransdag = newValue;
+                datum_tillgangligt_state.setText("Datumet är tillgängligt!");
+                checked_image_anchorpane.setLayoutX(326);
+                checked_image_anchorpane.setLayoutY(281);
+                datum_tillgangligt_state_image.setLayoutX(326);
+                datum_tillgangligt_state_image.setLayoutY(281);
+                checked_image_anchorpane.toBack();
                 for (String listItem : list_of_weekends) {
                     if (newValue.contains(listItem)) {
-                        datum_tillgangligt_state_image.setImage(new Image(""));
+                        datum_tillgangligt_state.setText("Datumet är INTE tillgängligt!");
+                        checked_image_anchorpane.setLayoutX(197);
+                        checked_image_anchorpane.setLayoutY(335);
+                        datum_tillgangligt_state_image.setLayoutX(197);
+                        datum_tillgangligt_state_image.setLayoutY(335);
+                        checked_image_anchorpane.toFront();
+
                     }
                 }
             }
