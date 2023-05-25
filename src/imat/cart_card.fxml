@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="150.0" prefWidth="600.0" stylesheets="@imat_app.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <ImageView fx:id="imageItem" blendMode="SRC_ATOP" fitHeight="144.0" fitWidth="144.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="6.0">
+         <image>
+            <Image url="@resources/Senior.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelProductName" layoutX="168.0" layoutY="14.0" style="-fx-text-fill: ffffff;" styleClass="default-font-small" text="Grönkål" />
+      <Button layoutX="473.0" layoutY="96.0" mnemonicParsing="false" onAction="#increaseItem" styleClass="color-tertiary">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@resources/plus.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="370.0" layoutY="96.0" mnemonicParsing="false" onAction="#decreaseItem" styleClass="color-tertiary">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@resources/minus.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="labelProductCount" alignment="CENTER" layoutX="418.0" layoutY="101.0" prefHeight="28.0" prefWidth="55.0" style="-fx-text-fill: FFFFFF;" styleClass="default-font-small" text="8" />
+      <Button layoutX="525.0" layoutY="15.0" mnemonicParsing="false" onAction="#removeItem" style="-fx-background-color: transparent;" styleClass="color-tertiary" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true">
+               <image>
+                  <Image url="@resources/icon_close.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="labelProductCost" layoutX="191.0" layoutY="106.0" style="-fx-text-fill: FFFFFF;" styleClass="default-font-bold-medium" text="1337 kr" />
+   </children>
+   <styleClass>
+      <String fx:value="color-primary" />
+      <String fx:value="rounded" />
+   </styleClass>
+</fx:root>
