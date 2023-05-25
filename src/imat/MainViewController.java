@@ -70,32 +70,8 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
-        openStart();
         generateCheckout();
-    }
-
-    public void resume() {
-        switch (lastPane) {
-            case "Start":
-                openStart();
-                break;
-            case "Help":
-                openHelp();
-                break;
-            case "Categories":
-                openCategories();
-                break;
-            case "Cart":
-                openCart();
-                break;
-            case "Checkout":
-                openCheckout();
-                break;
-            case "History":
-                openHistory();
-                break;
-
-        }
+        openStart();
     }
 
     public void openStart() {
