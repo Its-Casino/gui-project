@@ -34,9 +34,7 @@ import se.chalmers.cse.dat216.project.User;
 public class MainViewController implements Initializable {
 
     @FXML
-    AnchorPane paneLoggedIn;
-    @FXML
-    AnchorPane paneLoggedOut;
+    AnchorPane paneStart;
     @FXML
     AnchorPane paneHelp;
     @FXML
@@ -47,8 +45,6 @@ public class MainViewController implements Initializable {
     AnchorPane paneAccount;
     @FXML
     AnchorPane paneCheckout;
-    @FXML
-    AnchorPane paneLogin;
     @FXML
     FlowPane flowCategories;
     @FXML
@@ -75,25 +71,14 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
+        generateCheckout();
         openStart();
         generateCheckout();
-        for (ProductCategory cat : ProductCategory.values()) {
-            System.out.println(cat.name());
-        }
-    }
-
-    public void goLanding(Boolean loggedIn) {
-        if (loggedIn) {
-            paneLoggedIn.toFront();
-            return;
-        }
-        paneLoggedOut.toFront();
-        return;
     }
 
     @FXML
     public void openStart() {
-        goLanding(currentUser != null);
+        paneStart.toFront();
     }
 
     @FXML
@@ -146,27 +131,6 @@ public class MainViewController implements Initializable {
     @FXML
     public void closeAccount() {
         paneAccount.toBack();
-    }
-
-    @FXML
-    public void openLogin() {
-        paneLogin.toFront();
-    }
-
-    @FXML
-    public void closeLogin() {
-        paneLogin.toBack();
-    }
-
-    @FXML
-    public void logIn() {
-
-    }
-
-    @FXML
-    public void logOut() {
-        iMatDataHandler.reset();
-        openStart();
     }
 
     @FXML
