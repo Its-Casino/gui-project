@@ -24,9 +24,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.User;
 
 public class MainViewController implements Initializable {
@@ -38,6 +40,8 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneHelp;
     @FXML
+    AnchorPane paneCart;
+    @FXML
     AnchorPane paneCategories;
     @FXML
     AnchorPane paneAccount;
@@ -45,6 +49,8 @@ public class MainViewController implements Initializable {
     AnchorPane paneCheckout;
     @FXML
     FlowPane flowCategories;
+    @FXML
+    VBox vboxCart;
     @FXML
     AnchorPane paneProducts;
     @FXML
@@ -114,6 +120,16 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void openCart() {
+        vboxCart.getChildren().clear();
+        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
+            vboxCart.getChildren().add(new CartCard(shoppingItem, this));
+        }
+        paneCheckout.toBack();
+        paneCart.toFront();
+    }
+
+    @FXML
     public void openAccount() {
         paneAccount.toFront();
     }
@@ -134,6 +150,11 @@ public class MainViewController implements Initializable {
     @FXML
     public void closeCheckout() {
         paneCheckout.toBack();
+    }
+
+    @FXML
+    public void openCheckout() {
+        paneCheckout.toFront();
     }
 
     @FXML

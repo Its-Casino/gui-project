@@ -92,7 +92,7 @@
                         <Font name="Poppins Regular" size="24.0" />
                      </font>
                   </TextField>
-                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="280.0" styleClass="navbar-upper-button" text="Varukorg">
+                  <Button mnemonicParsing="false" onAction="#openCart" prefHeight="55.0" prefWidth="280.0" styleClass="navbar-upper-button" text="Varukorg">
                      <graphic>
                         <ImageView fitHeight="32.04" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
                            <image>
@@ -336,7 +336,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;" stylesheets="@products.css">
+            <AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -397,7 +397,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="130.0">
                            <children>
-                              <AnchorPane prefHeight="580.0" prefWidth="300.0" style="-fx-background-radius: 5px; -fx-background-color: #354C37;" styleClass="category-pane">
+                              <AnchorPane prefHeight="580.0" prefWidth="300.0" style="-fx-background-radius: 5px; -fx-background-color: #354C37;" styleClass="category-pane" stylesheets="@products.css">
                                  <effect>
                                     <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
                                        <color>
@@ -565,6 +565,37 @@
                   </VBox>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="paneCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="687.0" layoutY="-1.0" prefHeight="86.0" prefWidth="1440.0" style="-fx-underline: true; -fx-font-size: 32;" styleClass="default-font-bold-big" text="Varukorg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+                     <content>
+                        <AnchorPane prefHeight="676.0" prefWidth="1126.0">
+                           <children>
+                              <VBox fx:id="vboxCart" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <padding>
+                                    <Insets left="40.0" right="40.0" top="40.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="color-secondary" />
+                              <String fx:value="rounded" />
+                           </styleClass>
+                        </AnchorPane>
+                     </content>
+                     <padding>
+                        <Insets bottom="150.0" left="150.0" right="150.0" />
+                     </padding>
+                  </ScrollPane>
+                  <Button mnemonicParsing="false" onAction="#openCheckout" text="Till Utcheckning" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="750.0">
+                     <styleClass>
+                        <String fx:value="button-primary" />
+                        <String fx:value="dropshadow-default" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css">
@@ -580,10 +611,13 @@
                                     <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Din varukorg" />
                                     <Label fx:id="din_varukorg_antal_varor" layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
                                     <Label fx:id="din_varukorg_totalt_kostnad" layoutX="40.0" layoutY="127.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
-                                    <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
+                                    <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" onAction="#openCart" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
+                                       <cursor>
+                                          <Cursor fx:constant="CLOSED_HAND" />
+                                       </cursor>
                                        <styleClass>
-                                          <String fx:value="color-primary" />
-                                          <String fx:value="default-font-bold-big" />
+                                          <String fx:value="button-primary" />
+                                          <String fx:value="dropshadow-default" />
                                        </styleClass>
                                     </Button>
                                  </children>
@@ -868,10 +902,8 @@
                <children>
                   <Button layoutX="1270.0" layoutY="23.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="55.0" prefWidth="145.0" text=" Hjälp">
                      <styleClass>
-                        <String fx:value="color-secondary" />
-                        <String fx:value="default-font-bold-big" />
-                        <String fx:value="rounded" />
                         <String fx:value="dropshadow-default" />
+                        <String fx:value="navbar-upper-help" />
                      </styleClass>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -880,14 +912,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
                   </Button>
                   <Button layoutX="39.0" layoutY="22.0" mnemonicParsing="false" onAction="#closeCheckout" prefHeight="55.0" prefWidth="180.0" text=" Tillbaka">
-                     <styleClass>
-                        <String fx:value="color-primary" />
-                        <String fx:value="default-font-bold-big" />
-                        <String fx:value="rounded" />
-                        <String fx:value="dropshadow-default" />
-                     </styleClass>
                      <graphic>
                         <ImageView fitHeight="24.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
                            <image>
@@ -895,6 +924,13 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="dropshadow-default" />
+                        <String fx:value="button-primary" />
+                     </styleClass>
                   </Button>
                   <ImageView fitHeight="51.0" fitWidth="155.0" layoutX="643.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -903,10 +939,8 @@
                   </ImageView>
                   <Button layoutX="1091.0" layoutY="23.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" text=" Konto">
                      <styleClass>
-                        <String fx:value="color-primary" />
-                        <String fx:value="default-font-bold-big" />
-                        <String fx:value="rounded" />
                         <String fx:value="dropshadow-default" />
+                        <String fx:value="button-primary" />
                      </styleClass>
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -915,6 +949,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
                   </Button>
                </children>
             </AnchorPane>

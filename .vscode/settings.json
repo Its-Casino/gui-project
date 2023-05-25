@@ -9,5 +9,6 @@
         "/home/casino/Programming/GUI/javafx/lib/javafx.fxml.jar",
         "/home/casino/Programming/GUI/javafx/lib/javafx.controls.jar",
         "/home/casino/Programming/GUI/javafx/lib/javafx.base.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
