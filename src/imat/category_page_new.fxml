@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="176.0">
+         <children>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="806.0" prefWidth="1440.0" style="-fx-background-color: efefef; -fx-border-color: transparent;" vbarPolicy="ALWAYS">
+               <content>
+                  <FlowPane fx:id="flowCategories" alignment="TOP_CENTER" hgap="40.0" prefWidth="1424.0" prefWrapLength="1400.0" rowValignment="TOP" style="-fx-background-color: efefef;" vgap="40.0">
+                     <padding>
+                        <Insets left="40.0" right="40.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Alla Kategorier" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="40.0" />
+      <Line endX="370.0" layoutX="545.0" layoutY="123.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.topAnchor="108.0" />
+   </children>
+</AnchorPane>
