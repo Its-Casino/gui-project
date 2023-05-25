@@ -73,6 +73,18 @@
     -fx-background-color: #263b27;
 }
 
+.button-secondary {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+.button-primary:hover {
+    -fx-background-color: #263b27;
+}
+
 .navbar-lower-button:hover{
     -fx-background-color: #263b27;
 }

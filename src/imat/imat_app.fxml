@@ -25,312 +25,8 @@
 
 <AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
-      <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css">
+      <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@imat_app.css">
           <children>
-              <ScrollPane hbarPolicy="NEVER" layoutY="282.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                  <content>
-                      <AnchorPane prefHeight="2481.0" prefWidth="1424.0" stylesheets="@imat_app.css">
-                          <children>
-                              <AnchorPane layoutX="227.0" layoutY="50.0" prefHeight="2113.0" prefWidth="980.0">
-                                  <children>
-                                      <AnchorPane prefHeight="182.0" prefWidth="980.0">
-                                          <children>
-                                              <Label layoutX="40.0" layoutY="14.0" styleClass="checkout-title-font" text="Din varukorg" />
-                                              <Label fx:id="din_varukorg_antal_varor" layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
-                                              <Label fx:id="din_varukorg_totalt_kostnad" layoutX="40.0" layoutY="127.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
-                                              <Button layoutX="706.0" layoutY="115.0" mnemonicParsing="false" onAction="#openCart" prefHeight="44.0" prefWidth="237.0" text="Visa varukorg">
-                                                  <cursor>
-                                                      <Cursor fx:constant="CLOSED_HAND" />
-                                                  </cursor>
-                                                  <styleClass>
-                                                      <String fx:value="button-primary" />
-                                                      <String fx:value="dropshadow-default" />
-                                                  </styleClass>
-                                              </Button>
-                                          </children>
-                                          <styleClass>
-                                              <String fx:value="checkout-section-color" />
-                                              <String fx:value="rounded" />
-                                          </styleClass>
-                                      </AnchorPane>
-                                      <AnchorPane layoutY="230.0" prefHeight="725.0" prefWidth="980.0" styleClass="checkout-section-color">
-                                          <children>
-                                              <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
-                                              <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
-                                              <TextField fx:id="leveransadress_fornamn" layoutX="40.0" layoutY="145.0" prefHeight="60.0" prefWidth="220.0" promptText="Förnamn*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_efternamn" layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" promptText="Efternamn*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_gatuadress" layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" promptText="Gatuadress*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_postnummer" layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postnummer*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_postort" layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postort*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_mobilnummer" layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Mobilnummer*">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="leveransadress_hemtelefon" layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Hemtelefon">
-                                                  <styleClass>
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
-                                              <Label layoutX="575.0" layoutY="144.0" prefHeight="60.0" prefWidth="272.0" styleClass="default-stroke" text="Ja, spara min adress i framtiden">
-                                                  <font>
-                                                      <Font name="Poppins ExtraBold" size="16.0" />
-                                                  </font>
-                                              </Label>
-                                              <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
-                                              <Label layoutX="575.0" layoutY="266.0" prefHeight="60.0" prefWidth="276.0" styleClass="default-stroke" text="Ja, ställ kassorna utanför dörren">
-                                                  <font>
-                                                      <Font name="Poppins ExtraBold" size="16.0" />
-                                                  </font>
-                                              </Label>
-                                              <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
-                                              <TextArea layoutX="550.0" layoutY="444.0" prefHeight="217.0" prefWidth="390.0" promptText="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till" wrapText="true">
-                                                  <styleClass>
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                      <String fx:value="default-stroke" />
-                                                      <String fx:value="rounded" />
-                                                  </styleClass>
-                                              </TextArea>
-                                              <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
-                                              <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" promptText="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true">
-                                                  <styleClass>
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                      <String fx:value="default-stroke" />
-                                                  </styleClass>
-                                              </TextArea>
-                                              <CheckBox fx:id="spara_adress_checkbox" layoutX="868.0" layoutY="167.0" mnemonicParsing="false" />
-                                              <CheckBox fx:id="stall_kassorna_checkbox" layoutX="868.0" layoutY="287.0" mnemonicParsing="false" />
-                                              <Label layoutX="40.0" layoutY="684.0" text="(*) Uppgifter som vi behöver för att genomföra beställning" textFill="#00000080">
-                                                  <font>
-                                                      <Font name="Poppins Regular" size="20.0" />
-                                                  </font>
-                                              </Label>
-                                          </children>
-                                      </AnchorPane>
-                                      <AnchorPane layoutY="1010.0" prefHeight="593.0" prefWidth="980.0">
-                                          <children>
-                                              <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="326.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/Checked%20Circle.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <AnchorPane fx:id="checked_image_anchorpane" layoutX="325.0" layoutY="280.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
-                                              <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
-                                              <Label layoutX="46.0" layoutY="108.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
-                                              <Label layoutX="48.0" layoutY="163.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
-                                              <Button fx:id="button_confirm_delivery" layoutX="306.0" layoutY="494.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="352.0" text="Bekräfta och gå till betalning">
-                                                  <styleClass>
-                                                      <String fx:value="color-primary" />
-                                                      <String fx:value="default-font-bold-small" />
-                                                  </styleClass>
-                                              </Button>
-                                              <Label fx:id="datum_tillgangligt_state" layoutX="130.0" layoutY="283.0" styleClass="checkout-text-small" text="Välj datum ovan" />
-                                              <Label layoutX="445.0" layoutY="163.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
-                                              <ComboBox fx:id="leveranstid_dag" layoutX="57.0" layoutY="210.0" prefHeight="50.0" prefWidth="113.0" promptText="Dag">
-                                                  <styleClass>
-                                                      <String fx:value="default-font-small" />
-                                                      <String fx:value="text-allignment-right" />
-                                                  </styleClass>
-                                              </ComboBox>
-                                              <ComboBox fx:id="leveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="188.0" promptText="Månad" styleClass="default-font-small" />
-                                              <Label fx:id="leveranstid_vald_datum" layoutX="292.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: " />
-                                              <Label fx:id="leveranstid_vald_tid" layoutX="426.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid:" />
-                                              <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
-                                                  <children>
-                                                      <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
-                                                          <children>
-                                                              <RadioButton fx:id="leveranstid_07_11_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="07:00 - 11:00">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="18.0" />
-                                                                  </font>
-                                                              </RadioButton>
-                                                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="16.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="99.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
-                                                          <children>
-                                                              <RadioButton fx:id="leveranstid_10_14_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="10:00 - 14:00">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="18.0" />
-                                                                  </font>
-                                                              </RadioButton>
-                                                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="16.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="132.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
-                                                          <children>
-                                                              <RadioButton fx:id="leveranstid_11_15_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="11:00 - 15:00">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="18.0" />
-                                                                  </font>
-                                                              </RadioButton>
-                                                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="16.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="33.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
-                                                          <children>
-                                                              <RadioButton fx:id="leveranstid_08_12_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="08:00 - 12:00">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="18.0" />
-                                                                  </font>
-                                                              </RadioButton>
-                                                              <Label layoutX="357.0" layoutY="7.0" text="Fullbokat">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="16.0" />
-                                                                  </font>
-                                                              </Label>
-                                                              <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="66.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
-                                                          <children>
-                                                              <RadioButton fx:id="leveranstid_09_13_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="09:00 - 13:00">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="18.0" />
-                                                                  </font>
-                                                              </RadioButton>
-                                                              <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
-                                                                  <font>
-                                                                      <Font name="Poppins Regular" size="16.0" />
-                                                                  </font>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane fx:id="leveranstidcoverpane" prefHeight="165.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
-                                                  </children>
-                                              </AnchorPane>
-                                          </children>
-                                          <styleClass>
-                                              <String fx:value="checkout-section-color" />
-                                              <String fx:value="rounded" />
-                                          </styleClass>
-                                      </AnchorPane>
-                                      <AnchorPane layoutY="1653.0" prefHeight="487.0" prefWidth="980.0">
-                                          <children>
-                                              <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Betalning" />
-                                              <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Ange dina kortuppgifter" />
-                                              <TextField fx:id="betalning_manad_ar" layoutX="40.0" layoutY="207.0" prefHeight="60.0" prefWidth="226.0" promptText="MM/ÅÅ">
-                                                  <styleClass>
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                      <String fx:value="default-stroke" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="betalning_cvc" layoutX="266.0" layoutY="207.0" prefHeight="60.0" prefWidth="244.0" promptText="CVC">
-                                                  <styleClass>
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                      <String fx:value="default-stroke" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <TextField fx:id="betalning_kortnummer" layoutX="40.0" layoutY="147.0" prefHeight="60.0" prefWidth="470.0" promptText="Kortnummer">
-                                                  <styleClass>
-                                                      <String fx:value="checkout-leverans-text-input" />
-                                                      <String fx:value="default-stroke" />
-                                                  </styleClass>
-                                              </TextField>
-                                              <Label layoutX="42.0" layoutY="346.0" styleClass="checkout-text-medium" text="Spara kortuppgifter för framtida köp?" />
-                                              <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="453.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/bankkort-ikon-transparent.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <Label layoutX="83.0" layoutY="389.0" prefHeight="60.0" prefWidth="300.0" styleClass="default-stroke" text="Ja, spara mitt betalsätt i framtiden">
-                                                  <font>
-                                                      <Font name="Poppins ExtraBold" size="16.0" />
-                                                  </font>
-                                              </Label>
-                                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="457.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/Kalender-ikon-transparent.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="220.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/cvc-ikon-transparent.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <ImageView fitHeight="24.0" fitWidth="75.0" layoutX="42.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/visa-logo.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <ImageView fitHeight="40.0" fitWidth="53.0" layoutX="142.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/logos_mastercard.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="220.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@resources/cib_american-express.png" />
-                                                  </image>
-                                              </ImageView>
-                                              <Button layoutX="595.0" layoutY="316.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
-                                                  <styleClass>
-                                                      <String fx:value="color-primary" />
-                                                      <String fx:value="default-font-bold-big" />
-                                                  </styleClass>
-                                              </Button>
-                                              <Label fx:id="betalning_total_kostnad" layoutX="633.0" layoutY="246.0" text="Totalt: 205 kr">
-                                                  <font>
-                                                      <Font name="Poppins ExtraBold" size="36.0" />
-                                                  </font>
-                                              </Label>
-                                              <CheckBox fx:id="betalning_spara_betalning" layoutX="393.0" layoutY="411.0" mnemonicParsing="false" />
-                                              <Label fx:id="betalning_antal_varor" layoutX="633.0" layoutY="177.0" styleClass="default-font-small" text="12 varor" />
-                                              <Label layoutX="816.0" layoutY="177.0" styleClass="default-font-small" text="205 kr" />
-                                              <Label layoutX="633.0" layoutY="206.0" styleClass="default-font-small" text="moms" />
-                                              <Label fx:id="betalning_moms" layoutX="840.0" layoutY="206.0" styleClass="default-font-small" text="0 kr" />
-                                          </children>
-                                          <styleClass>
-                                              <String fx:value="checkout-section-color" />
-                                              <String fx:value="rounded" />
-                                          </styleClass>
-                                      </AnchorPane>
-                                  </children>
-                              </AnchorPane>
-                          </children>
-                      </AnchorPane>
-                  </content>
-              </ScrollPane>
               <AnchorPane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #C8D3C6;">
                   <children>
                       <Button layoutX="1270.0" layoutY="23.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="55.0" prefWidth="145.0" text=" Hjälp">
@@ -388,49 +84,522 @@
                       </Button>
                   </children>
               </AnchorPane>
-              <AnchorPane layoutY="100.0" prefHeight="182.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
-                  <children>
-                      <Label layoutX="284.0" layoutY="58.0" styleClass="wizard-text" text="Varukorg" />
-                      <Label layoutX="512.0" layoutY="58.0" styleClass="wizard-text" text="Leveransadress" />
-                      <Label layoutX="792.0" layoutY="58.0" styleClass="wizard-text" text="Leveranstid" />
-                      <Label layoutX="1063.0" layoutY="58.0" styleClass="wizard-text" text="Betalning" />
-                      <ImageView fx:id="varukorg_wizard_state_image" fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+            <AnchorPane fx:id="checkout_leveransadress_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
+                     <children>
+                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
+                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
+                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
+                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-box-active.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fx:id="leveransadress_wizard_state_image" fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-box-inactive.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fx:id="leveranstid_wizard_state_image" fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-box-inactive.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fx:id="betalning_wizard_state_image" fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                          <AnchorPane layoutX="230.0" layoutY="171.0" prefHeight="725.0" prefWidth="980.0" styleClass="checkout-section-color">
+                              <children>
+                                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveransadress" />
+                                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Vilken adress ska varorna levereras till?" />
+                                  <TextField fx:id="leveransadress_fornamn" layoutX="40.0" layoutY="145.0" prefHeight="60.0" prefWidth="220.0" promptText="Förnamn*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_efternamn" layoutX="290.0" layoutY="144.0" prefHeight="60.0" prefWidth="220.0" promptText="Efternamn*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_gatuadress" layoutX="40.0" layoutY="244.0" prefHeight="60.0" prefWidth="470.0" promptText="Gatuadress*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_postnummer" layoutX="40.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postnummer*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_postort" layoutX="290.0" layoutY="344.0" prefHeight="60.0" prefWidth="220.0" promptText="Postort*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_mobilnummer" layoutX="40.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Mobilnummer*">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="leveransadress_hemtelefon" layoutX="290.0" layoutY="444.0" prefHeight="60.0" prefWidth="220.0" promptText="Hemtelefon">
+                                      <styleClass>
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="checkout-leverans-text-input" />
+                                      </styleClass>
+                                  </TextField>
+                                  <Label layoutX="550.0" layoutY="96.0" styleClass="checkout-text-medium" text="Spara adress för framtida köp?" />
+                                  <Label layoutX="575.0" layoutY="144.0" prefHeight="60.0" prefWidth="272.0" styleClass="default-stroke" text="Ja, spara min adress i framtiden">
+                                      <font>
+                                          <Font name="Poppins ExtraBold" size="16.0" />
+                                      </font>
+                                  </Label>
+                                  <Label layoutX="550.0" layoutY="219.0" styleClass="checkout-text-medium" text="Ställ kassorna utanför dörren?" />
+                                  <Label layoutX="575.0" layoutY="266.0" prefHeight="60.0" prefWidth="276.0" styleClass="default-stroke" text="Ja, ställ kassorna utanför dörren">
+                                      <font>
+                                          <Font name="Poppins ExtraBold" size="16.0" />
+                                      </font>
+                                  </Label>
+                                  <Label layoutX="550.0" layoutY="344.0" prefHeight="73.0" prefWidth="390.0" styleClass="checkout-text-medium" text="Något mer vi behöver veta för leveransen?" wrapText="true" />
+                                  <TextArea layoutX="550.0" layoutY="444.0" prefHeight="165.0" prefWidth="390.0" promptText="Skriv ett kort meddelande som du anser att vi eller chauffören och behöver känna till" wrapText="true">
+                                      <styleClass>
+                                          <String fx:value="checkout-leverans-text-input" />
+                                          <String fx:value="default-stroke" />
+                                          <String fx:value="rounded" />
+                                      </styleClass>
+                                  </TextArea>
+                                  <Label layoutX="40.0" layoutY="529.0" styleClass="checkout-text-medium" text="Portkod eller porttelefon?" />
+                                  <TextArea layoutX="40.0" layoutY="576.0" prefHeight="86.0" prefWidth="470.0" promptText="Om ja, skriv portkod eller namn på porttelefon här" wrapText="true">
+                                      <styleClass>
+                                          <String fx:value="checkout-leverans-text-input" />
+                                          <String fx:value="default-stroke" />
+                                      </styleClass>
+                                  </TextArea>
+                                  <CheckBox fx:id="spara_adress_checkbox" layoutX="868.0" layoutY="167.0" mnemonicParsing="false" />
+                                  <CheckBox fx:id="stall_kassorna_checkbox" layoutX="868.0" layoutY="287.0" mnemonicParsing="false" />
+                                  <Label layoutX="40.0" layoutY="684.0" text="(*) Nödvändiga uppgifter" textFill="#00000080">
+                                      <font>
+                                          <Font name="Poppins Regular" size="20.0" />
+                                      </font>
+                                  </Label>
+                        <Button layoutX="800.0" layoutY="660.0" mnemonicParsing="false" onAction="#continuetodeliverytime" prefHeight="51.0" prefWidth="166.0" text="Gå vidare">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-primary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="607.0" layoutY="660.0" mnemonicParsing="false" onAction="#backfromdeliverydate" prefHeight="51.0" prefWidth="166.0" text="Tillbaka">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-secondary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                              </children>
+                          </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkout_betalning_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                          <AnchorPane layoutX="230.0" layoutY="267.0" prefHeight="487.0" prefWidth="980.0">
+                              <children>
+                                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Betalning" />
+                                  <Label layoutX="40.0" layoutY="96.0" styleClass="checkout-text-medium" text="Ange dina kortuppgifter" />
+                                  <TextField fx:id="betalning_manad_ar" layoutX="40.0" layoutY="207.0" prefHeight="60.0" prefWidth="226.0" promptText="MM/ÅÅ">
+                                      <styleClass>
+                                          <String fx:value="checkout-leverans-text-input" />
+                                          <String fx:value="default-stroke" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="betalning_cvc" layoutX="266.0" layoutY="207.0" prefHeight="60.0" prefWidth="244.0" promptText="CVC">
+                                      <styleClass>
+                                          <String fx:value="checkout-leverans-text-input" />
+                                          <String fx:value="default-stroke" />
+                                      </styleClass>
+                                  </TextField>
+                                  <TextField fx:id="betalning_kortnummer" layoutX="40.0" layoutY="147.0" prefHeight="60.0" prefWidth="470.0" promptText="Kortnummer">
+                                      <styleClass>
+                                          <String fx:value="checkout-leverans-text-input" />
+                                          <String fx:value="default-stroke" />
+                                      </styleClass>
+                                  </TextField>
+                                  <Label layoutX="42.0" layoutY="346.0" styleClass="checkout-text-medium" text="Spara kortuppgifter för framtida köp?" />
+                                  <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="453.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/bankkort-ikon-transparent.png" />
+                                      </image>
+                                  </ImageView>
+                                  <Label layoutX="83.0" layoutY="389.0" prefHeight="60.0" prefWidth="300.0" styleClass="default-stroke" text="Ja, spara mitt betalsätt i framtiden">
+                                      <font>
+                                          <Font name="Poppins ExtraBold" size="16.0" />
+                                      </font>
+                                  </Label>
+                                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="457.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/Kalender-ikon-transparent.png" />
+                                      </image>
+                                  </ImageView>
+                                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="220.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/cvc-ikon-transparent.png" />
+                                      </image>
+                                  </ImageView>
+                                  <ImageView fitHeight="24.0" fitWidth="75.0" layoutX="42.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/visa-logo.png" />
+                                      </image>
+                                  </ImageView>
+                                  <ImageView fitHeight="40.0" fitWidth="53.0" layoutX="142.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/logos_mastercard.png" />
+                                      </image>
+                                  </ImageView>
+                                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="220.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/cib_american-express.png" />
+                                      </image>
+                                  </ImageView>
+                                  <Button layoutX="596.0" layoutY="299.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
+                                      <styleClass>
+                                          <String fx:value="button-primary" />
+                                          <String fx:value="dropshadow-default" />
+                                      </styleClass>
+                                  </Button>
+                                  <Label fx:id="betalning_total_kostnad" layoutX="634.0" layoutY="226.0" text="Totalt: 205 kr">
+                                      <font>
+                                          <Font name="Poppins ExtraBold" size="36.0" />
+                                      </font>
+                                  </Label>
+                                  <CheckBox fx:id="betalning_spara_betalning" layoutX="393.0" layoutY="411.0" mnemonicParsing="false" />
+                                  <Label fx:id="betalning_antal_varor" layoutX="634.0" layoutY="157.0" styleClass="default-font-small" text="12 varor" />
+                                  <Label layoutX="817.0" layoutY="157.0" styleClass="default-font-small" text="205 kr" />
+                                  <Label layoutX="634.0" layoutY="186.0" styleClass="default-font-small" text="moms" />
+                                  <Label fx:id="betalning_moms" layoutX="841.0" layoutY="186.0" styleClass="default-font-small" text="0 kr" />
+                        <Button layoutX="673.0" layoutY="377.0" mnemonicParsing="false" onAction="#backfrompayment" prefHeight="51.0" prefWidth="166.0" text="Tillbaka">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-secondary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                              </children>
+                              <styleClass>
+                                  <String fx:value="checkout-section-color" />
+                                  <String fx:value="rounded" />
+                              </styleClass>
+                          </AnchorPane>
+                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
+                     <children>
+                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
+                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
+                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
+                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-box-inactive.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-active.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-line.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-line.png" />
-                          </image>
-                      </ImageView>
-                      <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
                               <Image url="@resources/wizard-line.png" />
-                          </image>
-                      </ImageView>
-                  </children>
-              </AnchorPane>
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkout_leveranstid_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
+                     <children>
+                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
+                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
+                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
+                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-active.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                          <AnchorPane layoutX="230.0" layoutY="221.0" prefHeight="593.0" prefWidth="980.0">
+                              <children>
+                                  <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="326.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@resources/Checked%20Circle.png" />
+                                      </image>
+                                  </ImageView>
+                                  <AnchorPane fx:id="checked_image_anchorpane" layoutX="325.0" layoutY="280.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
+                                  <Label layoutX="40.0" layoutY="26.0" styleClass="checkout-title-font" text="Leveranstid" />
+                                  <Label layoutX="46.0" layoutY="108.0" styleClass="checkout-text-medium" text="När vill du att varorna ska levereras?" />
+                                  <Label layoutX="48.0" layoutY="163.0" styleClass="checkout-text-small" text="Kolla om ett datum är tillgängligt" />
+                                  <Button fx:id="button_confirm_delivery" layoutX="800.0" layoutY="528.0" mnemonicParsing="false" onAction="#continuetopayment" prefHeight="51.0" prefWidth="166.0" text="Gå vidare">
+                                      <styleClass>
+                                          <String fx:value="button-primary" />
+                                          <String fx:value="dropshadow-default" />
+                                      </styleClass>
+                                  </Button>
+                                  <Label fx:id="datum_tillgangligt_state" layoutX="130.0" layoutY="283.0" styleClass="checkout-text-small" text="Välj datum ovan" />
+                                  <Label layoutX="445.0" layoutY="163.0" styleClass="checkout-text-small" text="Vilken tid vill du ha leveransen?" />
+                                  <ComboBox fx:id="leveranstid_dag" layoutX="57.0" layoutY="210.0" prefHeight="50.0" prefWidth="113.0" promptText="Dag">
+                                      <styleClass>
+                                          <String fx:value="default-font-small" />
+                                          <String fx:value="text-allignment-right" />
+                                      </styleClass>
+                                  </ComboBox>
+                                  <ComboBox fx:id="leveranstid_manad" layoutX="192.0" layoutY="210.0" prefHeight="50.0" prefWidth="188.0" promptText="Månad" styleClass="default-font-small" />
+                                  <Label fx:id="leveranstid_vald_datum" layoutX="445.0" layoutY="408.0" styleClass="default-font-bold-small" text="Leveransdatum: " />
+                                  <Label fx:id="leveranstid_vald_tid" layoutX="579.0" layoutY="446.0" styleClass="default-font-bold-small" text="Tid:" />
+                                  <AnchorPane layoutX="445.0" layoutY="205.0" prefHeight="165.0" prefWidth="490.0" styleClass="default-stroke">
+                                      <children>
+                                          <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                                              <children>
+                                                  <RadioButton fx:id="leveranstid_07_11_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="07:00 - 11:00">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="18.0" />
+                                                      </font>
+                                                  </RadioButton>
+                                                  <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="16.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutY="99.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
+                                              <children>
+                                                  <RadioButton fx:id="leveranstid_10_14_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="10:00 - 14:00">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="18.0" />
+                                                      </font>
+                                                  </RadioButton>
+                                                  <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="16.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutY="132.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                                              <children>
+                                                  <RadioButton fx:id="leveranstid_11_15_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="11:00 - 15:00">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="18.0" />
+                                                      </font>
+                                                  </RadioButton>
+                                                  <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="16.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutY="33.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #EAEAEA;">
+                                              <children>
+                                                  <RadioButton fx:id="leveranstid_08_12_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="08:00 - 12:00">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="18.0" />
+                                                      </font>
+                                                  </RadioButton>
+                                                  <Label layoutX="357.0" layoutY="7.0" text="Fullbokat">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="16.0" />
+                                                      </font>
+                                                  </Label>
+                                                  <AnchorPane prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutY="66.0" prefHeight="33.0" prefWidth="490.0" style="-fx-background-color: #E1E1E1;">
+                                              <children>
+                                                  <RadioButton fx:id="leveranstid_09_13_button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" text="09:00 - 13:00">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="18.0" />
+                                                      </font>
+                                                  </RadioButton>
+                                                  <Label layoutX="357.0" layoutY="7.0" text="Tillgängligt">
+                                                      <font>
+                                                          <Font name="Poppins Regular" size="16.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="leveranstidcoverpane" prefHeight="165.0" prefWidth="490.0" style="-fx-background-color: #00000075;" />
+                                      </children>
+                                  </AnchorPane>
+                        <Button layoutX="607.0" layoutY="528.0" mnemonicParsing="false" onAction="#backfromdeliverytime" prefHeight="51.0" prefWidth="166.0" text="Tillbaka">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-secondary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                              </children>
+                              <styleClass>
+                                  <String fx:value="checkout-section-color" />
+                                  <String fx:value="rounded" />
+                              </styleClass>
+                          </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkout_varukorg_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
+                     <children>
+                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
+                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
+                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
+                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-active.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                          <AnchorPane layoutX="230.0" layoutY="171.0" prefHeight="725.0" prefWidth="980.0">
+                              <children>
+                                  <Label layoutX="40.0" layoutY="20.0" styleClass="checkout-title-font" text="Din varukorg" />
+                                  <Label fx:id="din_varukorg_antal_varor" layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
+                                  <Label fx:id="din_varukorg_totalt_kostnad" layoutX="40.0" layoutY="127.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
+                        <Button layoutX="800.0" layoutY="660.0" mnemonicParsing="false" onAction="#continuetodeliverydate" prefHeight="51.0" prefWidth="166.0" text="Gå vidare">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-primary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                              </children>
+                              <styleClass>
+                                  <String fx:value="checkout-section-color" />
+                                  <String fx:value="rounded" />
+                              </styleClass>
+                          </AnchorPane>
+               </children>
+            </AnchorPane>
           </children>
       </AnchorPane>
       <AnchorPane fx:id="paneAccount" maxHeight="1024.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -482,74 +651,6 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <AnchorPane fx:id="paneLoggedOut" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
-                           <children>
-                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
-                                       <children>
-                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Välkommen till iMat" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Label fx:id="labelWelcomeUnder" layoutX="68.0" layoutY="131.0" prefHeight="30.0" style="-fx-font-size: 20;" text="Börja handla genom att logga in nedan" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="128.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Button fx:id="buttonWelcome" layoutX="109.0" layoutY="237.0" mnemonicParsing="false" onMouseClicked="#logIn" prefHeight="60.0" prefWidth="278.0" text="Logga in" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="199.0">
-                                             <styleClass>
-                                                <String fx:value="color-tertiary" />
-                                                <String fx:value="dropshadow-default" />
-                                                <String fx:value="rounded" />
-                                                <String fx:value="default-font" />
-                                             </styleClass>
-                                             <cursor>
-                                                <Cursor fx:constant="CLOSED_HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <image>
-                                                <Image url="@resources/Senior.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </AnchorPane>
-                                    <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
-                                       <children>
-                                          <Label styleClass="default-font" text="Våra bästa erbjudanden denna veckan!">
-                                             <padding>
-                                                <Insets left="10.0" top="10.0" />
-                                             </padding>
-                                          </Label>
-                                          <HBox prefHeight="200.0" prefWidth="200.0" />
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
-                                       <children>
-                                          <Label styleClass="default-font" text="Populära artiklar">
-                                             <padding>
-                                                <Insets left="10.0" top="10.0" />
-                                             </padding>
-                                          </Label>
-                                          <HBox prefHeight="200.0" prefWidth="200.0" />
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label alignment="CENTER" style="-fx-font-weight: bold; -fx-font-size: 48; -fx-underline: true;" styleClass="default-font" text="Hjälp" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
@@ -935,6 +1036,74 @@
                         </ScrollPane>
                      </children>
                   </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneLoggedOut" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
+                           <children>
+                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
+                                       <children>
+                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Välkommen till iMat" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label fx:id="labelWelcomeUnder" layoutX="68.0" layoutY="131.0" prefHeight="30.0" style="-fx-font-size: 20;" text="Börja handla genom att logga in nedan" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="128.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Button fx:id="buttonWelcome" layoutX="109.0" layoutY="237.0" mnemonicParsing="false" onMouseClicked="#logIn" prefHeight="60.0" prefWidth="278.0" text="Logga in" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="199.0">
+                                             <styleClass>
+                                                <String fx:value="color-tertiary" />
+                                                <String fx:value="dropshadow-default" />
+                                                <String fx:value="rounded" />
+                                                <String fx:value="default-font" />
+                                             </styleClass>
+                                             <cursor>
+                                                <Cursor fx:constant="CLOSED_HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <image>
+                                                <Image url="@resources/Senior.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
+                                       <children>
+                                          <Label styleClass="default-font" text="Våra bästa erbjudanden denna veckan!">
+                                             <padding>
+                                                <Insets left="10.0" top="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="240.0" prefWidth="100.0" styleClass="color-secondary">
+                                       <children>
+                                          <Label styleClass="default-font" text="Populära artiklar">
+                                             <padding>
+                                                <Insets left="10.0" top="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
          </children>

@@ -264,6 +264,11 @@ public class MainViewController implements Initializable {
     private Label betalning_total_kostnad;
     @FXML
     private AnchorPane checked_image_anchorpane;
+    @FXML private AnchorPane checkout_varukorg_pane;
+    @FXML private AnchorPane checkout_leveransadress_pane;
+    @FXML private AnchorPane checkout_leveranstid_pane;
+    @FXML private AnchorPane checkout_betalning_pane;
+
 
     @FXML
     private AnchorPane leveranstidcoverpane;
@@ -285,6 +290,31 @@ public class MainViewController implements Initializable {
     private String vald_leveransmanad;
 
     private boolean datum_available;
+
+    public void continuetodeliverydate(){
+        checkout_leveransadress_pane.toFront();
+    }
+
+    public void backfromdeliverydate(){
+        checkout_varukorg_pane.toFront();
+    }
+
+    public void continuetodeliverytime(){
+        checkout_leveranstid_pane.toFront();
+    }
+
+    public void backfromdeliverytime(){
+        checkout_leveransadress_pane.toFront();
+    }
+
+    public void continuetopayment(){
+        checkout_betalning_pane.toFront();
+    }
+
+    public void backfrompayment(){
+        checkout_leveranstid_pane.toFront();
+    }
+
 
     void generateCheckout() {
 
