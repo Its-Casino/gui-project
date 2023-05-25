@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.function.Function;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,12 +15,12 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -46,11 +47,19 @@ public class MainViewController implements Initializable {
     @FXML
     VBox vboxCart;
     @FXML
+    VBox vboxHistoryOverview;
+    @FXML
+    VBox vboxHistoryDetailed;
+    @FXML
     AnchorPane paneProducts;
+    @FXML
+    AnchorPane paneHistory;
     @FXML
     FlowPane productFlow;
     @FXML
     Label labelProductCategory;
+
+    String lastPane;
 
     User currentUser;
 
@@ -61,15 +70,13 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
-        openStart();
         generateCheckout();
-        for (ProductCategory cat : ProductCategory.values()) {
-            System.out.println(cat.name());
-        }
+        openStart();
     }
 
-    public void goLanding(Boolean loggedIn) {
-        if (loggedIn) {
+    public void openStart() {
+        lastPane = "Start";
+        if (currentUser != null) {
             paneLoggedIn.toFront();
             return;
         }
@@ -78,18 +85,15 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    public void openStart() {
-        goLanding(currentUser != null);
-    }
-
-    @FXML
     public void openHelp() {
+        lastPane = "Help";
         paneHelp.toFront();
         closeCheckout();
     }
 
     @FXML
     public void openCategories() {
+        lastPane = "Categories";
         refreshCategories();
         paneCategories.toFront();
     }
@@ -116,6 +120,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCart() {
+        lastPane = "Cart";
         vboxCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             vboxCart.getChildren().add(new CartCard(shoppingItem, this));
@@ -143,18 +148,48 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void logOut() {
+        iMatDataHandler.reset();
+        openStart();
+    }
+
+    @FXML
     public void closeCheckout() {
         paneCheckout.toBack();
     }
 
     @FXML
     public void openCheckout() {
+        lastPane = "Checkout";
         paneCheckout.toFront();
     }
 
     @FXML
     public void mouseTrap(Event e) {
         e.consume();
+    }
+
+    @FXML
+    public void openHistory() {
+        lastPane = "History";
+        vboxHistoryOverview.getChildren().clear();
+        for (Order order : iMatDataHandler.getOrders()) {
+            vboxHistoryOverview.getChildren().add(new OrderOverview(order, this));
+        }
+        paneHistory.toFront();
+    }
+
+    public void openHistoryDetailed(Order order) {
+        vboxHistoryDetailed.getChildren().clear();
+        for (ShoppingItem item : order.getItems()) {
+            vboxHistoryDetailed.getChildren().add(new HistoryDetailed(item, this));
+        }
+    }
+
+    @FXML
+    public void createFauxOrder() {
+        iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.findProducts("Äpple").get(0));
+        iMatDataHandler.placeOrder(false);
     }
 
     @FXML
@@ -230,8 +265,10 @@ public class MainViewController implements Initializable {
     @FXML
     private AnchorPane checked_image_anchorpane;
 
-    @FXML private AnchorPane leveranstidcoverpane;
-    @FXML private Button button_confirm_delivery;
+    @FXML
+    private AnchorPane leveranstidcoverpane;
+    @FXML
+    private Button button_confirm_delivery;
 
     private String vald_leveranstid;
     private String vald_leveransdag;
@@ -242,12 +279,12 @@ public class MainViewController implements Initializable {
 
     private List<String> list_of_months_30 = Arrays.asList("Juni", "September", "November");
 
-    private List<String> list_of_all_months = Arrays.asList("Maj","Juni","Juli","Augusti","September","Oktober","November","December");
+    private List<String> list_of_all_months = Arrays.asList("Maj", "Juni", "Juli", "Augusti", "September", "Oktober",
+            "November", "December");
 
     private String vald_leveransmanad;
 
     private boolean datum_available;
-
 
     void generateCheckout() {
 
@@ -363,10 +400,10 @@ public class MainViewController implements Initializable {
         leveranstidToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                    if (leveranstidToggleGroup.getSelectedToggle() != null) {
-                        RadioButton selected = (RadioButton) leveranstidToggleGroup.getSelectedToggle();
-                        leveranstid_vald_tid.setText(String.format("Tid:    %s", selected.getText()));
-                    }
+                if (leveranstidToggleGroup.getSelectedToggle() != null) {
+                    RadioButton selected = (RadioButton) leveranstidToggleGroup.getSelectedToggle();
+                    leveranstid_vald_tid.setText(String.format("Tid:    %s", selected.getText()));
+                }
             }
         });
     }
