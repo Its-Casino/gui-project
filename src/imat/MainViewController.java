@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.function.Function;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -264,19 +266,34 @@ public class MainViewController implements Initializable {
     private Label betalning_total_kostnad;
     @FXML
     private AnchorPane checked_image_anchorpane;
-    @FXML private AnchorPane checkout_varukorg_pane;
-    @FXML private AnchorPane checkout_leveransadress_pane;
-    @FXML private AnchorPane checkout_leveranstid_pane;
-    @FXML private AnchorPane checkout_betalning_pane;
-
-
+    @FXML
+    private AnchorPane checkout_varukorg_pane;
+    @FXML
+    private AnchorPane checkout_leveransadress_pane;
+    @FXML
+    private AnchorPane checkout_leveranstid_pane;
+    @FXML
+    private AnchorPane checkout_betalning_pane;
+    @FXML
+    private Button leveransadress_continue_button;
     @FXML
     private AnchorPane leveranstidcoverpane;
     @FXML
     private Button button_confirm_delivery;
 
-    private String vald_leveranstid;
     private String vald_leveransdag;
+
+    private boolean valid_fornamn;
+
+    private boolean valid_efternamn;
+
+    private boolean valid_gatuadress;
+
+    private boolean valid_postnummer;
+
+    private boolean valid_postort;
+
+    private boolean valid_mobilnummer;
 
     private List<String> list_of_weekends = Arrays.asList("6", "7", "13", "14", "20", "21", "27", "28");
 
@@ -315,8 +332,171 @@ public class MainViewController implements Initializable {
         checkout_leveranstid_pane.toFront();
     }
 
+    public static boolean hasNumber(String input) {
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean hasLetter(String input) {
+        Pattern pattern = Pattern.compile("[a-zA-Z]");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean hasSpecialCharacter(String input) {
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9ÅÄÖåäö ]");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public void check_if_leveransadress_valid(){
+        if(valid_fornamn && valid_efternamn && valid_gatuadress && valid_postnummer && valid_postort && valid_mobilnummer ) leveransadress_continue_button.setDisable(false);
+        else leveransadress_continue_button.setDisable(true);
+    }
 
     void generateCheckout() {
+
+        leveransadress_continue_button.setDisable(true);
+
+        TextFormatter<String> postnummerFormatter = new TextFormatter<>(change -> {
+            if (change.getControlNewText().length() <= 5){
+                return change;
+            }
+            return null;
+        });
+        leveransadress_postnummer.setTextFormatter(postnummerFormatter);
+
+        TextFormatter<String> mobilenumberFormatter = new TextFormatter<>(change -> {
+            if (change.getControlNewText().length() <= 10){
+                return change;
+            }
+            return null;
+        });
+        leveransadress_mobilnummer.setTextFormatter(mobilenumberFormatter);
+
+        TextFormatter<String> hemtelefonFormatter = new TextFormatter<>(change -> {
+            if (change.getControlNewText().length() <= 10){
+                return change;
+            }
+            return null;
+        });
+        leveransadress_hemtelefon.setTextFormatter(hemtelefonFormatter);
+
+
+        leveransadress_fornamn.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_fornamn = true;
+                leveransadress_fornamn.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_fornamn.setStyle("-fx-border-color: red");
+                    valid_fornamn = false;
+                }
+                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                    leveransadress_fornamn.setStyle("-fx-background-color: rgba(255,0,0,0.30)");
+                    valid_fornamn = false;
+                }
+                check_if_leveransadress_valid();
+            }
+        });
+
+        leveransadress_efternamn.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_efternamn = true;
+                leveransadress_efternamn.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_efternamn.setStyle("-fx-border-color: red");
+                    valid_efternamn = false;
+                    }
+                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                    leveransadress_efternamn.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                    valid_efternamn = false;
+                }
+                check_if_leveransadress_valid();
+            }
+        });
+
+        leveransadress_gatuadress.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_gatuadress = true;
+                leveransadress_gatuadress.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_gatuadress.setStyle("-fx-border-color: red");
+                    valid_gatuadress = false;
+                    }
+                if(hasSpecialCharacter(newValue)) {
+                    leveransadress_gatuadress.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                    valid_gatuadress = false;
+                }
+                check_if_leveransadress_valid();
+            }
+        });
+
+        leveransadress_postnummer.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_postnummer = true;
+                leveransadress_postnummer.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_postnummer.setStyle("-fx-border-color: red");
+                    valid_postnummer = false;
+                    }
+                if(hasLetter(newValue) || hasSpecialCharacter(newValue)) {
+                    leveransadress_postnummer.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                    valid_postnummer = false;
+                    }
+                check_if_leveransadress_valid();
+            }
+        });
+
+        leveransadress_postort.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_postort = true;
+                leveransadress_postort.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_postort.setStyle("-fx-border-color: red");
+                    valid_postort = false;
+                    }
+                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                    leveransadress_postort.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                    valid_postort = false;
+                }
+                check_if_leveransadress_valid();
+            }
+        });
+
+        leveransadress_mobilnummer.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_mobilnummer = true;
+                leveransadress_mobilnummer.setStyle("-fx-border-color: green");
+                if(newValue == "") {
+                    leveransadress_continue_button.setDisable(true);
+                    leveransadress_mobilnummer.setStyle("-fx-border-color: red");
+                    valid_mobilnummer = false;
+                    }
+                if(hasLetter(newValue) || hasSpecialCharacter(newValue)) {
+                    leveransadress_mobilnummer.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                    valid_mobilnummer = false;
+                }
+                check_if_leveransadress_valid();
+            }
+        });
+
+
+
 
         for (int i = 1; i <= 31; i++) {
             String dag = Integer.toString(i);
