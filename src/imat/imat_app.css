@@ -190,12 +190,12 @@
 .default-stroke {
     -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
 }
-.scroll-bar:horizontal .track,
+
+.scroll-bar:horizontal .track
 {
     -fx-background-color: transparent;
 
 }
-
 
 .scroll-bar:horizontal .increment-button ,
 .scroll-bar:horizontal .decrement-button {
@@ -210,17 +210,16 @@
     -fx-background-color :transparent;
     -fx-background-radius : 0.0em;
     -fx-padding :0.0 10.0 0.0 0.0;
-
 }
 
- .scroll-bar .increment-arrow,
- .scroll-bar .decrement-arrow{
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
     -fx-shape : " ";
     -fx-padding :0.15em 0.0;
 }
 
- .scroll-bar:vertical .increment-arrow,
- .scroll-bar:vertical .decrement-arrow{
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
     -fx-shape : " ";
     -fx-padding :0.0 0.15em;
 }

@@ -57,6 +57,8 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneProducts;
     @FXML
+    AnchorPane paneFavorites;
+    @FXML
     AnchorPane paneHistory;
     @FXML
     FlowPane productFlow;
@@ -206,8 +208,12 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCheckout() {
-        lastPane = "Checkout";
         paneCheckout.toFront();
+    }
+
+    @FXML
+    public void openFavorites() {
+        paneFavorites.toFront();
     }
 
     @FXML
