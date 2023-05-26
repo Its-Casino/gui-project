@@ -24,6 +24,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
@@ -53,9 +54,13 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCart;
     @FXML
+    FlowPane flowFavorites;
+    @FXML
     VBox vboxHistoryOverview;
     @FXML
     VBox vboxHistoryDetailed;
+    @FXML
+    HBox hboxOffers;
     @FXML
     AnchorPane paneProducts;
     @FXML
@@ -129,6 +134,9 @@ public class MainViewController implements Initializable {
 
     private void generateMaps() {
         currentUser = new User();
+        for (int i = 1; i < 5; i++) {
+            hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
+        }
         currentUser.setUserName("Rune");
         for (ProductCategory category : ProductCategory.values()) {
             stringCategoryMap.put(convertToText(category), category);
@@ -311,22 +319,25 @@ public class MainViewController implements Initializable {
         anchorPaneLists.toBack();
         anchorPaneAbout.toFront();
     }
+
     @FXML
-    public void openAnswerOne(){
+    public void openAnswerOne() {
         answerOne.toFront();
         answerOneExpand.toFront();
         answerTwoExpand.toBack();
         answerThreeExpand.toBack();
 
     }
+
     @FXML
-    public void openAnswerTwo(){
+    public void openAnswerTwo() {
         answerTwo.toFront();
         answerTwoExpand.toFront();
         answerOneExpand.toBack();
         answerThreeExpand.toBack();
     }
-    public void openAnswerThree(){
+
+    public void openAnswerThree() {
         answerThree.toFront();
         answerThreeExpand.toFront();
         answerOneExpand.toBack();
@@ -351,6 +362,18 @@ public class MainViewController implements Initializable {
     @FXML
     public void openFavorites() {
         paneFavorites.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toFront();
+        anchorPaneAbout.toBack();
+        populateFavorites();
+    }
+
+    void populateFavorites() {
+        flowFavorites.getChildren().clear();
+        for (Product product : iMatDataHandler.favorites()) {
+            flowFavorites.getChildren().add(new ProductCard(product, this));
+        }
     }
 
     @FXML
