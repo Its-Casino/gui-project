@@ -54,6 +54,8 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCart;
     @FXML
+    VBox vboxCheckoutCart;
+    @FXML
     FlowPane flowFavorites;
     @FXML
     VBox vboxHistoryOverview;
@@ -129,7 +131,10 @@ public class MainViewController implements Initializable {
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             flowCart.getChildren().add(new CartCard(shoppingItem, this));
         }
+        vboxCheckoutCart.getChildren().clear();
+        vboxCheckoutCart.getChildren().addAll(flowCart.getChildren());
         labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        din_varukorg_totalt_kostnad.setText("Totalt: " + iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     private void generateMaps() {
