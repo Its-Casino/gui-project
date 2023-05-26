@@ -29,6 +29,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.User;
 
@@ -49,7 +50,7 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCategories;
     @FXML
-    VBox vboxCart;
+    FlowPane flowCart;
     @FXML
     VBox vboxHistoryOverview;
     @FXML
@@ -64,6 +65,10 @@ public class MainViewController implements Initializable {
     FlowPane productFlow;
     @FXML
     Label labelProductCategory;
+    @FXML
+    Label labelCartTotal;
+    @FXML
+    Label labelWelcome;
     @FXML
     AnchorPane anchorPaneStart;
     @FXML
@@ -94,6 +99,7 @@ public class MainViewController implements Initializable {
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
+    Map<Category, List<ProductCard>> categoryProductCards = new HashMap<>();
     Map<String, ProductCategory> stringCategoryMap = new TreeMap<>();
     Map<ProductCategory, String> categoryStringMap = new HashMap<>();
 
@@ -105,9 +111,24 @@ public class MainViewController implements Initializable {
         generateMaps();
         generateCheckout();
         openStart();
+        iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
+            updateCart();
+        });
+        updateCart();
+        labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
+    }
+
+    void updateCart() {
+        flowCart.getChildren().clear();
+        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
+            flowCart.getChildren().add(new CartCard(shoppingItem, this));
+        }
+        labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     private void generateMaps() {
+        currentUser = new User();
+        currentUser.setUserName("Rune");
         for (ProductCategory category : ProductCategory.values()) {
             stringCategoryMap.put(convertToText(category), category);
             categoryStringMap.put(category, convertToText(category));
@@ -125,7 +146,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openHelp() {
-        lastPane = "Help";
         paneHelp.toFront();
         closeCheckout();
         anchorPaneStart.toBack();
@@ -136,7 +156,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCategories() {
-        lastPane = "Categories";
         refreshCategories();
         paneCategories.toFront();
         anchorPaneStart.toBack();
@@ -246,7 +265,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openProducts(ProductCategory category) {
-        Comparator<Product> comparator = Comparator.comparing(Product::getName);
         List<Product> currProducts = iMatDataHandler.getProducts(category);
         Collections.sort(currProducts, Comparator.comparing(Product::getName));
         productFlow.getChildren().clear();
@@ -264,9 +282,9 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCart() {
         lastPane = "Cart";
-        vboxCart.getChildren().clear();
+        flowCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
-            vboxCart.getChildren().add(new CartCard(shoppingItem, this));
+            flowCart.getChildren().add(new CartCard(shoppingItem, this));
         }
         paneCheckout.toBack();
         paneCart.toFront();

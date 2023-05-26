@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +8,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="315.0" prefWidth="254.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;" stylesheets="@imat_app.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="315.0" prefWidth="254.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;" stylesheets="@products.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="62.0" layoutY="34.0" maxHeight="130.0" maxWidth="130.0" minHeight="130.0" minWidth="130.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-width: 4px; -fx-border-color: #E9E6E6; -fx-border-radius: 5px;">
          <children>
@@ -47,7 +46,7 @@
             </DropShadow>
          </effect>
          <children>
-            <AnchorPane layoutX="10.0" layoutY="8.0" onMouseClicked="#removeCurrentFromCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="9.0">
+            <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="9.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
@@ -55,11 +54,8 @@
                      </image>
                   </ImageView>
                </children>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
             </AnchorPane>
-            <AnchorPane layoutX="20.0" layoutY="18.0" onMouseClicked="#addCurrentToCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
@@ -67,24 +63,18 @@
                      </image>
                   </ImageView>
                </children>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
             </AnchorPane>
-            <Label fx:id="productCount" alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="default-font-small" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
+            <Label alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="imageFavorite" fitHeight="50.0" fitWidth="50.0" layoutX="122.0" layoutY="-41.0" onMouseClicked="#toggleFavorite" pickOnBounds="true" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <ImageView fx:id="imageFavorite" fitHeight="48.0" fitWidth="51.0" layoutX="200.0" layoutY="5.0" pickOnBounds="true" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <image>
-            <Image url="@resources/like_hollow.png" />
+            <Image url="@resources/like_filled.png" />
          </image>
-         <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
-         </cursor>
       </ImageView>
    </children>
    <effect>
