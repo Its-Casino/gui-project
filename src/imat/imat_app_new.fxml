@@ -24,48 +24,6 @@
 
 <AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
-      <AnchorPane fx:id="anchorPaneLists" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <Label alignment="CENTER" text="Inköpslistor" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
-            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
-               <effect>
-                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                     <color>
-                        <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Line>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="anchorPaneAbout" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="645.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <Label alignment="CENTER" text="Om iMat" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
-            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
-               <effect>
-                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                     <color>
-                        <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Line>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="anchorPaneStart" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <Label alignment="CENTER" text="Start" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
-            <Line endX="60.0" layoutX="75.0" layoutY="36.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
-               <effect>
-                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                     <color>
-                        <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Line>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="paneCheckOut" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css">
          <children>
             <ScrollPane hbarPolicy="NEVER" layoutY="282.0" prefHeight="742.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -468,20 +426,6 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneCategory" prefHeight="50.0" prefWidth="210.0" styleClass="navbar-lower-button-entered" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <Label alignment="CENTER" text="Alla kategorier" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
-            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
-               <effect>
-                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                     <color>
-                        <Color opacity="0.25" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Line>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="paneShoppingCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="560.0" styleClass="shopping-cart" stylesheets="@shopping-cart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label alignment="CENTER" layoutX="242.0" layoutY="21.0" styleClass="header" text="Varukorg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
@@ -821,25 +765,6 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="paneCategories" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="176.0">
-                     <children>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="806.0" prefWidth="1440.0" style="-fx-border-color: transparent; -fx-background-color: efefef;" vbarPolicy="ALWAYS">
-                           <content>
-                              <FlowPane fx:id="flowCategories" alignment="TOP_CENTER" hgap="40.0" prefWidth="1424.0" prefWrapLength="1400.0" rowValignment="TOP" style="-fx-background-color: efefef;" vgap="40.0">
-                                 <padding>
-                                    <Insets left="40.0" right="40.0" />
-                                 </padding>
-                              </FlowPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </VBox>
-                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Alla Kategorier" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="40.0" />
-                  <Line endX="360.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="108.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="paneDeliveryInfo" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" styleClass="leveransadress" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -1424,6 +1349,25 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="paneCategories" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="176.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="806.0" prefWidth="1440.0" style="-fx-border-color: transparent; -fx-background-color: efefef;" vbarPolicy="ALWAYS">
+                           <content>
+                              <FlowPane fx:id="flowCategories" alignment="TOP_CENTER" hgap="40.0" prefWidth="1424.0" prefWrapLength="1400.0" rowValignment="TOP" style="-fx-background-color: efefef;" vgap="40.0">
+                                 <padding>
+                                    <Insets left="40.0" right="40.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Alla Kategorier" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="40.0" />
+                  <Line endX="360.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="535.0" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="108.0" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <VBox maxHeight="1024.0" maxWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" scaleShape="false" AnchorPane.bottomAnchor="874.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1581,5 +1525,73 @@
             </DropShadow>
          </effect>
       </VBox>
+      <AnchorPane fx:id="anchorPaneLists" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: #E5F5C4;" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Inköpslistor" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="Poppins Medium" size="24.0" />
+               </font></Label>
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneAbout" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: #E5F5C4;" AnchorPane.leftAnchor="645.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Om iMat" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="Poppins Medium" size="24.0" />
+               </font></Label>
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneStart" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: #E5F5C4;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Start" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="Poppins Medium" size="24.0" />
+               </font></Label>
+            <Line endX="60.0" layoutX="75.0" layoutY="36.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneCategory" prefHeight="50.0" prefWidth="210.0" style="-fx-background-color: #E5F5C4;" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label alignment="CENTER" text="Alla kategorier" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font name="Poppins Medium" size="24.0" />
+               </font></Label>
+            <Line endX="60.0" stroke="#354c37" strokeWidth="4.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0">
+               <effect>
+                  <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Line>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

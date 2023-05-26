@@ -56,6 +56,18 @@ public class MainViewController implements Initializable {
     FlowPane productFlow;
     @FXML
     Label labelProductCategory;
+    @FXML
+    AnchorPane anchorPaneStart;
+    @FXML
+    AnchorPane anchorPaneCategory;
+    @FXML
+    AnchorPane anchorPaneLists;
+    @FXML
+    AnchorPane anchorPaneAbout;
+    @FXML
+    AnchorPane paneAbout;
+    @FXML
+    AnchorPane paneDeliveryInfo;
 
     String lastPane;
 
@@ -75,6 +87,10 @@ public class MainViewController implements Initializable {
     @FXML
     public void openStart() {
         paneStart.toFront();
+        anchorPaneStart.toFront();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
@@ -82,13 +98,21 @@ public class MainViewController implements Initializable {
         lastPane = "Help";
         paneHelp.toFront();
         closeCheckout();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
     public void openCategories() {
         lastPane = "Categories";
-        refreshCategories();
+        //refreshCategories();
         paneCategories.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toFront();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     private void refreshCategories() {
@@ -109,6 +133,10 @@ public class MainViewController implements Initializable {
         }
         labelProductCategory.setText(CategoryCard.convertToText(category));
         paneProducts.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
@@ -120,13 +148,27 @@ public class MainViewController implements Initializable {
         }
         paneCheckout.toBack();
         paneCart.toFront();
+        paneAccount.toBack();
     }
+    @FXML
+    public void closeCart(){
+        paneCart.toBack();
+    }
+
 
     @FXML
     public void openAccount() {
         paneAccount.toFront();
+        paneCart.toBack();
     }
-
+    @FXML
+    public void openAbout(){
+        paneAbout.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toFront();
+    }
     @FXML
     public void closeAccount() {
         paneAccount.toBack();
@@ -141,6 +183,10 @@ public class MainViewController implements Initializable {
     public void openCheckout() {
         lastPane = "Checkout";
         paneCheckout.toFront();
+    }
+    @FXML
+    public void openDeliveryInfo(){
+        paneDeliveryInfo.toFront();
     }
 
     @FXML
