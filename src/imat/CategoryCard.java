@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
@@ -19,7 +20,7 @@ public class CategoryCard extends AnchorPane {
     private MainViewController parentController;
 
     public CategoryCard(ProductCategory category, MainViewController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category_card.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category_card_new.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -32,6 +33,8 @@ public class CategoryCard extends AnchorPane {
         this.category = category;
         this.parentController = parentController;
         this.labelCategory.setText(parentController.categoryStringMap.get(category));
+        imageCategory.setImage(new Image(getClass()
+                .getResource("resources/categories/" + category.toString().toLowerCase() + ".jpg").toString()));
     }
 
     @FXML
