@@ -1299,7 +1299,7 @@
             </DropShadow>
          </effect>
       </VBox>
-      <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@imat_app.css">
+      <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@utcheckning.css">
           <children>
               <AnchorPane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #C8D3C6;">
                   <children>
