@@ -1119,70 +1119,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneStart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
-                           <children>
-                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
-                                       <children>
-                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Label layoutX="68.0" layoutY="131.0" prefHeight="65.0" prefWidth="659.0" style="-fx-font-size: 20;" text="Bläddra bland våra kategorier och erbjudanden eller använd vår sökfunktion för att hitta det du söker." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="143.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Börja handla!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
-                                             <styleClass>
-                                                <String fx:value="color-tertiary" />
-                                                <String fx:value="dropshadow-default" />
-                                                <String fx:value="rounded" />
-                                                <String fx:value="default-font" />
-                                             </styleClass>
-                                             <cursor>
-                                                <Cursor fx:constant="CLOSED_HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <image>
-                                                <Image url="@resources/Senior.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </AnchorPane>
-                                    <VBox prefHeight="367.0" prefWidth="1424.0" styleClass="color-secondary">
-                                       <children>
-                                          <Label styleClass="default-font" text="Våra bästa erbjudanden denna veckan!">
-                                             <padding>
-                                                <Insets left="10.0" top="10.0" />
-                                             </padding>
-                                          </Label>
-                                          <HBox fx:id="hboxOffers" prefHeight="303.0" prefWidth="1424.0" spacing="40.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                             <padding>
-                                                <Insets left="60.0" right="60.0" />
-                                             </padding></HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="paneHistory" maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;">
                <children>
                   <Pane prefHeight="10.0" prefWidth="350.0" style="-fx-background-color: #6B6B6B;" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="108.0" />
@@ -1519,6 +1455,78 @@
                   </VBox>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="paneStart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
+                           <children>
+                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
+                                       <children>
+                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label layoutX="68.0" layoutY="131.0" prefHeight="65.0" prefWidth="659.0" style="-fx-font-size: 20;" text="Bläddra bland våra kategorier och erbjudanden eller använd vår sökfunktion för att hitta det du söker." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="143.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Börja handla!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
+                                             <styleClass>
+                                                <String fx:value="color-tertiary" />
+                                                <String fx:value="dropshadow-default" />
+                                                <String fx:value="rounded" />
+                                                <String fx:value="default-font" />
+                                             </styleClass>
+                                             <cursor>
+                                                <Cursor fx:constant="CLOSED_HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <image>
+                                                <Image url="@resources/Senior.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox prefWidth="1424.0" styleClass="color-secondary">
+                                       <children>
+                                          <Label text="Våra populäraste varor!">
+                                             <padding>
+                                                <Insets left="40.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Poppins Bold" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox fx:id="hboxOffers" alignment="CENTER" prefWidth="1424.0" spacing="40.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                             </padding></HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="120.0" fitWidth="1700.0" pickOnBounds="true" AnchorPane.leftAnchor="-200.0" AnchorPane.rightAnchor="-200.0" AnchorPane.topAnchor="380.0">
+                                 <image>
+                                    <Image url="@resources/start-wave.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <VBox maxHeight="1024.0" maxWidth="1440.0" prefHeight="150.0" prefWidth="1440.0" scaleShape="false" style="-fx-background-color: #C8D3C6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1682,7 +1690,7 @@
       </VBox>
       <AnchorPane fx:id="paneAccount" layoutX="10.0" layoutY="10.0" onMouseClicked="#closeAccount" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00000070;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <AnchorPane maxHeight="874.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="874.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" onMouseClicked="#mouseTrap" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="218.0" layoutY="25.0" text="Konto" textFill="WHITE">
                      <font>
@@ -1832,7 +1840,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneCart" onMouseClicked="#closeCart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00000070;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label alignment="CENTER" layoutX="242.0" layoutY="21.0" styleClass="header" text="Varukorg" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>

@@ -69,7 +69,7 @@ public class ProductCard extends AnchorPane {
                 count = sItem.getAmount();
             }
         }
-        this.productCount.setText(count.toString());
+        this.productCount.setText(((Integer) count.intValue()).toString());
     }
 
     @FXML
@@ -84,6 +84,9 @@ public class ProductCard extends AnchorPane {
             if (sItem.getProduct() == product) {
                 sItem.setAmount(sItem.getAmount() - 1);
                 parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, isCache());
+            }
+            if (sItem.getAmount() == 0) {
+                parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
             }
         }
         update();
