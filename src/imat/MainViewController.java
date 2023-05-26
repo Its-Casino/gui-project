@@ -68,6 +68,8 @@ public class MainViewController implements Initializable {
     @FXML
     Label labelCartTotal;
     @FXML
+    Label labelWelcome;
+    @FXML
     AnchorPane anchorPaneStart;
     @FXML
     AnchorPane anchorPaneCategory;
@@ -101,6 +103,7 @@ public class MainViewController implements Initializable {
             updateCart();
         });
         updateCart();
+        labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
     }
 
     void updateCart() {
@@ -119,6 +122,8 @@ public class MainViewController implements Initializable {
     }
 
     private void generateMaps() {
+        currentUser = new User();
+        currentUser.setUserName("Rune");
         for (ProductCategory category : ProductCategory.values()) {
             stringCategoryMap.put(convertToText(category), category);
             categoryStringMap.put(category, convertToText(category));
