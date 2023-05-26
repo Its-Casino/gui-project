@@ -76,6 +76,18 @@ public class MainViewController implements Initializable {
     AnchorPane paneAbout;
     @FXML
     AnchorPane paneDeliveryInfo;
+    @FXML
+    AnchorPane answerOne;
+    @FXML
+    AnchorPane answerTwo;
+    @FXML
+    AnchorPane answerThree;
+    @FXML
+    ImageView answerOneExpand;
+    @FXML
+    ImageView answerTwoExpand;
+    @FXML
+    ImageView answerThreeExpand;
 
     String lastPane;
 
@@ -194,6 +206,27 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toFront();
+    }
+    @FXML
+    public void openAnswerOne(){
+        answerOne.toFront();
+        answerOneExpand.toFront();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+
+    }
+    @FXML
+    public void openAnswerTwo(){
+        answerTwo.toFront();
+        answerTwoExpand.toFront();
+        answerOneExpand.toBack();
+        answerThreeExpand.toBack();
+    }
+    public void openAnswerThree(){
+        answerThree.toFront();
+        answerThreeExpand.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
     }
 
     @FXML
