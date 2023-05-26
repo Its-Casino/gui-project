@@ -24,6 +24,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
@@ -57,6 +58,8 @@ public class MainViewController implements Initializable {
     VBox vboxHistoryOverview;
     @FXML
     VBox vboxHistoryDetailed;
+    @FXML
+    HBox hboxOffers;
     @FXML
     AnchorPane paneProducts;
     @FXML
@@ -130,6 +133,9 @@ public class MainViewController implements Initializable {
 
     private void generateMaps() {
         currentUser = new User();
+        for (int i = 1; i < 5; i++) {
+            hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
+        }
         currentUser.setUserName("Rune");
         for (ProductCategory category : ProductCategory.values()) {
             stringCategoryMap.put(convertToText(category), category);
