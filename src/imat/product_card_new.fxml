@@ -28,7 +28,7 @@
          </effect>
       </AnchorPane>
       <AnchorPane layoutX="62.0" layoutY="34.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-radius: 5px; -fx-border-color: efefef; -fx-border-width: 4px;" />
-      <Label fx:id="productName" layoutX="92.0" layoutY="171.0" text="Äpple" textFill="WHITE">
+      <Label fx:id="productName" alignment="CENTER" layoutX="92.0" layoutY="171.0" text="Äpple" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="Poppins Bold" size="24.0" />
          </font>

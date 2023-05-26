@@ -147,6 +147,9 @@ public class MainViewController implements Initializable {
     @FXML
     public void openStart() {
         paneStart.toFront();
+        closeCheckout();
+        closeCart();
+        closeAccount();
         anchorPaneStart.toFront();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
@@ -157,6 +160,8 @@ public class MainViewController implements Initializable {
     public void openHelp() {
         paneHelp.toFront();
         closeCheckout();
+        closeCart();
+        closeAccount();
         anchorPaneStart.toBack();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
@@ -166,98 +171,119 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCategories() {
         refreshCategories();
+        closeCart();
+        closeAccount();
         paneCategories.toFront();
         anchorPaneStart.toBack();
         anchorPaneCategory.toFront();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
     }
+
     @FXML
-    public void openBerry(){
+    public void openBerry() {
         openProducts(ProductCategory.BERRY);
     }
+
     @FXML
-    public void openBread(){
+    public void openBread() {
         openProducts(ProductCategory.BREAD);
     }
+
     @FXML
-    public void openCabbage(){
+    public void openCabbage() {
         openProducts(ProductCategory.CABBAGE);
     }
+
     @FXML
-    public void openCitrusFruit(){
+    public void openCitrusFruit() {
         openProducts(ProductCategory.CITRUS_FRUIT);
     }
+
     @FXML
-    public void openDairies(){
+    public void openDairies() {
         openProducts(ProductCategory.DAIRIES);
     }
+
     @FXML
-    public void openColdDrinks(){
+    public void openColdDrinks() {
         openProducts(ProductCategory.COLD_DRINKS);
     }
+
     @FXML
-    public void openExoticFruit(){
+    public void openExoticFruit() {
         openProducts(ProductCategory.EXOTIC_FRUIT);
     }
+
     @FXML
-    public void openFish(){
+    public void openFish() {
         openProducts(ProductCategory.FISH);
     }
+
     @FXML
-    public void openFlourSaltSugar(){
+    public void openFlourSaltSugar() {
         openProducts(ProductCategory.FLOUR_SUGAR_SALT);
     }
+
     @FXML
-    public void openFruit(){
+    public void openFruit() {
         openProducts(ProductCategory.FRUIT);
     }
+
     @FXML
-    public void openHerb(){
+    public void openHerb() {
         openProducts(ProductCategory.HERB);
     }
+
     @FXML
-    public void openHotDrinks(){
+    public void openHotDrinks() {
         openProducts(ProductCategory.HOT_DRINKS);
     }
+
     @FXML
-    public void openMeat(){
+    public void openMeat() {
         openProducts(ProductCategory.MEAT);
     }
+
     @FXML
-    public void openMelons(){
+    public void openMelons() {
         openProducts(ProductCategory.MELONS);
     }
+
     @FXML
-    public void openNutsAndSeeds(){
+    public void openNutsAndSeeds() {
         openProducts(ProductCategory.NUTS_AND_SEEDS);
     }
+
     @FXML
-    public void openPasta(){
+    public void openPasta() {
         openProducts(ProductCategory.PASTA);
     }
+
     @FXML
-    public void openPod(){
+    public void openPod() {
         openProducts(ProductCategory.POD);
     }
+
     @FXML
-    public void openPotatoRice(){
+    public void openPotatoRice() {
         openProducts(ProductCategory.POTATO_RICE);
     }
+
     @FXML
-    public void openRootVegetable(){
+    public void openRootVegetable() {
         openProducts(ProductCategory.ROOT_VEGETABLE);
     }
+
     @FXML
-    public void openSweet(){
+    public void openSweet() {
         openProducts(ProductCategory.SWEET);
     }
+
     @FXML
-    public void openVegetableFruit(){
+    public void openVegetableFruit() {
         openProducts(ProductCategory.VEGETABLE_FRUIT);
     }
-
-
 
     private void refreshCategories() {
         flowCategories.getChildren().clear();
@@ -282,6 +308,8 @@ public class MainViewController implements Initializable {
         }
         labelProductCategory.setText(categoryStringMap.get(category));
         paneProducts.toFront();
+        closeCart();
+        closeAccount();
         anchorPaneStart.toBack();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
@@ -295,6 +323,8 @@ public class MainViewController implements Initializable {
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             flowCart.getChildren().add(new CartCard(shoppingItem, this));
         }
+        closeAccount();
+        closeCheckout();
         paneCheckout.toBack();
         paneCart.toFront();
         paneAccount.toBack();
@@ -308,12 +338,16 @@ public class MainViewController implements Initializable {
     @FXML
     public void openAccount() {
         paneAccount.toFront();
-        paneCart.toBack();
+        closeCheckout();
+        closeCart();
     }
 
     @FXML
     public void openAbout() {
         paneAbout.toFront();
+        closeCheckout();
+        closeCart();
+        closeAccount();
         anchorPaneStart.toBack();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
@@ -357,6 +391,8 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCheckout() {
         paneCheckout.toFront();
+        closeCart();
+        closeAccount();
     }
 
     @FXML
@@ -636,49 +672,50 @@ public class MainViewController implements Initializable {
 
     private boolean spara_betalning;
 
-    public void continuetodeliverydate(){
+    public void continuetodeliverydate() {
         checkout_leveransadress_pane.toFront();
     }
 
-    public void backfromdeliverydate(){
+    public void backfromdeliverydate() {
         checkout_varukorg_pane.toFront();
     }
 
-    public void continuetodeliverytime(){
+    public void continuetodeliverytime() {
         checkout_leveranstid_pane.toFront();
     }
 
-    public void backfromdeliverytime(){
+    public void backfromdeliverytime() {
         checkout_leveransadress_pane.toFront();
     }
 
-    public void continuetopayment(){
+    public void continuetopayment() {
         checkout_betalning_pane.toFront();
     }
 
-    public void backfrompayment(){
+    public void backfrompayment() {
         checkout_leveranstid_pane.toFront();
     }
 
-    public void sparaadresscheckbox(){
+    public void sparaadresscheckbox() {
         spara_adressen = !spara_adressen;
     }
 
-    public void sparabetalningcheckbox(){
+    public void sparabetalningcheckbox() {
         spara_betalning = !spara_betalning;
     }
 
-    public void confirm_payment(){
-        if(spara_betalning){
+    public void confirm_payment() {
+        if (spara_betalning) {
             iMatDataHandler.getCreditCard().setCardNumber(betalning_kortnummer.getText());
             iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(betalning_cvc.getText()));
         }
-        if(spara_adressen){
+        if (spara_adressen) {
             iMatDataHandler.getCustomer().setFirstName(leveransadress_fornamn.getText());
             iMatDataHandler.getCustomer().setLastName(leveransadress_efternamn.getText());
             iMatDataHandler.getCustomer().setAddress(leveransadress_gatuadress.getText());
             iMatDataHandler.getCustomer().setMobilePhoneNumber(leveransadress_mobilnummer.getText());
-            if(!leveransadress_hemtelefon.getText().equals("")) iMatDataHandler.getCustomer().setPhoneNumber(leveransadress_hemtelefon.getText());
+            if (!leveransadress_hemtelefon.getText().equals(""))
+                iMatDataHandler.getCustomer().setPhoneNumber(leveransadress_hemtelefon.getText());
         }
     }
 
@@ -703,15 +740,17 @@ public class MainViewController implements Initializable {
         return matcher.find();
     }
 
-    public void check_if_leveransadress_valid(){
-        if(valid_fornamn && valid_efternamn && valid_gatuadress && valid_postnummer && valid_postort && valid_mobilnummer && valid_hemtelefon) {
+    public void check_if_leveransadress_valid() {
+        if (valid_fornamn && valid_efternamn && valid_gatuadress && valid_postnummer && valid_postort
+                && valid_mobilnummer && valid_hemtelefon) {
             leveransadress_continue_button.setDisable(false);
-        }
-        else leveransadress_continue_button.setDisable(true);
+        } else
+            leveransadress_continue_button.setDisable(true);
     }
 
     public void check_if_leveranstid_valid() {
-        if(valid_vald_dag && valid_vald_manad && valid_vald_tid) button_confirm_delivery.setDisable(false);
+        if (valid_vald_dag && valid_vald_manad && valid_vald_tid)
+            button_confirm_delivery.setDisable(false);
     }
 
     private String formatCardNumber(String cardNumber) {
@@ -771,13 +810,11 @@ public class MainViewController implements Initializable {
         return phoneNumber;
     }
 
-
     void generateCheckout() {
 
         leveransadress_continue_button.setDisable(true);
         button_confirm_delivery.setDisable(true);
         betalning_spara_betalning.setStyle("-fx-font-size: 18px");
-
 
         TextFormatter<String> zipCodeFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -798,24 +835,23 @@ public class MainViewController implements Initializable {
         leveransadress_mobilnummer.setTextFormatter(phoneNumberFormatter);
 
         TextFormatter<String> hemtelefonFormatter = new TextFormatter<>(change -> {
-            if (change.getControlNewText().length() <= 12){
+            if (change.getControlNewText().length() <= 12) {
                 return change;
             }
             return null;
         });
         leveransadress_hemtelefon.setTextFormatter(hemtelefonFormatter);
 
-
         leveransadress_fornamn.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_fornamn = true;
                 leveransadress_fornamn.setStyle("-fx-border-color: green");
-                if(newValue.equals("")) {
+                if (newValue.equals("")) {
                     leveransadress_fornamn.setStyle("-fx-border-color: red");
                     valid_fornamn = false;
                 }
-                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                if (hasNumber(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_fornamn.setStyle("-fx-background-color: rgba(255,0,0,0.30)");
                     valid_fornamn = false;
                 }
@@ -828,12 +864,12 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_efternamn = true;
                 leveransadress_efternamn.setStyle("-fx-border-color: green");
-                if(newValue.equals("")) {
+                if (newValue.equals("")) {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_efternamn.setStyle("-fx-border-color: red");
                     valid_efternamn = false;
                 }
-                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                if (hasNumber(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_efternamn.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_efternamn = false;
                 }
@@ -846,12 +882,12 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_gatuadress = true;
                 leveransadress_gatuadress.setStyle("-fx-border-color: green");
-                if(newValue.equals("")) {
+                if (newValue.equals("")) {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_gatuadress.setStyle("-fx-border-color: red");
                     valid_gatuadress = false;
                 }
-                if(hasSpecialCharacter(newValue)) {
+                if (hasSpecialCharacter(newValue)) {
                     leveransadress_gatuadress.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_gatuadress = false;
                 }
@@ -866,7 +902,7 @@ public class MainViewController implements Initializable {
                 String formattedText = formatZipCode(newValue);
                 leveransadress_postnummer.setText(formattedText);
                 leveransadress_postnummer.setStyle("-fx-border-color: green");
-                if(newValue.length() < 5) {
+                if (newValue.length() < 5) {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_postnummer.setStyle("-fx-border-color: red");
                     valid_postnummer = false;
@@ -880,11 +916,11 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_postort = true;
                 leveransadress_postort.setStyle("-fx-border-color: green");
-                if(newValue.equals("")) {
+                if (newValue.equals("")) {
                     leveransadress_postort.setStyle("-fx-border-color: red");
                     valid_postort = false;
                 }
-                if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
+                if (hasNumber(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_postort.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_postort = false;
                 }
@@ -899,7 +935,7 @@ public class MainViewController implements Initializable {
                 String formattedText = formatPhoneNumber(newValue);
                 leveransadress_mobilnummer.setText(formattedText);
                 leveransadress_mobilnummer.setStyle("-fx-border-color: green");
-                if(newValue.length() < 12 || !newValue.startsWith("07")) {
+                if (newValue.length() < 12 || !newValue.startsWith("07")) {
                     leveransadress_mobilnummer.setStyle("-fx-border-color: red");
                     valid_mobilnummer = false;
                 }
@@ -912,16 +948,13 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_hemtelefon = true;
                 leveransadress_hemtelefon.setStyle("-fx-border-color: rgba(0,128,0,0)");
-                if(hasLetter(newValue) || hasSpecialCharacter(newValue)) {
+                if (hasLetter(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_hemtelefon.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_hemtelefon = false;
                 }
                 check_if_leveransadress_valid();
             }
         });
-
-
-
 
         for (int i = 1; i <= 31; i++) {
             String dag = Integer.toString(i);
@@ -971,7 +1004,8 @@ public class MainViewController implements Initializable {
                     valid_vald_dag = true;
                     datum_available = true;
                     datum_tillgangligt_state.setLayoutX(83);
-                    leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                    leveranstid_vald_datum.setText(
+                            String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
                     datum_tillgangligt_state.setText("Datumet är tillgängligt");
                     checked_image_anchorpane.setLayoutX(326);
                     checked_image_anchorpane.setLayoutY(281);
@@ -1028,7 +1062,8 @@ public class MainViewController implements Initializable {
                         newValue = oldValue;
                     }
                     if (!newValue.contains(listItem) && datum_available) {
-                        leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
+                        leveranstid_vald_datum.setText(
+                                String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
                         leveranstidcoverpane.toBack();
                     }
                 }
@@ -1051,7 +1086,7 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 String formatterad_kortnummer = formatCardNumber(newValue);
-                if(formatterad_kortnummer.length() <= 19) {
+                if (formatterad_kortnummer.length() <= 19) {
                     betalning_kortnummer.setText(formatterad_kortnummer);
                 } else {
                     betalning_kortnummer.setText(oldValue);
