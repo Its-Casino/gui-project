@@ -191,7 +191,7 @@
     -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
 }
 
-.scroll-bar:horizontal .track
+.scroll-bar:horizontal .track,
 {
     -fx-background-color: transparent;
 

@@ -144,6 +144,92 @@ public class MainViewController implements Initializable {
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
     }
+    @FXML
+    public void openBerry(){
+        openProducts(ProductCategory.BERRY);
+    }
+    @FXML
+    public void openBread(){
+        openProducts(ProductCategory.BREAD);
+    }
+    @FXML
+    public void openCabbage(){
+        openProducts(ProductCategory.CABBAGE);
+    }
+    @FXML
+    public void openCitrusFruit(){
+        openProducts(ProductCategory.CITRUS_FRUIT);
+    }
+    @FXML
+    public void openDairies(){
+        openProducts(ProductCategory.DAIRIES);
+    }
+    @FXML
+    public void openColdDrinks(){
+        openProducts(ProductCategory.COLD_DRINKS);
+    }
+    @FXML
+    public void openExoticFruit(){
+        openProducts(ProductCategory.EXOTIC_FRUIT);
+    }
+    @FXML
+    public void openFish(){
+        openProducts(ProductCategory.FISH);
+    }
+    @FXML
+    public void openFlourSaltSugar(){
+        openProducts(ProductCategory.FLOUR_SUGAR_SALT);
+    }
+    @FXML
+    public void openFruit(){
+        openProducts(ProductCategory.FRUIT);
+    }
+    @FXML
+    public void openHerb(){
+        openProducts(ProductCategory.HERB);
+    }
+    @FXML
+    public void openHotDrinks(){
+        openProducts(ProductCategory.HOT_DRINKS);
+    }
+    @FXML
+    public void openMeat(){
+        openProducts(ProductCategory.MEAT);
+    }
+    @FXML
+    public void openMelons(){
+        openProducts(ProductCategory.MELONS);
+    }
+    @FXML
+    public void openNutsAndSeeds(){
+        openProducts(ProductCategory.NUTS_AND_SEEDS);
+    }
+    @FXML
+    public void openPasta(){
+        openProducts(ProductCategory.PASTA);
+    }
+    @FXML
+    public void openPod(){
+        openProducts(ProductCategory.POD);
+    }
+    @FXML
+    public void openPotatoRice(){
+        openProducts(ProductCategory.POTATO_RICE);
+    }
+    @FXML
+    public void openRootVegetable(){
+        openProducts(ProductCategory.ROOT_VEGETABLE);
+    }
+    @FXML
+    public void openSweet(){
+        openProducts(ProductCategory.SWEET);
+    }
+    @FXML
+    public void openVegetableFruit(){
+        openProducts(ProductCategory.VEGETABLE_FRUIT);
+    }
+
+
 
     private void refreshCategories() {
         flowCategories.getChildren().clear();
@@ -173,7 +259,6 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
-
     }
 
     @FXML
@@ -252,6 +337,11 @@ public class MainViewController implements Initializable {
     @FXML
     public void openDeliveryInfo() {
         paneDeliveryInfo.toFront();
+        paneAccount.toBack();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
@@ -267,6 +357,11 @@ public class MainViewController implements Initializable {
             vboxHistoryOverview.getChildren().add(new OrderOverview(order, this));
         }
         paneHistory.toFront();
+        paneAccount.toBack();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     public void openHistoryDetailed(Order order) {
