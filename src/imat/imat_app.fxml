@@ -50,7 +50,7 @@
                   <Font name="Poppins Bold" size="40.0" />
                </font>
             </Label>
-            <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                      <image>
@@ -65,7 +65,7 @@
             <Pane prefHeight="450.0" prefWidth="7.0" style="-fx-background-color: bebebe; -fx-background-radius: 50px;" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="110.0" />
             <ScrollPane fitToWidth="true" layoutX="150.0" layoutY="107.0" prefHeight="470.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-scrollpane" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <content>
-                  <FlowPane prefHeight="897.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-flowpane" vgap="15.0" />
+                  <FlowPane fx:id="flowCart" prefHeight="897.0" prefWidth="499.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart-flowpane" vgap="15.0" />
                </content>
             </ScrollPane>
             <Line endX="554.0" layoutX="280.0" layoutY="579.0" stroke="#354c37" strokeWidth="6.0" style="-fx-fill: white;" styleClass="scroll-divider" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
@@ -84,7 +84,7 @@
                   <Font name="Poppins SemiBold" size="32.0" />
                </font>
             </Label>
-            <Label layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
+            <Label fx:id="labelCartTotal" layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
                <font>
                   <Font name="Poppins SemiBold" size="32.0" />
                </font>
@@ -709,7 +709,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Button layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#closeAccount" prefHeight="70.0" prefWidth="70.0" styleClass="close-account-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Button layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#closeAccount" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-account-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                      <image>
@@ -1415,7 +1415,7 @@
                                  <children>
                                     <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
                                        <children>
-                                          <Label prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
+                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
                                              <styleClass>
                                                 <String fx:value="default-font" />
                                                 <String fx:value="color-primary" />
@@ -1427,7 +1427,7 @@
                                                 <String fx:value="color-primary" />
                                              </styleClass>
                                           </Label>
-                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Logga in" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
+                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Börja handla!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
                                              <styleClass>
                                                 <String fx:value="color-tertiary" />
                                                 <String fx:value="dropshadow-default" />
