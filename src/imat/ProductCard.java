@@ -85,8 +85,8 @@ public class ProductCard extends AnchorPane {
                 sItem.setAmount(sItem.getAmount() - 1);
                 parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, isCache());
             }
-            if (sItem.getAmount() < 0) {
-                sItem.setAmount(0);
+            if (sItem.getAmount() == 0) {
+                parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
             }
         }
         update();

@@ -1497,7 +1497,7 @@
                                     </AnchorPane>
                                     <VBox prefWidth="1424.0" styleClass="color-secondary">
                                        <children>
-                                          <Label text="Våra bästa erbjudanden denna veckan!">
+                                          <Label text="Våra populäraste varor!">
                                              <padding>
                                                 <Insets left="40.0" />
                                              </padding>
