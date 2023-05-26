@@ -7,8 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="514.0" styleClass="shopping-card" stylesheets="@shopping-cart.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="514.0" style="-fx-background-color: #E5F5C4; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <effect>
       <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
          <color>
@@ -27,9 +28,18 @@
             <BorderPane prefHeight="120.0" prefWidth="120.0" style="-fx-border-color: E9E6E6; -fx-border-radius: 10px; -fx-border-width: 4px; -fx-background-color: transparent;" />
          </children>
       </AnchorPane>
-      <Label layoutX="152.0" layoutY="20.0" styleClass="shopping-cart-card-label" text="Äpple" />
-      <Label layoutX="152.0" layoutY="60.0" styleClass="shopping-cart-card-price-label" text="10 kr" />
-      <Label layoutX="152.0" layoutY="93.0" styleClass="shopping-cart-card-info-label" text="Info om produkten" underline="true" />
+      <Label layoutX="152.0" layoutY="20.0" text="Äpple">
+         <font>
+            <Font name="Poppins SemiBold" size="24.0" />
+         </font></Label>
+      <Label layoutX="152.0" layoutY="60.0" text="10 kr">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font></Label>
+      <Label layoutX="152.0" layoutY="93.0" text="Info om produkten" underline="true">
+         <font>
+            <Font name="Poppins Medium" size="16.0" />
+         </font></Label>
       <AnchorPane layoutX="448.0" layoutY="-20.0" prefHeight="130.0" prefWidth="46.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
          <children>
             <AnchorPane prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
@@ -41,7 +51,10 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label alignment="CENTER" layoutX="8.0" layoutY="57.0" styleClass="shopping-card-amount" text="0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER" layoutX="8.0" layoutY="57.0" text="0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Poppins SemiBold" size="20.0" />
+               </font></Label>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
