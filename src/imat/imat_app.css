@@ -40,9 +40,8 @@
 .navbar-lower-button{
     -fx-background-color: #354C37;
     -fx-text-fill: #EEEEEE;
-    -fx-font-size: 22px;
-    -fx-font-family: "Poppins";
-    -fx-background-radius: 5px 5px 0px 0px;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins medium";
 }
 .navbar-upper-button{
     -fx-background-color: #354C37;
@@ -59,6 +58,13 @@
     -fx-font-family: "Poppins";
     -fx-font-weight: 700;
     -fx-background-radius: 5px;
+}
+
+.button-primary{
+    -fx-background-color: #354C37;
+}
+.button-primary:hover {
+    -fx-background-color: #263b27;
 }
 
 .navbar-lower-button:hover{
@@ -88,13 +94,13 @@
 .search-bar{
     -fx-background-radius: 5px;
     -fx-corner-radius: 5px;
-    -fx-background-size: 30px;
+    -fx-background-size: 40px;
     -fx-background-image: url("resources/sök.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
 
-    -fx-font-size: 20;
-    -fx-padding: 0 0 0 40 ;
+    -fx-font-size: 24;
+    -fx-padding: 0 0 0 50 ;
 
 }
 .rounded {
@@ -178,10 +184,10 @@
 .checkout-leverans-text-input {
     -fx-font-family: "Poppins";
     -fx-font-size: 20;
-    -fx-text-fill: #00000085;
-    -fx-background-color: #E3E3E3;
+    -fx-background-color: #FFFFFF;
 }
 
 .default-stroke {
     -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
 }
+

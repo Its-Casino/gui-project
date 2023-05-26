@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="874.0" maxWidth="1440.0" minHeight="874.0" minWidth="1440.0" prefHeight="874.0" prefWidth="1440.0" styleClass="leveransadress" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
+   <children>
+      <AnchorPane layoutX="303.0" layoutY="173.0" prefHeight="529.0" prefWidth="834.0">
+         <children>
+            <Label layoutX="182.0" layoutY="13.0" text="Dina leveransuppgifter">
+               <font>
+                  <Font name="Poppins ExtraBold" size="39.0" />
+               </font></Label>
+            <Label alignment="CENTER" layoutX="60.0" layoutY="90.0" minHeight="60.0" minWidth="119.0" styleClass="color-primary" text="Förnamn">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="179.0" layoutY="90.0" prefHeight="60.0" prefWidth="191.0" text="Rune">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass>
+               <font>
+                  <Font name="Poppins ExtraLight" size="22.0" />
+               </font></TextField>
+            <Label alignment="CENTER" layoutX="423.0" layoutY="90.0" minHeight="60.0" minWidth="135.0" styleClass="color-primary" text="Efternamn">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="558.0" layoutY="90.0" prefHeight="60.0" prefWidth="220.0" text="Gerdsås">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
+            <Label alignment="CENTER" layoutX="60.0" layoutY="180.0" minHeight="60.0" minWidth="148.0" styleClass="color-primary" text="Gatuadress">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="208.0" layoutY="180.0" prefHeight="60.0" prefWidth="569.0" text="Elektrogården 1">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
+            <Label alignment="CENTER" layoutX="60.0" layoutY="270.0" minHeight="60.0" minWidth="164.0" styleClass="color-primary" text="Postnummer">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="222.0" layoutY="270.0" prefHeight="60.0" prefWidth="148.0" text="421 58">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
+            <Label alignment="CENTER" layoutX="423.0" layoutY="270.0" minHeight="60.0" minWidth="104.0" styleClass="color-primary" text="Postort">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="526.0" layoutY="270.0" prefHeight="60.0" prefWidth="252.0" text="Göteborg">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass></TextField>
+            <Label alignment="CENTER" layoutX="60.0" layoutY="360.0" minHeight="60.0" minWidth="176.0" styleClass="color-primary" text="Mobilnummer">
+               <font>
+                  <Font name="Poppins ExtraBold" size="20.0" />
+               </font>
+            </Label>
+            <TextField layoutX="236.0" layoutY="360.0" prefHeight="60.0" prefWidth="191.0" text="076 726 52 86">
+               <styleClass>
+                  <String fx:value="leveransadress-input" />
+                  <String fx:value="default-stroke" />
+               </styleClass>
+            </TextField>
+            <Button layoutX="311.0" layoutY="450.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="212.0" styleClass="color-primary" text="Spara Uppgifter">
+               <font>
+                  <Font name="Poppins SemiBold" size="22.0" />
+               </font>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="color-secondary" />
+            <String fx:value="dropshadow-default" />
+         </styleClass>
+      </AnchorPane>
+   </children>
+</AnchorPane>

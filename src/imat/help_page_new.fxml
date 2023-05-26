@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="643.0" layoutY="50.0" style="-fx-text-fill: black;" styleClass="header-text" text="Hjälp" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="Poppins Bold" size="48.0" />
+         </font>
+      </Label>
+      <Line endX="120.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="655.0" AnchorPane.rightAnchor="654.0" AnchorPane.topAnchor="108.0" />
+      <ScrollPane fitToWidth="true" layoutX="187.0" layoutY="290.0" prefHeight="509.0" prefWidth="329.0" style="-fx-border-color: efefef;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="217.0">
+         <content>
+            <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: transparent;" vgap="22.0">
+               <children>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="helpArrow" fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur loggar man in?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="300.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="75.0" layoutY="27.0" text="Hur handlar man?" textFill="#e5f5c4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.5" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="158.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/help-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="100.0" layoutY="160.0" text="Nedan finns svar på våra vanligaste frågor:" underline="true" AnchorPane.leftAnchor="100.0">
+         <font>
+            <Font name="Poppins Medium" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="574.0" layoutY="285.0" prefHeight="509.0" prefWidth="200.0" style="-fx-background-radius: 5px; -fx-background-color: d9d9d9;" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="217.0">
+         <children>
+            <Label text="Svar:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Poppins Medium" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="answerOne" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: d9d9d9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+               <children>
+                  <Label alignment="TOP_LEFT" layoutX="110.0" layoutY="20.0" lineSpacing="4.0" prefHeight="367.0" prefWidth="778.0" text="Logga in gör du genom att klicka på knappen                               och sedan,                därefter fyller du i dina uppgifter eller skapar ett nytt konto." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="39.0">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="159.0" layoutY="-25.0" prefHeight="31.0" prefWidth="140.0" style="-fx-background-color: #354C37;" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="55.0" layoutY="9.0" text="Start" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane layoutX="218.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" style="-fx-background-color: #E5F5C4; -fx-background-radius: 5px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="54.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="6.0" text="Logga in" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children></AnchorPane>
+            <AnchorPane fx:id="answerTwo" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: d9d9d9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

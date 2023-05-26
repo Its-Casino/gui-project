@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -10,13 +8,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="315.0" prefWidth="254.0" stylesheets="@imat_app.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="315.0" prefWidth="254.0" style="-fx-background-color: #354C37; -fx-background-radius: 5px;" stylesheets="@products.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="62.0" layoutY="34.0" maxHeight="130.0" maxWidth="130.0" minHeight="130.0" minWidth="130.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-width: 4px; -fx-border-color: #E9E6E6; -fx-border-radius: 5px;">
          <children>
-            <ImageView fx:id="productImage" fitHeight="124.0" fitWidth="124.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView fx:id="productImage" fitHeight="124.0" fitWidth="124.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@resources/Senior.png" />
+                  <Image url="@resources/apples.png" />
                </image>
             </ImageView>
          </children>
@@ -28,15 +26,15 @@
             </DropShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane layoutX="62.0" layoutY="34.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-width: 4px; -fx-border-color: efefef; -fx-border-radius: 5px;" />
-      <Label fx:id="productName" alignment="CENTER" layoutX="89.0" layoutY="172.0" text="Äpple" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutX="62.0" layoutY="34.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-radius: 5px; -fx-border-color: efefef; -fx-border-width: 4px;" />
+      <Label fx:id="productName" layoutX="92.0" layoutY="171.0" text="Äpple" textFill="WHITE">
          <font>
-            <Font name="Poppins SemiBold" size="22.0" />
+            <Font name="Poppins Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="productPrice" alignment="CENTER" layoutX="94.0" layoutY="207.0" text="6 kr/st" textFill="#efac01" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Label fx:id="productPrice" layoutX="94.0" layoutY="207.0" text="6 kr/st" textFill="#efac01">
          <font>
-            <Font name="Poppins Medium" size="20.0" />
+            <Font name="Poppins SemiBold" size="20.0" />
          </font>
       </Label>
       <AnchorPane layoutX="32.0" layoutY="247.0" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
@@ -48,12 +46,7 @@
             </DropShadow>
          </effect>
          <children>
-            <Label fx:id="productCount" alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
-               <font>
-                  <Font name="Poppins SemiBold" size="18.0" />
-               </font>
-            </Label>
-            <AnchorPane layoutX="10.0" layoutY="8.0" onMouseClicked="#removeCurrentFromCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="9.0">
+            <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="9.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
@@ -61,11 +54,8 @@
                      </image>
                   </ImageView>
                </children>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
             </AnchorPane>
-            <AnchorPane layoutX="20.0" layoutY="18.0" onMouseClicked="#addCurrentToCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
@@ -73,12 +63,19 @@
                      </image>
                   </ImageView>
                </children>
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
             </AnchorPane>
+            <Label alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="item-count" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
+      <ImageView fx:id="imageFavorite" fitHeight="48.0" fitWidth="51.0" layoutX="200.0" layoutY="5.0" pickOnBounds="true" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <image>
+            <Image url="@resources/like_filled.png" />
+         </image>
+      </ImageView>
    </children>
    <effect>
       <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
@@ -87,8 +84,4 @@
          </color>
       </DropShadow>
    </effect>
-   <styleClass>
-      <String fx:value="rounded" />
-      <String fx:value="color-primary" />
-   </styleClass>
 </fx:root>
