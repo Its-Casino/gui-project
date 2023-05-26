@@ -70,6 +70,5 @@ public class CartCard extends AnchorPane {
     public void removeItem() {
         parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
         update();
-        parentController.openCart();
     }
 }
