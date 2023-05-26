@@ -722,6 +722,7 @@ public class MainViewController implements Initializable {
             if (!leveransadress_hemtelefon.getText().equals(""))
                 iMatDataHandler.getCustomer().setPhoneNumber(leveransadress_hemtelefon.getText());
         }
+        iMatDataHandler.placeOrder(true);
     }
 
     public static boolean hasNumber(String input) {
