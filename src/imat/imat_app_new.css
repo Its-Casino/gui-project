@@ -40,9 +40,8 @@
 .navbar-lower-button{
     -fx-background-color: #354C37;
     -fx-text-fill: #EEEEEE;
-    -fx-font-size: 22px;
+    -fx-font-size: 24px;
     -fx-font-family: "Poppins";
-    -fx-background-radius: 5px 5px 0px 0px;
 }
 .navbar-upper-button{
     -fx-background-color: #354C37;
@@ -59,30 +58,6 @@
     -fx-font-family: "Poppins";
     -fx-font-weight: 700;
     -fx-background-radius: 5px;
-}
-
-.button-primary {
-    -fx-background-color: #354C37;
-    -fx-text-fill: #EEEEEE;
-    -fx-font-size: 24px;
-    -fx-font-family: "Poppins";
-    -fx-font-weight: bold;
-    -fx-background-radius: 5px;
-}
-.button-primary:hover {
-    -fx-background-color: #263b27;
-}
-
-.button-secondary {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #000000;
-    -fx-font-size: 24px;
-    -fx-font-family: "Poppins";
-    -fx-font-weight: bold;
-    -fx-background-radius: 5px;
-}
-.button-primary:hover {
-    -fx-background-color: #263b27;
 }
 
 .navbar-lower-button:hover{
@@ -112,13 +87,13 @@
 .search-bar{
     -fx-background-radius: 5px;
     -fx-corner-radius: 5px;
-    -fx-background-size: 30px;
+    -fx-background-size: 40px;
     -fx-background-image: url("resources/sök.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: left center;
 
-    -fx-font-size: 20;
-    -fx-padding: 0 0 0 40 ;
+    -fx-font-size: 22;
+    -fx-padding: 0 0 0 50 ;
 
 }
 .rounded {
@@ -202,9 +177,76 @@
 .checkout-leverans-text-input {
     -fx-font-family: "Poppins";
     -fx-font-size: 20;
-    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #00000085;
+    -fx-background-color: #E3E3E3;
 }
 
 .default-stroke {
     -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
+
+
+.default-stroke {
+    -fx-effect: innershadow(one-pass-box,black,2,0,0,0); /* -fx-stroke fungerade inte, men lyckades åstadkomma samma visuella effekt med innershadow. */
+}
+.navbar-lower-button-entered{
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+}
+
+.close-account-button{
+    -fx-background-color: #7C8E70;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+ .scroll-bar .increment-arrow,
+ .scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+ .scroll-bar:vertical .increment-arrow,
+ .scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black,90.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
 }

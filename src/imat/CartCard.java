@@ -26,7 +26,7 @@ public class CartCard extends AnchorPane {
     Double count = 0d;
 
     public CartCard(ShoppingItem sItem, MainViewController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cart_card.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shopping-cart-card_new.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {
@@ -62,6 +62,7 @@ public class CartCard extends AnchorPane {
                 shoppingItem.setAmount(shoppingItem.getAmount() - 1);
             }
         }
+        parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, true);
         update();
     }
 

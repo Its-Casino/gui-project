@@ -2,10 +2,18 @@
 package imat;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.TreeMap;
+import java.util.Locale.Category;
 import java.util.function.Function;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,15 +29,15 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.User;
+import java.util.regex.*;
 
 public class MainViewController implements Initializable {
 
     @FXML
-    AnchorPane paneLoggedIn;
-    @FXML
-    AnchorPane paneLoggedOut;
+    AnchorPane paneStart;
     @FXML
     AnchorPane paneHelp;
     @FXML
@@ -43,7 +51,7 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCategories;
     @FXML
-    VBox vboxCart;
+    FlowPane flowCart;
     @FXML
     VBox vboxHistoryOverview;
     @FXML
@@ -51,104 +59,283 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneProducts;
     @FXML
+    AnchorPane paneFavorites;
+    @FXML
     AnchorPane paneHistory;
     @FXML
     FlowPane productFlow;
     @FXML
     Label labelProductCategory;
+    @FXML
+    Label labelCartTotal;
+    @FXML
+    Label labelWelcome;
+    @FXML
+    AnchorPane anchorPaneStart;
+    @FXML
+    AnchorPane anchorPaneCategory;
+    @FXML
+    AnchorPane anchorPaneLists;
+    @FXML
+    AnchorPane anchorPaneAbout;
+    @FXML
+    AnchorPane paneAbout;
+    @FXML
+    AnchorPane paneDeliveryInfo;
+    @FXML
+    AnchorPane answerOne;
+    @FXML
+    AnchorPane answerTwo;
+    @FXML
+    AnchorPane answerThree;
+    @FXML
+    ImageView answerOneExpand;
+    @FXML
+    ImageView answerTwoExpand;
+    @FXML
+    ImageView answerThreeExpand;
 
     String lastPane;
 
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
+    Map<Category, List<ProductCard>> categoryProductCards = new HashMap<>();
+    Map<String, ProductCategory> stringCategoryMap = new TreeMap<>();
+    Map<ProductCategory, String> categoryStringMap = new HashMap<>();
 
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
+        generateMaps();
         generateCheckout();
         openStart();
+        iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
+            updateCart();
+        });
+        updateCart();
+        labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
     }
 
-    public void openStart() {
-        lastPane = "Start";
-        if (currentUser != null) {
-            paneLoggedIn.toFront();
-            return;
+    void updateCart() {
+        flowCart.getChildren().clear();
+        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
+            flowCart.getChildren().add(new CartCard(shoppingItem, this));
         }
-        paneLoggedOut.toFront();
-        return;
+        labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+    }
+
+    private void generateMaps() {
+        currentUser = new User();
+        currentUser.setUserName("Rune");
+        for (ProductCategory category : ProductCategory.values()) {
+            stringCategoryMap.put(convertToText(category), category);
+            categoryStringMap.put(category, convertToText(category));
+        }
+    }
+
+    @FXML
+    public void openStart() {
+        paneStart.toFront();
+        anchorPaneStart.toFront();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
     public void openHelp() {
-        lastPane = "Help";
         paneHelp.toFront();
         closeCheckout();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
     public void openCategories() {
-        lastPane = "Categories";
         refreshCategories();
         paneCategories.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toFront();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
+    @FXML
+    public void openBerry(){
+        openProducts(ProductCategory.BERRY);
+    }
+    @FXML
+    public void openBread(){
+        openProducts(ProductCategory.BREAD);
+    }
+    @FXML
+    public void openCabbage(){
+        openProducts(ProductCategory.CABBAGE);
+    }
+    @FXML
+    public void openCitrusFruit(){
+        openProducts(ProductCategory.CITRUS_FRUIT);
+    }
+    @FXML
+    public void openDairies(){
+        openProducts(ProductCategory.DAIRIES);
+    }
+    @FXML
+    public void openColdDrinks(){
+        openProducts(ProductCategory.COLD_DRINKS);
+    }
+    @FXML
+    public void openExoticFruit(){
+        openProducts(ProductCategory.EXOTIC_FRUIT);
+    }
+    @FXML
+    public void openFish(){
+        openProducts(ProductCategory.FISH);
+    }
+    @FXML
+    public void openFlourSaltSugar(){
+        openProducts(ProductCategory.FLOUR_SUGAR_SALT);
+    }
+    @FXML
+    public void openFruit(){
+        openProducts(ProductCategory.FRUIT);
+    }
+    @FXML
+    public void openHerb(){
+        openProducts(ProductCategory.HERB);
+    }
+    @FXML
+    public void openHotDrinks(){
+        openProducts(ProductCategory.HOT_DRINKS);
+    }
+    @FXML
+    public void openMeat(){
+        openProducts(ProductCategory.MEAT);
+    }
+    @FXML
+    public void openMelons(){
+        openProducts(ProductCategory.MELONS);
+    }
+    @FXML
+    public void openNutsAndSeeds(){
+        openProducts(ProductCategory.NUTS_AND_SEEDS);
+    }
+    @FXML
+    public void openPasta(){
+        openProducts(ProductCategory.PASTA);
+    }
+    @FXML
+    public void openPod(){
+        openProducts(ProductCategory.POD);
+    }
+    @FXML
+    public void openPotatoRice(){
+        openProducts(ProductCategory.POTATO_RICE);
+    }
+    @FXML
+    public void openRootVegetable(){
+        openProducts(ProductCategory.ROOT_VEGETABLE);
+    }
+    @FXML
+    public void openSweet(){
+        openProducts(ProductCategory.SWEET);
+    }
+    @FXML
+    public void openVegetableFruit(){
+        openProducts(ProductCategory.VEGETABLE_FRUIT);
+    }
+
+
 
     private void refreshCategories() {
         flowCategories.getChildren().clear();
-        for (ProductCategory category : ProductCategory.values()) {
-            if (!categoryPanes.containsKey(category)) {
-                categoryPanes.put(category, new CategoryCard(category, this));
+        for (String categoryString : stringCategoryMap.keySet()) {
+            if (!categoryPanes.containsKey(stringCategoryMap.get(categoryString))) {
+                categoryPanes.put(stringCategoryMap.get(categoryString),
+                        new CategoryCard(stringCategoryMap.get(categoryString), this));
             }
         }
-        flowCategories.getChildren().addAll(categoryPanes.values());
+        for (String categoryString : stringCategoryMap.keySet()) {
+            flowCategories.getChildren().add(categoryPanes.get(stringCategoryMap.get(categoryString)));
+        }
     }
 
     @FXML
     public void openProducts(ProductCategory category) {
+        List<Product> currProducts = iMatDataHandler.getProducts(category);
+        Collections.sort(currProducts, Comparator.comparing(Product::getName));
         productFlow.getChildren().clear();
-        for (Product product : iMatDataHandler.getProducts(category)) {
+        for (Product product : currProducts) {
             productFlow.getChildren().add(new ProductCard(product, this));
         }
-        labelProductCategory.setText(CategoryCard.convertToText(category));
+        labelProductCategory.setText(categoryStringMap.get(category));
         paneProducts.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
     public void openCart() {
         lastPane = "Cart";
-        vboxCart.getChildren().clear();
+        flowCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
-            vboxCart.getChildren().add(new CartCard(shoppingItem, this));
+            flowCart.getChildren().add(new CartCard(shoppingItem, this));
         }
         paneCheckout.toBack();
         paneCart.toFront();
+        paneAccount.toBack();
+    }
+
+    @FXML
+    public void closeCart() {
+        paneCart.toBack();
     }
 
     @FXML
     public void openAccount() {
         paneAccount.toFront();
+        paneCart.toBack();
+    }
+
+    @FXML
+    public void openAbout() {
+        paneAbout.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toFront();
+    }
+    @FXML
+    public void openAnswerOne(){
+        answerOne.toFront();
+        answerOneExpand.toFront();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+
+    }
+    @FXML
+    public void openAnswerTwo(){
+        answerTwo.toFront();
+        answerTwoExpand.toFront();
+        answerOneExpand.toBack();
+        answerThreeExpand.toBack();
+    }
+    public void openAnswerThree(){
+        answerThree.toFront();
+        answerThreeExpand.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
     }
 
     @FXML
     public void closeAccount() {
         paneAccount.toBack();
-    }
-
-    @FXML
-    public void logIn() {
-        currentUser = new User();
-        currentUser.setUserName("Rune");
-        currentUser.setPassword("123");
-        openStart();
-    }
-
-    @FXML
-    public void logOut() {
-        iMatDataHandler.reset();
-        openStart();
     }
 
     @FXML
@@ -158,8 +345,22 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCheckout() {
-        lastPane = "Checkout";
         paneCheckout.toFront();
+    }
+
+    @FXML
+    public void openFavorites() {
+        paneFavorites.toFront();
+    }
+
+    @FXML
+    public void openDeliveryInfo() {
+        paneDeliveryInfo.toFront();
+        paneAccount.toBack();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     @FXML
@@ -175,6 +376,11 @@ public class MainViewController implements Initializable {
             vboxHistoryOverview.getChildren().add(new OrderOverview(order, this));
         }
         paneHistory.toFront();
+        paneAccount.toBack();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toBack();
+        anchorPaneAbout.toBack();
     }
 
     public void openHistoryDetailed(Order order) {
@@ -188,6 +394,100 @@ public class MainViewController implements Initializable {
     public void createFauxOrder() {
         iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.findProducts("Äpple").get(0));
         iMatDataHandler.placeOrder(false);
+    }
+
+    private static String convertToText(ProductCategory category) {
+        String val;
+        switch (category) {
+            case POD:
+                val = ("Baljväxter");
+                break;
+
+            case BREAD:
+                val = ("Bröd");
+                break;
+
+            case BERRY:
+                val = ("Bär");
+                break;
+
+            case CITRUS_FRUIT:
+                val = ("Citrusfrukter");
+                break;
+
+            case HOT_DRINKS:
+                val = ("Varm dryck");
+                break;
+
+            case COLD_DRINKS:
+                val = ("Kall dryck");
+                break;
+
+            case EXOTIC_FRUIT:
+                val = ("Exotisk frukt");
+                break;
+
+            case FISH:
+                val = ("Fisk");
+                break;
+
+            case VEGETABLE_FRUIT:
+                val = ("Grönsaker");
+                break;
+
+            case CABBAGE:
+                val = ("Sallad");
+                break;
+
+            case MEAT:
+                val = ("Kött");
+                break;
+
+            case DAIRIES:
+                val = ("Mjölkprodukter");
+                break;
+
+            case MELONS:
+                val = ("Melon");
+                break;
+
+            case FLOUR_SUGAR_SALT:
+                val = ("Skafferivaror");
+                break;
+
+            case NUTS_AND_SEEDS:
+                val = ("Nötter och frön");
+                break;
+
+            case PASTA:
+                val = ("Pasta");
+                break;
+
+            case POTATO_RICE:
+                val = ("Potatis och ris");
+                break;
+
+            case ROOT_VEGETABLE:
+                val = ("Rotfrukter");
+                break;
+
+            case FRUIT:
+                val = ("Frukt");
+                break;
+
+            case SWEET:
+                val = ("Sötsaker");
+                break;
+
+            case HERB:
+                val = ("Örter");
+                break;
+
+            default:
+                val = ("UNEXPECTED ERROR");
+                break;
+        }
+        return val;
     }
 
     @FXML
@@ -488,7 +788,7 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_fornamn = true;
                 leveransadress_fornamn.setStyle("-fx-border-color: green");
-                if(Objects.equals(newValue, "")) {
+                if(newValue.equals("")) {
                     leveransadress_fornamn.setStyle("-fx-border-color: red");
                     valid_fornamn = false;
                 }
@@ -509,7 +809,7 @@ public class MainViewController implements Initializable {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_efternamn.setStyle("-fx-border-color: red");
                     valid_efternamn = false;
-                    }
+                }
                 if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_efternamn.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_efternamn = false;
@@ -527,7 +827,7 @@ public class MainViewController implements Initializable {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_gatuadress.setStyle("-fx-border-color: red");
                     valid_gatuadress = false;
-                    }
+                }
                 if(hasSpecialCharacter(newValue)) {
                     leveransadress_gatuadress.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_gatuadress = false;
@@ -547,7 +847,7 @@ public class MainViewController implements Initializable {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_postnummer.setStyle("-fx-border-color: red");
                     valid_postnummer = false;
-                    }
+                }
                 check_if_leveransadress_valid();
             }
         });
@@ -560,7 +860,7 @@ public class MainViewController implements Initializable {
                 if(newValue.equals("")) {
                     leveransadress_postort.setStyle("-fx-border-color: red");
                     valid_postort = false;
-                    }
+                }
                 if(hasNumber(newValue) || hasSpecialCharacter(newValue)) {
                     leveransadress_postort.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
                     valid_postort = false;
@@ -579,7 +879,7 @@ public class MainViewController implements Initializable {
                 if(newValue.length() < 12 || !newValue.startsWith("07")) {
                     leveransadress_mobilnummer.setStyle("-fx-border-color: red");
                     valid_mobilnummer = false;
-                    }
+                }
                 check_if_leveransadress_valid();
             }
         });
