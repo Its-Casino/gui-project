@@ -1,8 +1,8 @@
 .text-sample{
-    -fx-font-size: 16px;
-    -fx-font-family: "Arial";
-    -fx-font-weight: bold;
-}
+      -fx-font-size: 16px;
+      -fx-font-family: "Arial";
+      -fx-font-weight: bold;
+  }
 
 .default-font {
     -fx-font-family: "Poppins";
@@ -44,7 +44,83 @@
     -fx-font-family: "Poppins";
     -fx-background-radius: 5px 5px 0px 0px;
 }
+.navbar-upper-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+.navbar-upper-help{
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: 700;
+    -fx-background-radius: 5px;
+}
 
+.button-primary {
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+.button-primary:hover {
+    -fx-background-color: #263b27;
+}
+
+.button-secondary {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-font-size: 24px;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+.button-primary:hover {
+    -fx-background-color: #263b27;
+}
+
+.navbar-lower-button:hover{
+    -fx-background-color: #263b27;
+}
+.navbar-upper-button{
+    -fx-background-color: #354C37;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px;
+}
+.navbar-upper-button:hover{
+    -fx-background-color: #263b27;
+}
+.navbar-upper-help{
+    -fx-background-color: #E2ECAD;
+    -fx-text-fill: #000000;
+    -fx-font-size: 22px;
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 5px;
+}
+.navbar-upper-help:hover{
+    -fx-background-color: #b2bb85;
+}
+
+.search-bar{
+    -fx-background-radius: 5px;
+    -fx-corner-radius: 5px;
+    -fx-background-size: 30px;
+    -fx-background-image: url("resources/sök.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left center;
+
+    -fx-font-size: 20;
+    -fx-padding: 0 0 0 40 ;
+
+}
 .rounded {
     -fx-background-radius: 5px;
     -fx-corner-radius: 5px;
@@ -58,6 +134,16 @@
 .color-secondary {
     -fx-background-color: #E2ECAD;
     -fx-text-fill: #000000;
+}
+
+.color-tertiary {
+    -fx-background-color: #E5F5C4;
+    -fx-text-fill: #000000;
+}
+
+.transparent-primary {
+    -fx-background-color: #354C37E6;
+    -fx-text-fill: #EEEEEE;
 }
 
 .account {
@@ -116,8 +202,7 @@
 .checkout-leverans-text-input {
     -fx-font-family: "Poppins";
     -fx-font-size: 20;
-    -fx-text-fill: #00000085;
-    -fx-background-color: #E3E3E3;
+    -fx-background-color: #FFFFFF;
 }
 
 .default-stroke {
