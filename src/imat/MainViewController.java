@@ -122,7 +122,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCategories() {
         lastPane = "Categories";
-        // refreshCategories();
+        refreshCategories();
         paneCategories.toFront();
         anchorPaneStart.toBack();
         anchorPaneCategory.toFront();
