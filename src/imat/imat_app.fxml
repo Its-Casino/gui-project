@@ -25,14 +25,14 @@
 
 <AnchorPane maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" styleClass="2" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.MainViewController">
    <children>
-      <AnchorPane fx:id="paneCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="paneCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" stylesheets="@shopping-cart_new.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label alignment="CENTER" layoutX="242.0" layoutY="21.0" styleClass="header" text="Varukorg" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="Poppins Bold" size="40.0" />
                </font>
             </Label>
-            <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                      <image>
@@ -47,7 +47,7 @@
             <Pane prefHeight="450.0" prefWidth="7.0" style="-fx-background-color: bebebe; -fx-background-radius: 50px;" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="110.0" />
             <ScrollPane fitToWidth="true" layoutX="150.0" layoutY="107.0" prefHeight="470.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-scrollpane" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <content>
-                  <FlowPane prefHeight="897.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-flowpane" vgap="15.0" />
+                  <FlowPane fx:id="flowCart" prefHeight="897.0" prefWidth="499.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart-flowpane" vgap="15.0" />
                </content>
             </ScrollPane>
             <Line endX="554.0" layoutX="280.0" layoutY="579.0" stroke="#354c37" strokeWidth="6.0" style="-fx-fill: white;" styleClass="scroll-divider" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
@@ -66,7 +66,7 @@
                   <Font name="Poppins SemiBold" size="32.0" />
                </font>
             </Label>
-            <Label layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
+            <Label fx:id="labelCartTotal" layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
                <font>
                   <Font name="Poppins SemiBold" size="32.0" />
                </font>
@@ -691,7 +691,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Button layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#closeAccount" prefHeight="70.0" prefWidth="70.0" styleClass="close-account-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Button layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#closeAccount" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-account-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                      <image>

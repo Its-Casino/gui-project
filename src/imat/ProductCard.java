@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 public class ProductCard extends AnchorPane {
@@ -40,6 +41,9 @@ public class ProductCard extends AnchorPane {
         this.productPrice.setText(product.getPrice() + " kr");
         this.productImage.setImage(parentController.iMatDataHandler.getFXImage(product));
         update();
+        this.parentController.iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
+            update();
+        });
     }
 
     public void update() {
@@ -62,6 +66,7 @@ public class ProductCard extends AnchorPane {
         for (ShoppingItem sItem : parentController.iMatDataHandler.getShoppingCart().getItems()) {
             if (sItem.getProduct() == product) {
                 sItem.setAmount(sItem.getAmount() - 1);
+                parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, isCache());
             }
         }
         update();
