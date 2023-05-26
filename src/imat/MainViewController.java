@@ -52,6 +52,8 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCart;
     @FXML
+    FlowPane flowFavorites;
+    @FXML
     VBox vboxHistoryOverview;
     @FXML
     VBox vboxHistoryDetailed;
@@ -224,22 +226,25 @@ public class MainViewController implements Initializable {
         anchorPaneLists.toBack();
         anchorPaneAbout.toFront();
     }
+
     @FXML
-    public void openAnswerOne(){
+    public void openAnswerOne() {
         answerOne.toFront();
         answerOneExpand.toFront();
         answerTwoExpand.toBack();
         answerThreeExpand.toBack();
 
     }
+
     @FXML
-    public void openAnswerTwo(){
+    public void openAnswerTwo() {
         answerTwo.toFront();
         answerTwoExpand.toFront();
         answerOneExpand.toBack();
         answerThreeExpand.toBack();
     }
-    public void openAnswerThree(){
+
+    public void openAnswerThree() {
         answerThree.toFront();
         answerThreeExpand.toFront();
         answerOneExpand.toBack();
@@ -264,6 +269,18 @@ public class MainViewController implements Initializable {
     @FXML
     public void openFavorites() {
         paneFavorites.toFront();
+        anchorPaneStart.toBack();
+        anchorPaneCategory.toBack();
+        anchorPaneLists.toFront();
+        anchorPaneAbout.toBack();
+        populateFavorites();
+    }
+
+    void populateFavorites() {
+        flowFavorites.getChildren().clear();
+        for (Product product : iMatDataHandler.favorites()) {
+            flowFavorites.getChildren().add(new ProductCard(product, this));
+        }
     }
 
     @FXML

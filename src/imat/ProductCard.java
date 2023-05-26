@@ -91,12 +91,13 @@ public class ProductCard extends AnchorPane {
 
     @FXML
     public void toggleFavorite() {
-        favorite = !favorite;
         if (!favorite) {
             parentController.iMatDataHandler.addFavorite(product);
         } else {
+            System.out.println("PING");
             parentController.iMatDataHandler.removeFavorite(product);
         }
+        favorite = !favorite;
         if (favorite) {
             Image image;
             image = new Image(getClass().getResource("resources/like_filled.png").toString());
