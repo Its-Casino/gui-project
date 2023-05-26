@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
+import java.util.Locale.Category;
 import java.util.function.Function;
 
 import javafx.beans.value.ChangeListener;
@@ -138,23 +139,18 @@ public class MainViewController implements Initializable {
                         new CategoryCard(stringCategoryMap.get(categoryString), this));
             }
         }
-        categoryPanes = sortCategoryPanes(categoryPanes);
-        flowCategories.getChildren().addAll(categoryPanes.values());
-    }
-
-    Map<ProductCategory, AnchorPane> sortCategoryPanes(Map<ProductCategory, AnchorPane> categoryPanes) {
-        List<String> categoryStrings = new ArrayList<>();
-        Collections.sort(categoryStrings);
-        for (String category : categoryStrings) {
-
+        for (String categoryString : stringCategoryMap.keySet()) {
+            flowCategories.getChildren().add(categoryPanes.get(stringCategoryMap.get(categoryString)));
         }
-        return categoryPanes;
     }
 
     @FXML
     public void openProducts(ProductCategory category) {
+        Comparator<Product> comparator = Comparator.comparing(Product::getName);
+        List<Product> currProducts = iMatDataHandler.getProducts(category);
+        Collections.sort(currProducts, Comparator.comparing(Product::getName));
         productFlow.getChildren().clear();
-        for (Product product : iMatDataHandler.getProducts(category)) {
+        for (Product product : currProducts) {
             productFlow.getChildren().add(new ProductCard(product, this));
         }
         labelProductCategory.setText(categoryStringMap.get(category));
@@ -163,6 +159,7 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
+
     }
 
     @FXML
