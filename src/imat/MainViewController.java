@@ -107,13 +107,6 @@ public class MainViewController implements Initializable {
     }
 
     void updateCart() {
-        for (Category category : Category.values()) {
-            if (categoryProductCards.containsKey(category)) {
-                for (ProductCard card : categoryProductCards.get(category)) {
-                    card.update();
-                }
-            }
-        }
         flowCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             flowCart.getChildren().add(new CartCard(shoppingItem, this));
@@ -186,7 +179,6 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
-
     }
 
     @FXML
