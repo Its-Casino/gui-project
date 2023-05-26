@@ -709,6 +709,24 @@ public class MainViewController implements Initializable {
         return cardNumber;
     }
 
+    private String format_mm_aa(String mm_aa) {
+        if (mm_aa.length() > 0) {
+            // Remove any non-digit characters
+            mm_aa = mm_aa.replaceAll("[^0-9]", "");
+
+            // Insert the formatting dashes
+            StringBuilder formattedNumber = new StringBuilder();
+            for (int i = 0; i < mm_aa.length(); i++) {
+                if (i > 0 && i % 2 == 0) {
+                    formattedNumber.append("/");
+                }
+                formattedNumber.append(mm_aa.charAt(i));
+            }
+            return formattedNumber.toString();
+        }
+        return mm_aa;
+    }
+
     private String formatZipCode(String zipCode) {
         if (zipCode.length() > 0) {
             // Remove any non-digit characters
@@ -755,6 +773,15 @@ public class MainViewController implements Initializable {
         button_confirm_delivery.setDisable(true);
         betalning_spara_betalning.setStyle("-fx-font-size: 18px");
 
+        TextFormatter<String> mm_aa_formatter = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d{0,4}") && newText.length() <= 4) {
+                return change;
+            }
+            return null;
+        });
+
+        betalning_manad_ar.setTextFormatter(mm_aa_formatter);
 
         TextFormatter<String> zipCodeFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -764,6 +791,44 @@ public class MainViewController implements Initializable {
             return null;
         });
         leveransadress_postnummer.setTextFormatter(zipCodeFormatter);
+
+        TextFormatter<String> onlyLetters_numbers = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-Z0-9]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_gatuadress.setTextFormatter(onlyLetters_numbers);
+
+        TextFormatter<String> onlyLetters_fornamn = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_fornamn.setTextFormatter(onlyLetters_fornamn);
+
+        TextFormatter<String> onlyLetters_efternamn = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_efternamn.setTextFormatter(onlyLetters_efternamn);
+
+        TextFormatter<String> onlyLetters_postort = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_postort.setTextFormatter(onlyLetters_postort);
+
+
 
         TextFormatter<String> phoneNumberFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -1032,6 +1097,18 @@ public class MainViewController implements Initializable {
                     betalning_kortnummer.setText(formatterad_kortnummer);
                 } else {
                     betalning_kortnummer.setText(oldValue);
+                }
+            }
+        });
+
+        betalning_manad_ar.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                String formaterad_mm_aa = format_mm_aa(newValue);
+                if(formaterad_mm_aa.length() <= 5) {
+                    betalning_manad_ar.setText(formaterad_mm_aa);
+                } else {
+                    betalning_manad_ar.setText(oldValue);
                 }
             }
         });
