@@ -2269,6 +2269,78 @@
                       </Button>
                   </children>
               </AnchorPane>
+            <AnchorPane fx:id="checkout_varukorg_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
+                     <children>
+                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
+                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
+                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
+                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard_box_active.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-box-inactive.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/wizard-line.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                          <AnchorPane layoutX="230.0" layoutY="171.0" prefHeight="725.0" prefWidth="980.0">
+                              <children>
+                                  <Label layoutX="40.0" layoutY="20.0" styleClass="checkout-title-font" text="Din varukorg" />
+                        <ScrollPane fitToWidth="true" layoutX="40.0" layoutY="163.0" prefHeight="470.0" prefWidth="891.0">
+                           <content>
+                              <VBox fx:id="vboxCheckoutCart" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                                  <Label fx:id="din_varukorg_antal_varor" layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
+                                  <Label fx:id="din_varukorg_totalt_kostnad" layoutX="40.0" layoutY="648.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
+                        <Button layoutX="774.0" layoutY="660.0" mnemonicParsing="false" onAction="#continuetodeliverydate" prefHeight="51.0" prefWidth="166.0" text="Gå vidare">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="button-primary" />
+                              <String fx:value="dropshadow-default" />
+                           </styleClass>
+                        </Button>
+                              </children>
+                              <styleClass>
+                                  <String fx:value="checkout-section-color" />
+                                  <String fx:value="rounded" />
+                              </styleClass>
+                          </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="checkout_betalning_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
                <children>
                           <AnchorPane layoutX="230.0" layoutY="267.0" prefHeight="487.0" prefWidth="980.0">
@@ -2329,7 +2401,7 @@
                                           <Image url="@resources/cib_american-express.png" />
                                       </image>
                                   </ImageView>
-                                  <Button layoutX="596.0" layoutY="299.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
+                                  <Button fx:id="betalning_button" layoutX="596.0" layoutY="299.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
                                       <styleClass>
                                           <String fx:value="button-primary" />
                                           <String fx:value="dropshadow-default" />
@@ -2403,78 +2475,6 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="checkout_varukorg_pane" layoutY="100.0" prefHeight="924.0" prefWidth="1440.0" style="-fx-background-color: EFEFEF;">
-               <children>
-                  <AnchorPane prefHeight="140.0" prefWidth="1440.0" style="-fx-background-color: #D8D8D8;" styleClass="dropshadow-default">
-                     <children>
-                        <Label layoutX="284.0" layoutY="26.0" styleClass="wizard-text" text="Varukorg" />
-                        <Label layoutX="512.0" layoutY="26.0" styleClass="wizard-text" text="Leveransadress" />
-                        <Label layoutX="792.0" layoutY="26.0" styleClass="wizard-text" text="Leveranstid" />
-                        <Label layoutX="1063.0" layoutY="26.0" styleClass="wizard-text" text="Betalning" />
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="319.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard_box_active.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="579.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-box-inactive.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="839.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-box-inactive.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1099.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-box-inactive.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="389.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-line.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="649.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-line.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="140.0" layoutX="909.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/wizard-line.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-                          <AnchorPane layoutX="230.0" layoutY="171.0" prefHeight="725.0" prefWidth="980.0">
-                              <children>
-                                  <Label layoutX="40.0" layoutY="20.0" styleClass="checkout-title-font" text="Din varukorg" />
-                        <ScrollPane fitToWidth="true" layoutX="40.0" layoutY="163.0" prefHeight="470.0" prefWidth="891.0">
-                           <content>
-                              <VBox fx:id="vboxCheckoutCart" prefHeight="200.0" prefWidth="100.0" />
-                           </content>
-                        </ScrollPane>
-                                  <Label fx:id="din_varukorg_antal_varor" layoutX="40.0" layoutY="82.0" styleClass="checkout-text-big" text="12 varor klara för leverans hem till din dörr!" />
-                                  <Label fx:id="din_varukorg_totalt_kostnad" layoutX="40.0" layoutY="648.0" styleClass="checkout-text-big" text="Totalt: 205 kr" />
-                        <Button layoutX="774.0" layoutY="660.0" mnemonicParsing="false" onAction="#continuetodeliverydate" prefHeight="51.0" prefWidth="166.0" text="Gå vidare">
-                           <cursor>
-                              <Cursor fx:constant="CLOSED_HAND" />
-                           </cursor>
-                           <styleClass>
-                              <String fx:value="button-primary" />
-                              <String fx:value="dropshadow-default" />
-                           </styleClass>
-                        </Button>
-                              </children>
-                              <styleClass>
-                                  <String fx:value="checkout-section-color" />
-                                  <String fx:value="rounded" />
-                              </styleClass>
-                          </AnchorPane>
                </children>
             </AnchorPane>
           </children>
