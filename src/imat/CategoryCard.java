@@ -31,7 +31,7 @@ public class CategoryCard extends AnchorPane {
         }
         this.category = category;
         this.parentController = parentController;
-        this.labelCategory.setText(convertToText(category));
+        this.labelCategory.setText(parentController.categoryStringMap.get(category));
     }
 
     @FXML
@@ -39,97 +39,7 @@ public class CategoryCard extends AnchorPane {
         this.parentController.openProducts(category);
     }
 
-    public static String convertToText(ProductCategory category) {
-        String val;
-        switch (category) {
-            case POD:
-                val = ("Baljväxter");
-                break;
-
-            case BREAD:
-                val = ("Bröd");
-                break;
-
-            case BERRY:
-                val = ("Bär");
-                break;
-
-            case CITRUS_FRUIT:
-                val = ("Citrusfrukter");
-                break;
-
-            case HOT_DRINKS:
-                val = ("Varm dryck");
-                break;
-
-            case COLD_DRINKS:
-                val = ("Kall dryck");
-                break;
-
-            case EXOTIC_FRUIT:
-                val = ("Exotisk frukt");
-                break;
-
-            case FISH:
-                val = ("Fisk");
-                break;
-
-            case VEGETABLE_FRUIT:
-                val = ("Grönsaker");
-                break;
-
-            case CABBAGE:
-                val = ("Sallad");
-                break;
-
-            case MEAT:
-                val = ("Kött");
-                break;
-
-            case DAIRIES:
-                val = ("Mjölkprodukter");
-                break;
-
-            case MELONS:
-                val = ("Melon");
-                break;
-
-            case FLOUR_SUGAR_SALT:
-                val = ("Skafferivaror");
-                break;
-
-            case NUTS_AND_SEEDS:
-                val = ("Nötter och frön");
-                break;
-
-            case PASTA:
-                val = ("Pasta");
-                break;
-
-            case POTATO_RICE:
-                val = ("Potatis och ris");
-                break;
-
-            case ROOT_VEGETABLE:
-                val = ("Rotfrukter");
-                break;
-
-            case FRUIT:
-                val = ("Frukt");
-                break;
-
-            case SWEET:
-                val = ("Sötsaker");
-                break;
-
-            case HERB:
-                val = ("Örter");
-                break;
-
-            default:
-                val = ("UNEXPECTED ERROR");
-                break;
-        }
-        return val;
+    String convertToText(ProductCategory category) {
+        return parentController.categoryStringMap.get(category);
     }
 }

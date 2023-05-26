@@ -2,11 +2,16 @@
 package imat;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 import javafx.beans.value.ChangeListener;
@@ -74,14 +79,24 @@ public class MainViewController implements Initializable {
     User currentUser;
 
     Map<ProductCategory, AnchorPane> categoryPanes = new HashMap<>();
+    Map<String, ProductCategory> stringCategoryMap = new TreeMap<>();
+    Map<ProductCategory, String> categoryStringMap = new HashMap<>();
 
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
+        generateMaps();
         generateCheckout();
         openStart();
+    }
+
+    private void generateMaps() {
+        for (ProductCategory category : ProductCategory.values()) {
+            stringCategoryMap.put(convertToText(category), category);
+            categoryStringMap.put(category, convertToText(category));
+        }
     }
 
     @FXML
@@ -107,7 +122,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCategories() {
         lastPane = "Categories";
-        //refreshCategories();
+        // refreshCategories();
         paneCategories.toFront();
         anchorPaneStart.toBack();
         anchorPaneCategory.toFront();
@@ -117,12 +132,23 @@ public class MainViewController implements Initializable {
 
     private void refreshCategories() {
         flowCategories.getChildren().clear();
-        for (ProductCategory category : ProductCategory.values()) {
-            if (!categoryPanes.containsKey(category)) {
-                categoryPanes.put(category, new CategoryCard(category, this));
+        for (String categoryString : stringCategoryMap.keySet()) {
+            if (!categoryPanes.containsKey(stringCategoryMap.get(categoryString))) {
+                categoryPanes.put(stringCategoryMap.get(categoryString),
+                        new CategoryCard(stringCategoryMap.get(categoryString), this));
             }
         }
+        categoryPanes = sortCategoryPanes(categoryPanes);
         flowCategories.getChildren().addAll(categoryPanes.values());
+    }
+
+    Map<ProductCategory, AnchorPane> sortCategoryPanes(Map<ProductCategory, AnchorPane> categoryPanes) {
+        List<String> categoryStrings = new ArrayList<>();
+        Collections.sort(categoryStrings);
+        for (String category : categoryStrings) {
+
+        }
+        return categoryPanes;
     }
 
     @FXML
@@ -131,7 +157,7 @@ public class MainViewController implements Initializable {
         for (Product product : iMatDataHandler.getProducts(category)) {
             productFlow.getChildren().add(new ProductCard(product, this));
         }
-        labelProductCategory.setText(CategoryCard.convertToText(category));
+        labelProductCategory.setText(categoryStringMap.get(category));
         paneProducts.toFront();
         anchorPaneStart.toBack();
         anchorPaneCategory.toBack();
@@ -150,25 +176,27 @@ public class MainViewController implements Initializable {
         paneCart.toFront();
         paneAccount.toBack();
     }
+
     @FXML
-    public void closeCart(){
+    public void closeCart() {
         paneCart.toBack();
     }
-
 
     @FXML
     public void openAccount() {
         paneAccount.toFront();
         paneCart.toBack();
     }
+
     @FXML
-    public void openAbout(){
+    public void openAbout() {
         paneAbout.toFront();
         anchorPaneStart.toBack();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
         anchorPaneAbout.toFront();
     }
+
     @FXML
     public void closeAccount() {
         paneAccount.toBack();
@@ -184,8 +212,9 @@ public class MainViewController implements Initializable {
         lastPane = "Checkout";
         paneCheckout.toFront();
     }
+
     @FXML
-    public void openDeliveryInfo(){
+    public void openDeliveryInfo() {
         paneDeliveryInfo.toFront();
     }
 
@@ -215,6 +244,100 @@ public class MainViewController implements Initializable {
     public void createFauxOrder() {
         iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.findProducts("Äpple").get(0));
         iMatDataHandler.placeOrder(false);
+    }
+
+    private static String convertToText(ProductCategory category) {
+        String val;
+        switch (category) {
+            case POD:
+                val = ("Baljväxter");
+                break;
+
+            case BREAD:
+                val = ("Bröd");
+                break;
+
+            case BERRY:
+                val = ("Bär");
+                break;
+
+            case CITRUS_FRUIT:
+                val = ("Citrusfrukter");
+                break;
+
+            case HOT_DRINKS:
+                val = ("Varm dryck");
+                break;
+
+            case COLD_DRINKS:
+                val = ("Kall dryck");
+                break;
+
+            case EXOTIC_FRUIT:
+                val = ("Exotisk frukt");
+                break;
+
+            case FISH:
+                val = ("Fisk");
+                break;
+
+            case VEGETABLE_FRUIT:
+                val = ("Grönsaker");
+                break;
+
+            case CABBAGE:
+                val = ("Sallad");
+                break;
+
+            case MEAT:
+                val = ("Kött");
+                break;
+
+            case DAIRIES:
+                val = ("Mjölkprodukter");
+                break;
+
+            case MELONS:
+                val = ("Melon");
+                break;
+
+            case FLOUR_SUGAR_SALT:
+                val = ("Skafferivaror");
+                break;
+
+            case NUTS_AND_SEEDS:
+                val = ("Nötter och frön");
+                break;
+
+            case PASTA:
+                val = ("Pasta");
+                break;
+
+            case POTATO_RICE:
+                val = ("Potatis och ris");
+                break;
+
+            case ROOT_VEGETABLE:
+                val = ("Rotfrukter");
+                break;
+
+            case FRUIT:
+                val = ("Frukt");
+                break;
+
+            case SWEET:
+                val = ("Sötsaker");
+                break;
+
+            case HERB:
+                val = ("Örter");
+                break;
+
+            default:
+                val = ("UNEXPECTED ERROR");
+                break;
+        }
+        return val;
     }
 
     @FXML
@@ -361,7 +484,8 @@ public class MainViewController implements Initializable {
                     button_confirm_delivery.setDisable(false);
                     datum_available = true;
                     datum_tillgangligt_state.setLayoutX(86);
-                    leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
+                    leveranstid_vald_datum.setText(
+                            String.format("Leveransdatum:    %s   %s", newValue, leveranstid_manad.getValue()));
                     datum_tillgangligt_state.setText("Datumet är tillgängligt");
                     checked_image_anchorpane.setLayoutX(326);
                     checked_image_anchorpane.setLayoutY(281);
@@ -415,7 +539,8 @@ public class MainViewController implements Initializable {
                         newValue = oldValue;
                     }
                     if (!newValue.contains(listItem) && datum_available) {
-                        leveranstid_vald_datum.setText(String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
+                        leveranstid_vald_datum.setText(
+                                String.format("Leveransdatum:    %s   %s", leveranstid_dag.getValue(), newValue));
                         leveranstidcoverpane.toBack();
                     }
                 }
