@@ -30,12 +30,12 @@
       <AnchorPane layoutX="62.0" layoutY="34.0" prefHeight="130.0" prefWidth="130.0" style="-fx-border-radius: 5px; -fx-border-color: efefef; -fx-border-width: 4px;" />
       <Label fx:id="productName" alignment="CENTER" layoutX="92.0" layoutY="171.0" text="Äpple" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
-            <Font name="Poppins Bold" size="24.0" />
+            <Font name="Poppins Bold" size="22.0" />
          </font>
       </Label>
       <Label fx:id="productPrice" layoutX="94.0" layoutY="207.0" text="6 kr/st" textFill="#efac01">
          <font>
-            <Font name="Poppins SemiBold" size="20.0" />
+            <Font name="Poppins Medium" size="20.0" />
          </font>
       </Label>
       <AnchorPane layoutX="32.0" layoutY="247.0" prefHeight="46.0" prefWidth="190.0" style="-fx-background-color: #E2ECAD; -fx-background-radius: 5px;">
@@ -47,6 +47,11 @@
             </DropShadow>
          </effect>
          <children>
+            <Label fx:id="productCount" alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Poppins SemiBold" size="20.0" />
+               </font>
+            </Label>
             <AnchorPane layoutX="10.0" layoutY="8.0" onMouseClicked="#removeCurrentFromCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="9.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -56,7 +61,7 @@
                   </ImageView>
                </children>
                <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
             <AnchorPane layoutX="20.0" layoutY="18.0" onMouseClicked="#addCurrentToCart" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #EFAC01; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
@@ -68,22 +73,17 @@
                   </ImageView>
                </children>
                <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </AnchorPane>
-            <Label fx:id="productCount" alignment="CENTER" graphicTextGap="0.0" layoutX="80.0" layoutY="15.0" styleClass="default-font-small" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="10.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="imageFavorite" fitHeight="50.0" fitWidth="50.0" layoutX="122.0" layoutY="-41.0" onMouseClicked="#toggleFavorite" pickOnBounds="true" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <ImageView fx:id="imageFavorite" fitHeight="40.0" fitWidth="40.0" layoutX="122.0" layoutY="-41.0" onMouseClicked="#toggleFavorite" pickOnBounds="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <image>
             <Image url="@resources/like_hollow.png" />
          </image>
          <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
    </children>
