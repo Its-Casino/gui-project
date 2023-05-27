@@ -15,8 +15,11 @@ import java.util.TreeMap;
 import java.util.Locale.Category;
 import java.util.function.Function;
 
+import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
+import javafx.collections.SetChangeListener;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +29,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -640,6 +644,8 @@ public class MainViewController implements Initializable {
     private Button button_confirm_delivery;
     @FXML
     private Button betalning_button;
+    @FXML
+    private CheckBox leveransadress_spara_adress_checkbox;
 
     private String vald_leveransdag;
 
@@ -721,6 +727,7 @@ public class MainViewController implements Initializable {
         if (spara_betalning) {
             iMatDataHandler.getCreditCard().setCardNumber(betalning_kortnummer.getText());
             iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(betalning_cvc.getText()));
+            iMatDataHandler.getCreditCard().setValidMonth(Integer.parseInt(betalning_cvc.getText().replaceAll("[^0-9]", "")));
         }
         if (spara_adressen) {
             iMatDataHandler.getCustomer().setFirstName(leveransadress_fornamn.getText());
@@ -784,22 +791,18 @@ public class MainViewController implements Initializable {
         return cardNumber;
     }
 
-    private String format_mm_aa(String mm_aa) {
-        if (mm_aa.length() > 0) {
-            // Remove any non-digit characters
-            mm_aa = mm_aa.replaceAll("[^0-9]", "");
+    private String format_manad_ar(String manad_ar) {
+        manad_ar = manad_ar.replaceAll("[^0-9]", ""); // Remove non-numeric characters
 
-            // Insert the formatting dashes
-            StringBuilder formattedNumber = new StringBuilder();
-            for (int i = 0; i < mm_aa.length(); i++) {
-                if (i > 0 && i % 2 == 0) {
-                    formattedNumber.append("-");
-                }
-                formattedNumber.append(mm_aa.charAt(i));
-            }
-            return formattedNumber.toString();
+        if (manad_ar.length() > 4) {
+            manad_ar = manad_ar.substring(0, 4); // Truncate to a maximum of 4 characters
         }
-        return mm_aa;
+
+        if (manad_ar.length() > 2) {
+            manad_ar = manad_ar.substring(0, 2) + "-" + manad_ar.substring(2); // Insert hyphen at position 2
+        }
+
+        return manad_ar;
     }
 
     private String formatZipCode(String zipCode) {
@@ -855,18 +858,15 @@ public class MainViewController implements Initializable {
         betalning_button.setDisable(true);
         betalning_spara_betalning.setStyle("-fx-font-size: 18px");
 
-        TextFormatter<String> mm_aa_formatter = new TextFormatter<>(change -> {
-            String newText = change.getControlNewText();
-            if (newText.matches("\\d{0,4}") && newText.length() <= 5) {
-                if (newText.length() == 2 && change.isAdded()) {
-                    newText += "/";
-                }
-                return change;
-            }
-            return null;
+        betalning_spara_betalning.setOnAction(event -> {
+            sparabetalningcheckbox();
         });
 
-        betalning_manad_ar.setTextFormatter(mm_aa_formatter);
+        leveransadress_spara_adress_checkbox.setOnAction(event -> {
+            sparaadresscheckbox();
+        });
+
+
 
         TextFormatter<String> zipCodeFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -1194,16 +1194,37 @@ public class MainViewController implements Initializable {
         betalning_manad_ar.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-                String formatterad_mm_aa = format_mm_aa(newValue);
+                String formatterad_manad = format_manad_ar(newValue);
+                valid_mm_aa = false;
                 betalning_manad_ar.setStyle("-fx-border-color: red");
-                if (formatterad_mm_aa.length() <= 5) {
-                    betalning_manad_ar.setText((formatterad_mm_aa));
+                if (formatterad_manad.length() <= 5) {
+                    betalning_manad_ar.setText(formatterad_manad);
                 } else {
                     betalning_manad_ar.setText(oldValue);
                 }
-                if (formatterad_mm_aa.length() == 4) {
+                if (formatterad_manad.length() == 5) {
                     betalning_manad_ar.setStyle("-fx-border-color: green");
+                    valid_mm_aa = true;
                 }
+                check_if_payment_valid();
+            }
+        });
+
+        betalning_cvc.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_cvc = false;
+                betalning_cvc.setStyle("-fx-border-color: red");
+                String filteredText = newValue.replaceAll("[^0-9]", "");
+                if (filteredText.length() > 3 ) {
+                    filteredText = filteredText.substring(0, 3);
+                }
+                if (newValue.length() == 3) {
+                    betalning_cvc.setStyle("-fx-border-color: green");
+                    valid_cvc = true;
+                }
+                betalning_cvc.setText(filteredText);
+                check_if_payment_valid();
             }
         });
 
