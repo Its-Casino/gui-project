@@ -134,7 +134,7 @@ public class MainViewController implements Initializable {
         vboxCheckoutCart.getChildren().clear();
         vboxCheckoutCart.getChildren().addAll(flowCart.getChildren());
         labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
-        din_varukorg_totalt_kostnad.setText("Totalt: " + iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        din_varukorg_totalt_kostnad.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     private void generateMaps() {
