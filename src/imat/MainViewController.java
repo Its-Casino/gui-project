@@ -407,6 +407,7 @@ public class MainViewController implements Initializable {
         anchorPaneCategory.toBack();
         anchorPaneLists.toFront();
         anchorPaneAbout.toBack();
+        paneAccount.toBack();
         populateFavorites();
     }
 

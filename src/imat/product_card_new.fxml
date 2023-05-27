@@ -78,13 +78,13 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <ImageView fx:id="imageFavorite" fitHeight="40.0" fitWidth="40.0" layoutX="122.0" layoutY="-41.0" onMouseClicked="#toggleFavorite" pickOnBounds="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-         <image>
-            <Image url="@resources/like_hollow.png" />
-         </image>
+      <ImageView fx:id="imageFavorite" fitHeight="40.0" fitWidth="40.0" layoutX="122.0" layoutY="-41.0" onMouseClicked="#toggleFavorite" pickOnBounds="true" styleClass="product-like" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <image>
+            <Image url="@resources/like_hollow.png" />
+         </image>
       </ImageView>
    </children>
    <effect>
