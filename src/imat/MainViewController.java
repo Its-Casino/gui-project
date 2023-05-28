@@ -2,9 +2,7 @@
 package imat;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -13,14 +11,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 import java.util.Locale.Category;
-import java.util.function.Function;
-
-import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
-import javafx.collections.MapChangeListener;
-import javafx.collections.SetChangeListener;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,8 +22,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.util.Duration;
-import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -126,6 +116,7 @@ public class MainViewController implements Initializable {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
         generateStuff();
+        generateAdresspage();
         openStart();
         updateCart();
     }
@@ -352,6 +343,61 @@ public class MainViewController implements Initializable {
         closeCart();
     }
 
+    @FXML
+    private TextField uppgifter_firstname;
+    @FXML
+    private TextField uppgifter_lastname;
+    @FXML
+    private TextField uppgifter_gatuadress;
+    @FXML
+    private TextField uppgifter_postnummer;
+    @FXML
+    private TextField uppgifter_postort;
+    @FXML
+    private TextField uppgifter_mobilnummer;
+    @FXML
+    private TextField uppgifter_hemtelefon;
+    @FXML
+    private Label saved_text;
+    @FXML
+    private AnchorPane cover_saved_text;
+
+    public void generateAdresspage() {
+        if (!iMatDataHandler.getCustomer().getFirstName().equals("")) {
+            uppgifter_firstname.setText(iMatDataHandler.getCustomer().getFirstName());
+        }
+        if (!iMatDataHandler.getCustomer().getLastName().equals("")) {
+            uppgifter_lastname.setText(iMatDataHandler.getCustomer().getLastName());
+        }
+        if (!iMatDataHandler.getCustomer().getAddress().equals("")) {
+            uppgifter_gatuadress.setText(iMatDataHandler.getCustomer().getAddress());
+        }
+        if (!iMatDataHandler.getCustomer().getPostCode().equals("")) {
+            uppgifter_postnummer.setText(iMatDataHandler.getCustomer().getPostCode());
+        }
+        if (!iMatDataHandler.getCustomer().getPostAddress().equals("")) {
+            uppgifter_postnummer.setText(iMatDataHandler.getCustomer().getPostAddress());
+        }
+        if (!iMatDataHandler.getCustomer().getMobilePhoneNumber().equals("")) {
+            uppgifter_mobilnummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
+        }
+        if (!iMatDataHandler.getCustomer().getPhoneNumber().equals("")) {
+            uppgifter_hemtelefon.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        }
+    }
+
+    @FXML
+    public void saveAdress() {
+        iMatDataHandler.getCustomer().setFirstName(uppgifter_firstname.getText());
+        iMatDataHandler.getCustomer().setLastName(uppgifter_lastname.getText());
+        iMatDataHandler.getCustomer().setAddress(uppgifter_gatuadress.getText());
+        iMatDataHandler.getCustomer().setPostCode(uppgifter_postnummer.getText());
+        iMatDataHandler.getCustomer().setPostAddress(uppgifter_postort.getText());
+        iMatDataHandler.getCustomer().setMobilePhoneNumber(uppgifter_mobilnummer.getText());
+        iMatDataHandler.getCustomer().setPhoneNumber(uppgifter_hemtelefon.getText());
+        cover_saved_text.toBack();
+    }
+
     public void openThanks() {
         openStart();
         paneThanks.toFront();
@@ -410,6 +456,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCheckout() {
+        getUserinfo();
         paneCheckout.toFront();
         checkout_varukorg_pane.toFront();
         closeCart();
@@ -443,6 +490,8 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openDeliveryInfo() {
+        generateAdresspage();
+        cover_saved_text.toFront();
         paneDeliveryInfo.toFront();
         paneAccount.toBack();
         anchorPaneStart.toBack();
@@ -576,6 +625,10 @@ public class MainViewController implements Initializable {
                 break;
         }
         return val;
+    }
+
+    public void getDeliveryinfo() {
+
     }
 
     @FXML
@@ -721,6 +774,42 @@ public class MainViewController implements Initializable {
     private boolean valid_vald_tid;
 
     private boolean spara_betalning;
+
+    public void getUserinfo() {
+        if (!iMatDataHandler.getCustomer().getFirstName().equals("")) {
+            leveransadress_fornamn.setText(iMatDataHandler.getCustomer().getFirstName());
+        }
+        if (!iMatDataHandler.getCustomer().getLastName().equals("")) {
+            leveransadress_efternamn.setText(iMatDataHandler.getCustomer().getLastName());
+        }
+        if (!iMatDataHandler.getCustomer().getAddress().equals("")) {
+            leveransadress_gatuadress.setText(iMatDataHandler.getCustomer().getAddress());
+        }
+        if (!iMatDataHandler.getCustomer().getPostCode().equals("")) {
+            leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostCode());
+        }
+        if (!iMatDataHandler.getCustomer().getPostAddress().equals("")) {
+            leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostAddress());
+        }
+        if (!iMatDataHandler.getCustomer().getMobilePhoneNumber().equals("")) {
+            leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
+        }
+        if (!iMatDataHandler.getCustomer().getPhoneNumber().equals("")) {
+            leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        }
+        if (!iMatDataHandler.getCreditCard().getCardNumber().equals("")) {
+            betalning_kortnummer.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        }
+        if (iMatDataHandler.getCreditCard().getValidMonth() != 0) {
+            betalning_manad.setText(Integer.toString(iMatDataHandler.getCreditCard().getValidMonth()));
+        }
+        if (iMatDataHandler.getCreditCard().getValidYear() != 0) {
+            betalning_ar.setText(Integer.toString(iMatDataHandler.getCreditCard().getValidYear()));
+        }
+        if (iMatDataHandler.getCreditCard().getVerificationCode() != 0) {
+            betalning_cvc.setText(Integer.toString(iMatDataHandler.getCreditCard().getVerificationCode()));
+        }
+    }
 
     public void continuetodeliverydate() {
         checkout_leveransadress_pane.toFront();
