@@ -38,6 +38,10 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneHelp;
     @FXML
+    AnchorPane paneHelpCheckout;
+    @FXML
+    Button closeHelpCheckout;
+    @FXML
     AnchorPane paneCart;
     @FXML
     AnchorPane paneCategories;
@@ -184,7 +188,6 @@ public class MainViewController implements Initializable {
     @FXML
     public void openHelp() {
         paneHelp.toFront();
-        closeCheckout();
         closeCart();
         closeAccount();
         anchorPaneStart.toBack();
@@ -192,6 +195,17 @@ public class MainViewController implements Initializable {
         anchorPaneLists.toBack();
         anchorPaneAbout.toBack();
     }
+    @FXML
+    public void openHelpCheckout(){
+        paneHelpCheckout.toFront();
+        closeHelpCheckout.toFront();
+    }
+    @FXML
+    public void closeHelpCheckout(){
+        paneHelpCheckout.toBack();
+        closeHelpCheckout.toBack();
+    }
+
 
     @FXML
     public void openCategories() {
