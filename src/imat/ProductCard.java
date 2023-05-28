@@ -91,24 +91,32 @@ public class ProductCard extends AnchorPane {
         }
         update();
     }
-
     @FXML
-    public void toggleFavorite() {
-        if (!favorite) {
-            parentController.iMatDataHandler.addFavorite(product);
-        } else {
-            System.out.println("PING");
-            parentController.iMatDataHandler.removeFavorite(product);
+        public void toggleFavorite() {
+            if (!favorite) {
+                parentController.iMatDataHandler.addFavorite(product);
+                parentController.hasFavorites.toFront();
+            }
+            else {
+                System.out.println("PING");
+                parentController.iMatDataHandler.removeFavorite(product);
+                if (parentController.iMatDataHandler.favorites().size() == 0){
+                    parentController.hasFavorites.toBack();
+                }
+                parentController.populateFavorites();
+            }
+            favorite = !favorite;
+            if (favorite) {
+                Image image;
+                image = new Image(getClass().getResource("resources/like_filled.png").toString());
+                imageFavorite.setImage(image);
+            }
+            else {
+                Image image;
+                image = new Image(getClass().getResource("resources/like_hollow.png").toString());
+                imageFavorite.setImage(image);
+            }
+            parentController.refreshOffers();
         }
-        favorite = !favorite;
-        if (favorite) {
-            Image image;
-            image = new Image(getClass().getResource("resources/like_filled.png").toString());
-            imageFavorite.setImage(image);
-        } else {
-            Image image;
-            image = new Image(getClass().getResource("resources/like_hollow.png").toString());
-            imageFavorite.setImage(image);
-        }
-    }
 }
+

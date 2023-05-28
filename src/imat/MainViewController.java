@@ -101,6 +101,8 @@ public class MainViewController implements Initializable {
     ImageView answerTwoExpand;
     @FXML
     ImageView answerThreeExpand;
+    @FXML
+    ScrollPane hasFavorites;
 
     String lastPane;
 
@@ -138,6 +140,7 @@ public class MainViewController implements Initializable {
     }
 
     private void generateMaps() {
+
         currentUser = new User();
         for (int i = 1; i < 5; i++) {
             hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
@@ -417,6 +420,17 @@ public class MainViewController implements Initializable {
             flowFavorites.getChildren().add(new ProductCard(product, this));
         }
     }
+    void refreshOffers() {
+        hboxOffers.getChildren().clear();
+        for (int i = 1; i < 5; i++) {
+            hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
+        }
+    }
+
+
+
+
+    
 
     @FXML
     public void openDeliveryInfo() {
