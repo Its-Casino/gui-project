@@ -119,14 +119,8 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         String iMatDirectory = iMatDataHandler.imatDirectory();
         refreshCategories();
-        generateMaps();
-        generateCheckout();
+        generateStuff();
         openStart();
-        iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
-            updateCart();
-        });
-        updateCart();
-        labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
     }
 
     void updateCart() {
@@ -142,8 +136,7 @@ public class MainViewController implements Initializable {
         din_varukorg_totalt_kostnad.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
-    private void generateMaps() {
-
+    private void generateStuff() {
         currentUser = new User();
         for (int i = 1; i < 5; i++) {
             hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
@@ -153,6 +146,12 @@ public class MainViewController implements Initializable {
             stringCategoryMap.put(convertToText(category), category);
             categoryStringMap.put(category, convertToText(category));
         }
+        generateCheckout();
+        iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
+            updateCart();
+        });
+        updateCart();
+        labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
     }
 
     @FXML

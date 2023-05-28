@@ -53,6 +53,9 @@
                </children>
             </AnchorPane>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane fx:id="paneCheckout" maxHeight="3000.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@utcheckning.css">
           <children>
@@ -475,6 +478,9 @@
                                           <String fx:value="button-primary" />
                                           <String fx:value="dropshadow-default" />
                                       </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                                   </Button>
                                   <Label fx:id="betalning_total_kostnad" layoutX="634.0" layoutY="226.0" text="Totalt: 205 kr">
                                       <font>
@@ -1888,11 +1894,14 @@
                                           <Image url="@resources/cib_american-express.png" />
                                       </image>
                                   </ImageView>
-                                  <Button layoutX="596.0" layoutY="299.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
+                                  <Button layoutX="596.0" layoutY="299.0" mnemonicParsing="false" onAction="#confirm_payment" prefHeight="60.0" prefWidth="319.0" text="Betala nu">
                                       <styleClass>
                                           <String fx:value="button-primary" />
                                           <String fx:value="dropshadow-default" />
                                       </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                                   </Button>
                                   <Label fx:id="betalning_total_kostnad" layoutX="634.0" layoutY="226.0" text="Totalt: 205 kr">
                                       <font>
