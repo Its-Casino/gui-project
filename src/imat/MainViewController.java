@@ -30,7 +30,6 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.User;
 import java.util.regex.*;
@@ -88,6 +87,8 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane paneAbout;
     @FXML
+    AnchorPane paneThanks;
+    @FXML
     AnchorPane paneDeliveryInfo;
     @FXML
     AnchorPane answerOne;
@@ -136,6 +137,8 @@ public class MainViewController implements Initializable {
         vboxCheckoutCart.getChildren().clear();
         vboxCheckoutCart.getChildren().addAll(flowCart.getChildren());
         labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        din_varukorg_antal_varor.setText(
+                iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
         din_varukorg_totalt_kostnad.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
@@ -350,6 +353,16 @@ public class MainViewController implements Initializable {
         closeCart();
     }
 
+    public void openThanks() {
+        openStart();
+        paneThanks.toFront();
+    }
+
+    @FXML
+    public void closeThanks() {
+        paneThanks.toBack();
+    }
+
     @FXML
     public void openAbout() {
         paneAbout.toFront();
@@ -420,17 +433,13 @@ public class MainViewController implements Initializable {
             flowFavorites.getChildren().add(new ProductCard(product, this));
         }
     }
+
     void refreshOffers() {
         hboxOffers.getChildren().clear();
         for (int i = 1; i < 5; i++) {
             hboxOffers.getChildren().add(new ProductCard(iMatDataHandler.getProduct(i), this));
         }
     }
-
-
-
-
-    
 
     @FXML
     public void openDeliveryInfo() {
@@ -738,6 +747,7 @@ public class MainViewController implements Initializable {
                 iMatDataHandler.getCustomer().setPhoneNumber(leveransadress_hemtelefon.getText());
         }
         iMatDataHandler.placeOrder(true);
+        openThanks();
     }
 
     public static boolean hasNumber(String input) {

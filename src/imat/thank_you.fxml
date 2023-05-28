@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="paneFavorites" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #00000050;" stylesheets="@imat_app.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="200.0">
+         <styleClass>
+            <String fx:value="color-secondary" />
+            <String fx:value="rounded" />
+         </styleClass>
+         <children>
+            <Label alignment="CENTER" layoutX="115.0" layoutY="47.0" styleClass="checkout-title-font" text="Tack för ditt köp!" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+            <Label alignment="CENTER" layoutX="348.0" layoutY="213.0" prefHeight="193.0" prefWidth="1040.0" styleClass="default-font-bold-medium" text="Din beställning är nu lagd och hanteras av våra experter! Det enda kvar för dig är att göra är att luta dig bak och vänta på din leverans!" wrapText="true" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+            <Label alignment="CENTER" layoutY="368.0" prefHeight="49.0" prefWidth="1040.0" style="-fx-font-size: 16;" styleClass="default-font-bold-small" text="Klicka var som helst för att återgå till startsidan!" wrapText="true" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
