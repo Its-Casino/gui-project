@@ -15,8 +15,12 @@ import java.util.TreeMap;
 import java.util.Locale.Category;
 import java.util.function.Function;
 
+import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
+import javafx.collections.MapChangeListener;
+import javafx.collections.SetChangeListener;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +30,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -411,6 +416,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void openCheckout() {
         paneCheckout.toFront();
+        checkout_varukorg_pane.toFront();
         closeCart();
         closeAccount();
     }
@@ -578,6 +584,8 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    private AnchorPane orderCompletepane;
+    @FXML
     private ImageView varukorg_wizard_state_image;
     @FXML
     private ImageView leveransadress_wizard_state_image;
@@ -607,6 +615,8 @@ public class MainViewController implements Initializable {
     private TextField leveransadress_hemtelefon;
     @FXML
     private CheckBox stall_kassorna_checkbox;
+    @FXML private Button complete_history_button;
+    @FXML private Button complete_shop_button;
 
     @FXML
     private ComboBox<String> leveranstid_dag;
@@ -633,8 +643,8 @@ public class MainViewController implements Initializable {
 
     @FXML
     private TextField betalning_kortnummer;
-    @FXML
-    private TextField betalning_manad_ar;
+    @FXML private TextField betalning_manad;
+    @FXML private TextField betalning_ar;
     @FXML
     private TextField betalning_cvc;
     @FXML
@@ -661,6 +671,12 @@ public class MainViewController implements Initializable {
     private AnchorPane leveranstidcoverpane;
     @FXML
     private Button button_confirm_delivery;
+    @FXML
+    private Button betalning_button;
+    @FXML
+    private CheckBox leveransadress_spara_adress_checkbox;
+    @FXML
+    private AnchorPane betalning_manad_ar_field;
 
     private String vald_leveransdag;
 
@@ -688,6 +704,13 @@ public class MainViewController implements Initializable {
             "November", "December");
 
     private String vald_leveransmanad;
+
+    private boolean valid_kortnummer;
+
+    private boolean valid_input_mm;
+    private boolean valid_input_aa;
+
+    private boolean valid_cvc;
 
     private boolean datum_available;
     private boolean spara_adressen;
@@ -733,9 +756,12 @@ public class MainViewController implements Initializable {
     }
 
     public void confirm_payment() {
+        orderCompletepane.toFront();
         if (spara_betalning) {
             iMatDataHandler.getCreditCard().setCardNumber(betalning_kortnummer.getText());
             iMatDataHandler.getCreditCard().setVerificationCode(Integer.parseInt(betalning_cvc.getText()));
+            iMatDataHandler.getCreditCard().setValidYear(Integer.parseInt(betalning_ar.getText()));
+            iMatDataHandler.getCreditCard().setValidMonth(Integer.parseInt(betalning_manad.getText()));
         }
         if (spara_adressen) {
             iMatDataHandler.getCustomer().setFirstName(leveransadress_fornamn.getText());
@@ -747,6 +773,21 @@ public class MainViewController implements Initializable {
         }
         iMatDataHandler.placeOrder(true);
         openThanks();
+    }
+
+    public void backToStart(){
+        checkout_betalning_pane.toBack();
+        checkout_leveranstid_pane.toBack();
+        checkout_leveransadress_pane.toBack();
+        paneCheckout.toBack();
+        paneStart.toFront();
+    }
+    public void goTohistory(){
+        checkout_betalning_pane.toBack();
+        checkout_leveranstid_pane.toBack();
+        checkout_leveransadress_pane.toBack();
+        paneCheckout.toBack();
+        paneHistory.toFront();
     }
 
     public static boolean hasNumber(String input) {
@@ -801,6 +842,20 @@ public class MainViewController implements Initializable {
         return cardNumber;
     }
 
+    private String format_manad_ar(String manad_ar) {
+        manad_ar = manad_ar.replaceAll("[^0-9]", ""); // Remove non-numeric characters
+
+        if (manad_ar.length() > 4) {
+            manad_ar = manad_ar.substring(0, 4); // Truncate to a maximum of 4 characters
+        }
+
+        if (manad_ar.length() > 2) {
+            manad_ar = manad_ar.substring(0, 2) + "-" + manad_ar.substring(2); // Insert hyphen at position 2
+        }
+
+        return manad_ar;
+    }
+
     private String formatZipCode(String zipCode) {
         if (zipCode.length() > 0) {
             // Remove any non-digit characters
@@ -840,11 +895,54 @@ public class MainViewController implements Initializable {
         return phoneNumber;
     }
 
+    public void check_if_payment_valid() {
+        if (valid_kortnummer && valid_input_mm && valid_input_aa && valid_cvc) {
+            betalning_button.setDisable(false);
+        }
+        else betalning_button.setDisable(true);
+    }
+
     void generateCheckout() {
 
         leveransadress_continue_button.setDisable(true);
         button_confirm_delivery.setDisable(true);
+        betalning_button.setDisable(true);
         betalning_spara_betalning.setStyle("-fx-font-size: 18px");
+
+        complete_history_button.setOnAction(event -> {
+            goTohistory();
+        });
+
+        complete_shop_button.setOnAction(event -> {
+            backToStart();
+        });
+
+        betalning_spara_betalning.setOnAction(event -> {
+            sparabetalningcheckbox();
+        });
+
+        leveransadress_spara_adress_checkbox.setOnAction(event -> {
+            sparaadresscheckbox();
+        });
+
+
+        TextFormatter<String> valid_manad = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if(newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
+                return change;
+            }
+            return null;
+        });
+        betalning_manad.setTextFormatter(valid_manad);
+
+        TextFormatter<String> valid_ar = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if(newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
+                return change;
+            }
+            return null;
+        });
+        betalning_ar.setTextFormatter(valid_ar);
 
         TextFormatter<String> zipCodeFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -854,6 +952,44 @@ public class MainViewController implements Initializable {
             return null;
         });
         leveransadress_postnummer.setTextFormatter(zipCodeFormatter);
+
+        TextFormatter<String> onlyLetters_numbers = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-Z0-9\\s]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_gatuadress.setTextFormatter(onlyLetters_numbers);
+
+        TextFormatter<String> onlyLetters_fornamn = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_fornamn.setTextFormatter(onlyLetters_fornamn);
+
+        TextFormatter<String> onlyLetters_efternamn = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_efternamn.setTextFormatter(onlyLetters_efternamn);
+
+        TextFormatter<String> onlyLetters_postort = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("[a-zA-ZäöåÄÖÅ]*")) {
+                return change;
+            }
+            return null;
+        });
+        leveransadress_postort.setTextFormatter(onlyLetters_postort);
+
+
 
         TextFormatter<String> phoneNumberFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -865,7 +1001,7 @@ public class MainViewController implements Initializable {
         leveransadress_mobilnummer.setTextFormatter(phoneNumberFormatter);
 
         TextFormatter<String> hemtelefonFormatter = new TextFormatter<>(change -> {
-            if (change.getControlNewText().length() <= 12) {
+            if (change.getControlNewText().length() <= 10) {
                 return change;
             }
             return null;
@@ -912,7 +1048,7 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_gatuadress = true;
                 leveransadress_gatuadress.setStyle("-fx-border-color: green");
-                if (newValue.equals("")) {
+                if (newValue.equals("") || newValue.startsWith(" ")) {
                     leveransadress_continue_button.setDisable(true);
                     leveransadress_gatuadress.setStyle("-fx-border-color: red");
                     valid_gatuadress = false;
@@ -978,11 +1114,48 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_hemtelefon = true;
                 leveransadress_hemtelefon.setStyle("-fx-border-color: rgba(0,128,0,0)");
-                if (hasLetter(newValue) || hasSpecialCharacter(newValue)) {
-                    leveransadress_hemtelefon.setStyle("-fx-background-color: rgba(255,0,0,0.40)");
+                if (hasLetter(newValue) || hasSpecialCharacter(newValue) || newValue.length() < 10) {
+                    leveransadress_hemtelefon.setStyle("-fx-border-color: red");
                     valid_hemtelefon = false;
                 }
                 check_if_leveransadress_valid();
+            }
+        });
+
+        betalning_ar.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+            valid_input_aa = true;
+                if(newValue.equals("")) {
+                    valid_input_aa = false;
+                    betalning_manad_ar_field.setStyle("-fx-border-color: red");
+                    check_if_payment_valid();
+                    return;
+                }
+            if(valid_input_aa && valid_input_mm) betalning_manad_ar_field.setStyle("-fx-border-color: green");
+            if(Integer.parseInt(newValue) < 23) {
+                valid_input_aa = false;
+                betalning_manad_ar_field.setStyle("-fx-border-color: red");
+            }
+            check_if_payment_valid();
+            }
+        });
+        betalning_manad.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_input_mm = true;
+                if(newValue.equals("")) {
+                    valid_input_mm = false;
+                    betalning_manad_ar_field.setStyle("-fx-border-color: red");
+                    check_if_payment_valid();
+                    return;
+                }
+                if(valid_input_mm && valid_input_aa) betalning_manad_ar_field.setStyle("-fx-border-color: green");
+                if(Integer.parseInt(newValue) > 12) {
+                    valid_input_mm = false;
+                    betalning_manad_ar_field.setStyle("-fx-border-color: red");
+                }
+                check_if_payment_valid();
             }
         });
 
@@ -997,26 +1170,38 @@ public class MainViewController implements Initializable {
                 "September", "Oktober", "November", "December");
         leveranstid_manad.getSelectionModel().select("Månad");
 
-        if (iMatDataHandler.getCustomer().getFirstName() != "") {
+        if (!iMatDataHandler.getCustomer().getFirstName().equals("")) {
             leveransadress_fornamn.setText(iMatDataHandler.getCustomer().getFirstName());
         }
-        if (iMatDataHandler.getCustomer().getLastName() != "") {
+        if (!iMatDataHandler.getCustomer().getLastName().equals("")) {
             leveransadress_efternamn.setText(iMatDataHandler.getCustomer().getLastName());
         }
-        if (iMatDataHandler.getCustomer().getAddress() != "") {
+        if (!iMatDataHandler.getCustomer().getAddress().equals("")) {
             leveransadress_gatuadress.setText(iMatDataHandler.getCustomer().getAddress());
         }
-        if (iMatDataHandler.getCustomer().getPostCode() != "") {
+        if (!iMatDataHandler.getCustomer().getPostCode().equals("")) {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostCode());
         }
-        if (iMatDataHandler.getCustomer().getPostAddress() != "") {
+        if (!iMatDataHandler.getCustomer().getPostAddress().equals("")) {
             leveransadress_postnummer.setText(iMatDataHandler.getCustomer().getPostAddress());
         }
-        if (iMatDataHandler.getCustomer().getMobilePhoneNumber() != "") {
+        if (!iMatDataHandler.getCustomer().getMobilePhoneNumber().equals("")) {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getMobilePhoneNumber());
         }
-        if (iMatDataHandler.getCustomer().getPhoneNumber() != "") {
+        if (!iMatDataHandler.getCustomer().getPhoneNumber().equals("")) {
             leveransadress_mobilnummer.setText(iMatDataHandler.getCustomer().getPhoneNumber());
+        }
+        if (!iMatDataHandler.getCreditCard().getCardNumber().equals("")) {
+            betalning_kortnummer.setText(iMatDataHandler.getCreditCard().getCardNumber());
+        }
+        if (iMatDataHandler.getCreditCard().getValidMonth() != 0) {
+            betalning_manad.setText(Integer.toString(iMatDataHandler.getCreditCard().getValidMonth()));
+        }
+        if (iMatDataHandler.getCreditCard().getValidYear() != 0) {
+            betalning_ar.setText(Integer.toString(iMatDataHandler.getCreditCard().getValidYear()));
+        }
+        if (iMatDataHandler.getCreditCard().getVerificationCode() != 0) {
+            betalning_cvc.setText(Integer.toString(iMatDataHandler.getCreditCard().getVerificationCode()));
         }
 
         ToggleGroup leveranstidToggleGroup = new ToggleGroup();
@@ -1116,11 +1301,37 @@ public class MainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 String formatterad_kortnummer = formatCardNumber(newValue);
+                valid_mobilnummer = false;
+                betalning_kortnummer.setStyle("-fx-border-color: red");
                 if (formatterad_kortnummer.length() <= 19) {
                     betalning_kortnummer.setText(formatterad_kortnummer);
                 } else {
                     betalning_kortnummer.setText(oldValue);
                 }
+                if (formatterad_kortnummer.length() == 19) {
+                    betalning_kortnummer.setStyle("-fx-border-color: green");
+                    valid_kortnummer = true;
+                }
+                check_if_payment_valid();
+            }
+        });
+
+
+        betalning_cvc.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                valid_cvc = false;
+                betalning_cvc.setStyle("-fx-border-color: red");
+                String filteredText = newValue.replaceAll("[^0-9]", "");
+                if (filteredText.length() > 3 ) {
+                    filteredText = filteredText.substring(0, 3);
+                }
+                if (newValue.length() == 3) {
+                    betalning_cvc.setStyle("-fx-border-color: green");
+                    valid_cvc = true;
+                }
+                betalning_cvc.setText(filteredText);
+                check_if_payment_valid();
             }
         });
 
