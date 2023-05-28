@@ -337,7 +337,7 @@
                               <children>
                                   <ImageView fx:id="datum_tillgangligt_state_image" fitHeight="33.0" fitWidth="33.0" layoutX="326.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                          <Image url="@resources/Checked%20Circle.png" />
+                                          <Image url="@resources/Checked_Circle.png" />
                                       </image>
                                   </ImageView>
                                   <AnchorPane fx:id="checked_image_anchorpane" layoutX="325.0" layoutY="280.0" prefHeight="35.0" prefWidth="35.0" styleClass="checkout-section-color" />
