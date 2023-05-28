@@ -1114,7 +1114,7 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_hemtelefon = true;
                 leveransadress_hemtelefon.setStyle("-fx-border-color: rgba(0,128,0,0)");
-                if (hasLetter(newValue) || hasSpecialCharacter(newValue) || newValue.length() < 10) {
+                if (hasLetter(newValue) || hasSpecialCharacter(newValue) || newValue.length() < 10 && newValue.length() > 1) {
                     leveransadress_hemtelefon.setStyle("-fx-border-color: red");
                     valid_hemtelefon = false;
                 }

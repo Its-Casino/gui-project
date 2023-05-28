@@ -459,7 +459,7 @@
                   <AnchorPane layoutX="342.0" layoutY="282.0" prefHeight="360.0" prefWidth="756.0">
                      <children>
                         <Label layoutX="173.0" layoutY="46.0" styleClass="checkout-title-font" text="Beställning slutförd" />
-                        <Label layoutX="49.0" layoutY="125.0" prefHeight="73.0" prefWidth="658.0" styleClass="default-font" text="Tack för din beställning! Vi hoppas väljer oss igen i framtiden!" textAlignment="CENTER" wrapText="true" />
+                        <Label layoutX="49.0" layoutY="125.0" prefHeight="73.0" prefWidth="658.0" styleClass="default-font" text="Tack för din beställning! Vi hoppas ni väljer oss igen i framtiden!" textAlignment="CENTER" wrapText="true" />
                         <Button fx:id="complete_shop_button" layoutX="433.0" layoutY="245.0" mnemonicParsing="false" onAction="#backToStart" prefHeight="51.0" prefWidth="243.0" text="Fortsätt handla">
                            <styleClass>
                               <String fx:value="button-primary" />
