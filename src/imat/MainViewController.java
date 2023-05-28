@@ -94,11 +94,28 @@ public class MainViewController implements Initializable {
     @FXML
     AnchorPane answerThree;
     @FXML
+    AnchorPane answerFour;
+    @FXML
+    AnchorPane answerFive;
+    @FXML
+    AnchorPane answerSix;
+    @FXML
+    AnchorPane answerSeven;
+    @FXML
     ImageView answerOneExpand;
     @FXML
     ImageView answerTwoExpand;
     @FXML
     ImageView answerThreeExpand;
+    @FXML
+    ImageView answerFourExpand;
+    @FXML
+    ImageView answerFiveExpand;
+    @FXML
+    ImageView answerSixExpand;
+    @FXML
+    ImageView answerSevenExpand;
+
     @FXML
     ScrollPane hasFavorites;
 
@@ -426,22 +443,78 @@ public class MainViewController implements Initializable {
         answerOneExpand.toFront();
         answerTwoExpand.toBack();
         answerThreeExpand.toBack();
-
+        answerFourExpand.toBack();
+        answerFiveExpand.toBack();
+        answerSixExpand.toBack();
+        answerSevenExpand.toBack();
     }
 
     @FXML
     public void openAnswerTwo() {
         answerTwo.toFront();
-        answerTwoExpand.toFront();
         answerOneExpand.toBack();
+        answerTwoExpand.toFront();
         answerThreeExpand.toBack();
+        answerFourExpand.toBack();
+        answerFiveExpand.toBack();
+        answerSixExpand.toBack();
+        answerSevenExpand.toBack();
     }
-
+    @FXML
     public void openAnswerThree() {
         answerThree.toFront();
-        answerThreeExpand.toFront();
         answerOneExpand.toBack();
         answerTwoExpand.toBack();
+        answerThreeExpand.toFront();
+        answerFourExpand.toBack();
+        answerFiveExpand.toBack();
+        answerSixExpand.toBack();
+        answerSevenExpand.toBack();
+    }
+    @FXML
+    public void openAnswerFour() {
+        answerFour.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+        answerFourExpand.toFront();
+        answerFiveExpand.toBack();
+        answerSixExpand.toBack();
+        answerSevenExpand.toBack();
+
+    }
+    @FXML
+    public void openAnswerFive() {
+        answerFive.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+        answerFourExpand.toBack();
+        answerFiveExpand.toFront();
+        answerSixExpand.toBack();
+        answerSevenExpand.toBack();
+    }
+    @FXML
+    public void openAnswerSix() {
+        answerSix.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+        answerFourExpand.toBack();
+        answerFiveExpand.toBack();
+        answerSixExpand.toFront();
+        answerSevenExpand.toBack();
+    }
+    @FXML
+    public void openAnswerSeven() {
+        answerSeven.toFront();
+        answerOneExpand.toBack();
+        answerTwoExpand.toBack();
+        answerThreeExpand.toBack();
+        answerFourExpand.toBack();
+        answerFiveExpand.toBack();
+        answerSixExpand.toBack();
+        answerSevenExpand.toFront();
     }
 
     @FXML
