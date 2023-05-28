@@ -16,6 +16,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -123,12 +124,11 @@ public class MainViewController implements Initializable {
 
     void updateCart() {
         vboxCart.getChildren().clear();
+        vboxCheckoutCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
             vboxCart.getChildren().add(new CartCard(shoppingItem, this));
+            vboxCheckoutCart.getChildren().add(new CartCard(shoppingItem, this));
         }
-        vboxCheckoutCart.getChildren().clear();
-        vboxCheckoutCart.getChildren().addAll(vboxCart.getChildren());
-        vboxCart.getChildren().addAll(vboxCheckoutCart.getChildren());
         labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
         din_varukorg_antal_varor.setText(
                 iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
