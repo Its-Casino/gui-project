@@ -198,3 +198,7 @@
 .scroll-pane > .viewport {
    -fx-background-color: transparent;
 }
+
+.product-hover:hover{
+    -fx-text-fill:#263b27 ;
+}

@@ -1458,76 +1458,6 @@
             </AnchorPane>
           </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneCart" onMouseClicked="#closeCart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00000070;" stylesheets="@scroll-bar.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
-         <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="242.0" layoutY="21.0" styleClass="header" text="Varukorg" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <font>
-                        <Font name="Poppins Bold" size="40.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                     <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@resources/icon-close-shopping-cart.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
-                     </cursor>
-                  </Button>
-                  <Pane prefHeight="450.0" prefWidth="7.0" style="-fx-background-color: bebebe; -fx-background-radius: 50px;" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="110.0" />
-                  <ScrollPane fitToWidth="true" layoutX="150.0" layoutY="107.0" prefHeight="470.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-scrollpane" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
-                     <content>
-                        <FlowPane fx:id="flowCart" prefHeight="897.0" prefWidth="499.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart-flowpane" vgap="15.0" />
-                     </content>
-                  </ScrollPane>
-                  <Line endX="554.0" layoutX="280.0" layoutY="579.0" stroke="#354c37" strokeWidth="6.0" style="-fx-fill: white;" styleClass="scroll-divider" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Label layoutX="97.0" layoutY="616.0" styleClass="shipping-label" text="Frakt" textFill="WHITE" AnchorPane.leftAnchor="120.0">
-                     <font>
-                        <Font name="Poppins SemiBold" size="32.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="357.0" layoutY="616.0" styleClass="shipping-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
-                     <font>
-                        <Font name="Poppins SemiBold" size="32.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="97.0" layoutY="665.0" styleClass="total-label" text="Total" textFill="WHITE" AnchorPane.leftAnchor="120.0">
-                     <font>
-                        <Font name="Poppins SemiBold" size="32.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelCartTotal" layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
-                     <font>
-                        <Font name="Poppins SemiBold" size="32.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="120.0" layoutY="753.0" onMouseClicked="#openCheckout" prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #E2ECAD; -fx-text-fill: black;" text="Gå till kassan" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
-                     <font>
-                        <Font name="Poppins SemiBold" size="40.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                           <color>
-                              <Color opacity="0.25" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="paneAccount" layoutX="10.0" layoutY="10.0" onMouseClicked="#closeAccount" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00000070;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
             <AnchorPane maxHeight="874.0" maxWidth="560.0" minHeight="874.0" minWidth="560.0" onMouseClicked="#mouseTrap" prefHeight="874.0" prefWidth="560.0" styleClass="account" stylesheets="@imat_app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -2029,7 +1959,7 @@
                       </Button>
                       <ImageView fitHeight="51.0" fitWidth="155.0" layoutX="643.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                           <image>
-                              <Image url="@resources/iMat_logo_png.png" />
+                              <Image url="@resources/imat-logo.png" />
                           </image>
                       </ImageView>
                   </children>
@@ -2248,47 +2178,61 @@
             </AnchorPane>
           </children>
       </AnchorPane>
-      <VBox maxHeight="1024.0" maxWidth="1440.0" prefHeight="150.0" prefWidth="1440.0" scaleShape="false" style="-fx-background-color: #C8D3C6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneCart" onMouseClicked="#closeCart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00000070;" stylesheets="@scroll-bar.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="100.0" minHeight="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="1440.0" spacing="25.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="874.0" prefWidth="560.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ImageView fitHeight="51.0" fitWidth="155.0" onMouseClicked="#openStart" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/imat-logo.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="CLOSED_HAND" />
-                     </cursor>
-                  </ImageView>
-                  <TextField prefHeight="55.0" prefWidth="540.0" promptText="Sök..." style="-fx-background-color: #ffffff;">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
+                  <Label alignment="CENTER" layoutX="242.0" layoutY="21.0" styleClass="header" text="Varukorg" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
-                        <Font name="Poppins Medium" size="24.0" />
+                        <Font name="Poppins Bold" size="40.0" />
                      </font>
-                     <styleClass>
-                        <String fx:value="rounded" />
-                        <String fx:value="search-bar" />
-                     </styleClass>
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
-                  </TextField>
-                  <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#openCart" prefHeight="55.0" prefWidth="280.0" styleClass="navbar-upper-button" text="Varukorg">
+                  </Label>
+                  <Button layoutX="481.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#closeCart" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="close-shopping-cart-button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true">
                            <image>
-                              <Image url="@resources/shopping-cart.png" />
+                              <Image url="@resources/icon-close-shopping-cart.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
+                  </Button>
+                  <Pane prefHeight="450.0" prefWidth="7.0" style="-fx-background-color: bebebe; -fx-background-radius: 50px;" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="110.0" />
+                  <ScrollPane fitToWidth="true" layoutX="150.0" layoutY="107.0" prefHeight="470.0" style="-fx-background-color: transparent;" styleClass="shopping-cart-scrollpane" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <content>
+                        <FlowPane fx:id="flowCart" prefWidth="499.0" style="-fx-background-color: #7C8E70;" styleClass="shopping-cart-flowpane" vgap="15.0" />
+                     </content>
+                  </ScrollPane>
+                  <Line endX="554.0" layoutX="280.0" layoutY="579.0" stroke="#354c37" strokeWidth="6.0" style="-fx-fill: white;" styleClass="scroll-divider" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutX="97.0" layoutY="616.0" styleClass="shipping-label" text="Frakt" textFill="WHITE" AnchorPane.leftAnchor="120.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="357.0" layoutY="616.0" styleClass="shipping-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="97.0" layoutY="665.0" styleClass="total-label" text="Total" textFill="WHITE" AnchorPane.leftAnchor="120.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCartTotal" layoutX="357.0" layoutY="665.0" styleClass="total-cost-label" text="0 kr" textFill="WHITE" AnchorPane.rightAnchor="120.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="120.0" layoutY="753.0" onMouseClicked="#openCheckout" prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #E2ECAD; -fx-text-fill: black;" text="Gå till kassan" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="40.0" />
+                     </font>
                      <effect>
                         <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
                            <color>
@@ -2296,117 +2240,14 @@
                            </color>
                         </DropShadow>
                      </effect>
-                  </Button>
-                  <Button graphicTextGap="8.0" mnemonicParsing="false" onMouseClicked="#openAccount" prefHeight="55.0" prefWidth="150.0" styleClass="navbar-upper-button" text="Konto">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
-                           <image>
-                              <Image url="@resources/account.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <effect>
-                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                           <color>
-                              <Color opacity="0.25" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
-                  <Button graphicTextGap="8.0" mnemonicParsing="false" onMouseClicked="#openHelp" prefHeight="55.0" prefWidth="145.0" styleClass="navbar-upper-help" text="Hjälp">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@resources/help.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <effect>
-                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                           <color>
-                              <Color opacity="0.25" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
+                  </Label>
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="25.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0" styleClass="navbar-lower">
-               <children>
-                  <AnchorPane onMouseClicked="#openStart" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
-                     <children>
-                        <Label alignment="CENTER" text="Start" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="Poppins Medium" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-                  <AnchorPane onMouseClicked="#openCategories" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" text="Alla kategorier" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="Poppins Medium" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-                  <AnchorPane onMouseClicked="#openFavorites" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" text="Favoriter" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="Poppins Medium" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-                  <AnchorPane onMouseClicked="#openAbout" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" text="Om iMat" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="Poppins Medium" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </children>
-            </HBox>
+            </AnchorPane>
          </children>
-         <effect>
-            <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
-      </VBox>
+      </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
             <AnchorPane fx:id="paneHelp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0">
@@ -2882,7 +2723,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;" stylesheets="@scroll-bar.css">
+            <AnchorPane fx:id="paneProducts" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #EFEFEF;">
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -2903,7 +2744,7 @@
                               <Insets right="20.0" />
                            </padding>
                         </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="130.0">
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="80.0">
                            <children>
                               <AnchorPane prefHeight="580.0" prefWidth="300.0" style="-fx-background-radius: 5px; -fx-background-color: #354C37;" styleClass="category-pane" stylesheets="@products.css">
                                  <effect>
@@ -2935,7 +2776,7 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="284.0">
                                              <children>
-                                                <Label alignment="CENTER" layoutX="127.0" layoutY="20.0" onMouseClicked="#openPod" text="Baljväxter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                                <Label alignment="CENTER" layoutX="127.0" layoutY="20.0" onMouseClicked="#openPod" styleClass="product-hover" text="Baljväxter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2944,7 +2785,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="90.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="90.0" />
-                                                <Label alignment="CENTER" layoutX="137.0" layoutY="30.0" onMouseClicked="#openBread" text="Bröd" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                                                <Label alignment="CENTER" layoutX="137.0" layoutY="30.0" onMouseClicked="#openBread" styleClass="product-hover" text="Bröd" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2953,7 +2794,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="100.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="180.0" />
-                                                <Label alignment="CENTER" layoutX="147.0" layoutY="40.0" onMouseClicked="#openBerry" text="Bär" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0">
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="40.0" onMouseClicked="#openBerry" styleClass="product-hover" text="Bär" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2962,7 +2803,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="110.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="270.0" />
-                                                <Label alignment="CENTER" layoutX="157.0" layoutY="50.0" onMouseClicked="#openCitrusFruit" text="Citrusfrukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
+                                                <Label alignment="CENTER" layoutX="157.0" layoutY="50.0" onMouseClicked="#openCitrusFruit" styleClass="product-hover" text="Citrusfrukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2971,7 +2812,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="120.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="360.0" />
-                                                <Label alignment="CENTER" layoutX="167.0" layoutY="60.0" onMouseClicked="#openHotDrinks" text="Varm dryck" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="390.0">
+                                                <Label alignment="CENTER" layoutX="167.0" layoutY="60.0" onMouseClicked="#openHotDrinks" styleClass="product-hover" text="Varm dryck" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="390.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2980,7 +2821,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="130.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="450.0" />
-                                                <Label alignment="CENTER" layoutX="177.0" layoutY="70.0" onMouseClicked="#openColdDrinks" text="Kall dryck" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="480.0">
+                                                <Label alignment="CENTER" layoutX="177.0" layoutY="70.0" onMouseClicked="#openColdDrinks" styleClass="product-hover" text="Kall dryck" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="480.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2989,7 +2830,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="140.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="540.0" />
-                                                <Label alignment="CENTER" layoutX="187.0" layoutY="80.0" onMouseClicked="#openExoticFruit" text="Exotisk frukt" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="570.0">
+                                                <Label alignment="CENTER" layoutX="187.0" layoutY="80.0" onMouseClicked="#openExoticFruit" styleClass="product-hover" text="Exotisk frukt" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="570.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -2998,7 +2839,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="150.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="630.0" />
-                                                <Label alignment="CENTER" layoutX="197.0" layoutY="90.0" onMouseClicked="#openFish" text="Fisk" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="660.0">
+                                                <Label alignment="CENTER" layoutX="197.0" layoutY="90.0" onMouseClicked="#openFish" styleClass="product-hover" text="Fisk" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="660.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3007,7 +2848,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="160.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="720.0" />
-                                                <Label alignment="CENTER" layoutX="207.0" layoutY="100.0" onMouseClicked="#openVegetableFruit" text="Grönsaker" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="750.0">
+                                                <Label alignment="CENTER" layoutX="207.0" layoutY="100.0" onMouseClicked="#openVegetableFruit" styleClass="product-hover" text="Grönsaker" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="750.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3016,7 +2857,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="170.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="810.0" />
-                                                <Label alignment="CENTER" layoutX="217.0" layoutY="110.0" onMouseClicked="#openCabbage" text="Sallad" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="840.0">
+                                                <Label alignment="CENTER" layoutX="217.0" layoutY="110.0" onMouseClicked="#openCabbage" styleClass="product-hover" text="Sallad" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="840.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3025,7 +2866,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="180.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="900.0" />
-                                                <Label alignment="CENTER" layoutX="227.0" layoutY="120.0" onMouseClicked="#openMeat" text="Kött" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="930.0">
+                                                <Label alignment="CENTER" layoutX="227.0" layoutY="120.0" onMouseClicked="#openMeat" styleClass="product-hover" text="Kött" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="930.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3034,7 +2875,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="190.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="990.0" />
-                                                <Label alignment="CENTER" layoutX="237.0" layoutY="130.0" onMouseClicked="#openDairies" text="Mjölkprodukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1020.0">
+                                                <Label alignment="CENTER" layoutX="237.0" layoutY="130.0" onMouseClicked="#openDairies" styleClass="product-hover" text="Mjölkprodukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1020.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3043,7 +2884,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="200.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1080.0" />
-                                                <Label alignment="CENTER" layoutX="247.0" layoutY="140.0" onMouseClicked="#openMelons" text="Melon" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1110.0">
+                                                <Label alignment="CENTER" layoutX="247.0" layoutY="140.0" onMouseClicked="#openMelons" styleClass="product-hover" text="Melon" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1110.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3052,7 +2893,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="210.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1170.0" />
-                                                <Label alignment="CENTER" layoutX="257.0" layoutY="150.0" onMouseClicked="#openFlourSaltSugar" text="Skafferivaror" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1200.0">
+                                                <Label alignment="CENTER" layoutX="257.0" layoutY="150.0" onMouseClicked="#openFlourSaltSugar" styleClass="product-hover" text="Skafferivaror" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1200.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3061,7 +2902,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="220.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1260.0" />
-                                                <Label alignment="CENTER" layoutX="267.0" layoutY="160.0" onMouseClicked="#openNutsAndSeeds" text="Nötter och frön" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1290.0">
+                                                <Label alignment="CENTER" layoutX="267.0" layoutY="160.0" onMouseClicked="#openNutsAndSeeds" styleClass="product-hover" text="Nötter och frön" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1290.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3070,7 +2911,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="230.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1350.0" />
-                                                <Label alignment="CENTER" layoutX="277.0" layoutY="170.0" onMouseClicked="#openPasta" text="Pasta" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1380.0">
+                                                <Label alignment="CENTER" layoutX="277.0" layoutY="170.0" onMouseClicked="#openPasta" styleClass="product-hover" text="Pasta" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1380.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3079,7 +2920,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="240.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1440.0" />
-                                                <Label alignment="CENTER" layoutX="287.0" layoutY="180.0" onMouseClicked="#openPotatoRice" text="Potatis och ris" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1470.0">
+                                                <Label alignment="CENTER" layoutX="287.0" layoutY="180.0" onMouseClicked="#openPotatoRice" styleClass="product-hover" text="Potatis och ris" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1470.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3088,7 +2929,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="250.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1530.0" />
-                                                <Label alignment="CENTER" layoutX="297.0" layoutY="190.0" onMouseClicked="#openRootVegetable" text="Rotfrukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1560.0">
+                                                <Label alignment="CENTER" layoutX="297.0" layoutY="190.0" onMouseClicked="#openRootVegetable" styleClass="product-hover" text="Rotfrukter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1560.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3097,7 +2938,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="260.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1620.0" />
-                                                <Label alignment="CENTER" layoutX="307.0" layoutY="200.0" onMouseClicked="#openFruit" text="Frukt" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1650.0">
+                                                <Label alignment="CENTER" layoutX="307.0" layoutY="200.0" onMouseClicked="#openFruit" styleClass="product-hover" text="Frukt" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1650.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3106,7 +2947,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="270.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1710.0" />
-                                                <Label alignment="CENTER" layoutX="317.0" layoutY="210.0" onMouseClicked="#openSweet" text="Sötsaker" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1740.0">
+                                                <Label alignment="CENTER" layoutX="317.0" layoutY="210.0" onMouseClicked="#openSweet" styleClass="product-hover" text="Sötsaker" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1740.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3115,7 +2956,7 @@
                                                    </cursor>
                                                 </Label>
                                                 <Line endX="180.0" layoutX="52.0" layoutY="280.0" stroke="#1c281d" strokeWidth="4.0" AnchorPane.topAnchor="1800.0" />
-                                                <Label alignment="CENTER" layoutX="327.0" layoutY="220.0" onMouseClicked="#openHerb" text="Örter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1830.0">
+                                                <Label alignment="CENTER" layoutX="327.0" layoutY="220.0" onMouseClicked="#openHerb" styleClass="product-hover" text="Örter" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1830.0">
                                                    <font>
                                                       <Font name="Poppins SemiBold" size="28.0" />
                                                    </font>
@@ -3129,96 +2970,33 @@
                                     </ScrollPane>
                                  </children>
                               </AnchorPane>
-                              <ScrollPane fitToWidth="true" prefHeight="690.0" prefWidth="891.0" style="-fx-background-color: transparent;">
-                                 <content>
-                                    <FlowPane fx:id="productFlow" alignment="TOP_CENTER" hgap="40.0" prefWidth="889.0" prefWrapLength="260.0" rowValignment="TOP" vgap="40.0" />
-                                 </content>
-                              </ScrollPane>
+                              <AnchorPane prefHeight="500.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <Pane prefHeight="570.0" prefWidth="7.0" style="-fx-background-color: #bebebe; -fx-background-radius: 50px;" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+                                    <ScrollPane fitToWidth="true" prefHeight="580.0" prefWidth="891.0" style="-fx-background-color: transparent;">
+                                       <content>
+                                          <FlowPane fx:id="productFlow" alignment="TOP_CENTER" hgap="40.0" prefHeight="100.0" prefWidth="889.0" prefWrapLength="260.0" rowValignment="TOP" vgap="40.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
                            </children>
                            <padding>
                               <Insets left="100.0" top="100.0" />
                            </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </HBox>
                      </children>
                   </VBox>
                </children>
-            </AnchorPane>
-            <AnchorPane fx:id="paneStart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
-                           <children>
-                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="30.0" stylesheets="@scroll-bar.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <AnchorPane prefHeight="465.0" prefWidth="200.0" styleClass="color-primary">
-                                       <children>
-                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Label layoutX="68.0" layoutY="131.0" prefHeight="65.0" prefWidth="659.0" style="-fx-font-size: 20;" text="Bläddra bland våra kategorier och erbjudanden eller använd vår sökfunktion för att hitta det du söker." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="143.0">
-                                             <styleClass>
-                                                <String fx:value="default-font" />
-                                                <String fx:value="color-primary" />
-                                             </styleClass>
-                                          </Label>
-                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="278.0" text="Börja handla!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
-                                             <styleClass>
-                                                <String fx:value="color-tertiary" />
-                                                <String fx:value="dropshadow-default" />
-                                                <String fx:value="rounded" />
-                                             </styleClass>
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Poppins Medium" size="24.0" />
-                                             </font>
-                                          </Button>
-                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" onMouseClicked="#openCategories" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <image>
-                                                <Image url="@resources/Senior.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </AnchorPane>
-                                    <VBox prefWidth="1424.0" styleClass="color-secondary">
-                                       <children>
-                                          <Label text="Våra populäraste varor!">
-                                             <padding>
-                                                <Insets left="40.0" />
-                                             </padding>
-                                             <font>
-                                                <Font name="Poppins Bold" size="34.0" />
-                                             </font>
-                                          </Label>
-                                          <HBox fx:id="hboxOffers" alignment="CENTER" prefWidth="1424.0" spacing="60.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                             <padding>
-                                                <Insets bottom="100.0" left="60.0" right="60.0" top="60.0" />
-                                             </padding></HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                              <ImageView fitHeight="120.0" fitWidth="1700.0" pickOnBounds="true" AnchorPane.leftAnchor="-200.0" AnchorPane.rightAnchor="-200.0" AnchorPane.topAnchor="380.0">
-                                 <image>
-                                    <Image url="@resources/start-wave.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
-               </children>
                <stylesheets>
-                  <URL value="@imat_app.css" />
                   <URL value="@scroll-bar.css" />
+                  <URL value="@imat_app.css" />
                </stylesheets>
             </AnchorPane>
             <AnchorPane fx:id="paneFavorites" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #efefef;" stylesheets="@imat_app.css">
@@ -3268,7 +3046,244 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="paneStart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                     <content>
+                        <AnchorPane prefHeight="874.0" prefWidth="1424.0">
+                           <children>
+                              <VBox prefHeight="1018.0" prefWidth="1444.0" spacing="30.0" stylesheets="@scroll-bar.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="465.0" styleClass="color-primary">
+                                       <children>
+                                          <Label fx:id="labelWelcome" prefHeight="78.0" prefWidth="558.0" style="-fx-font-size: 52; -fx-font-weight: bold;" text="Hej {Insert Name}!" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="50.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label layoutX="68.0" layoutY="131.0" prefHeight="65.0" prefWidth="659.0" style="-fx-font-size: 20;" text="Bläddra bland våra kategorier och erbjudanden eller använd vår sökfunktion för att hitta det du söker." wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="143.0">
+                                             <styleClass>
+                                                <String fx:value="default-font" />
+                                                <String fx:value="color-primary" />
+                                             </styleClass>
+                                          </Label>
+                                          <Button layoutX="43.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#openCategories" prefHeight="60.0" prefWidth="278.0" text="Börja handla!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="233.0">
+                                             <styleClass>
+                                                <String fx:value="color-tertiary" />
+                                                <String fx:value="dropshadow-default" />
+                                                <String fx:value="rounded" />
+                                             </styleClass>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <font>
+                                                <Font name="Poppins Medium" size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <ImageView fitHeight="472.0" fitWidth="720.0" layoutX="1219.0" layoutY="341.0" onMouseClicked="#openCategories" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                             <image>
+                                                <Image url="@resources/Senior.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox prefWidth="1424.0" styleClass="color-secondary">
+                                       <children>
+                                          <Label text="Våra populäraste varor!">
+                                             <padding>
+                                                <Insets left="40.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Poppins Bold" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox fx:id="hboxOffers" alignment="CENTER" prefWidth="1424.0" spacing="60.0">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="100.0" left="60.0" right="60.0" top="60.0" />
+                                             </padding></HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="120.0" fitWidth="1700.0" pickOnBounds="true" AnchorPane.leftAnchor="-200.0" AnchorPane.rightAnchor="-200.0" AnchorPane.topAnchor="380.0">
+                                 <image>
+                                    <Image url="@resources/start-wave.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <stylesheets>
+                  <URL value="@imat_app.css" />
+                  <URL value="@scroll-bar.css" />
+               </stylesheets>
+            </AnchorPane>
          </children>
       </AnchorPane>
+      <VBox maxHeight="1024.0" maxWidth="1440.0" prefHeight="150.0" prefWidth="1440.0" scaleShape="false" style="-fx-background-color: #C8D3C6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="100.0" minHeight="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="1440.0" spacing="25.0">
+               <children>
+                  <ImageView fitHeight="51.0" fitWidth="155.0" onMouseClicked="#openStart" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/imat-logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <TextField prefHeight="55.0" prefWidth="540.0" promptText="Sök..." style="-fx-background-color: #ffffff;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Poppins Medium" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="search-bar" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#openCart" prefHeight="55.0" prefWidth="280.0" styleClass="navbar-upper-button" text="Varukorg">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
+                           <image>
+                              <Image url="@resources/shopping-cart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Button graphicTextGap="8.0" mnemonicParsing="false" onMouseClicked="#openAccount" prefHeight="55.0" prefWidth="150.0" styleClass="navbar-upper-button" text="Konto">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="white-icon">
+                           <image>
+                              <Image url="@resources/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Button graphicTextGap="8.0" mnemonicParsing="false" onMouseClicked="#openHelp" prefHeight="55.0" prefWidth="145.0" styleClass="navbar-upper-help" text="Hjälp">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                           <color>
+                              <Color opacity="0.25" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0" styleClass="navbar-lower">
+               <children>
+                  <AnchorPane onMouseClicked="#openStart" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
+                     <children>
+                        <Label alignment="CENTER" text="Start" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane onMouseClicked="#openCategories" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" text="Alla kategorier" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane onMouseClicked="#openFavorites" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" text="Favoriter" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+                  <AnchorPane onMouseClicked="#openAbout" prefHeight="50.0" prefWidth="210.0" styleClass="button-primary">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" text="Om iMat" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </VBox>
    </children>
 </AnchorPane>
