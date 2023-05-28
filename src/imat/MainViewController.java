@@ -119,9 +119,16 @@ public class MainViewController implements Initializable {
     ImageView answerSixExpand;
     @FXML
     ImageView answerSevenExpand;
-
     @FXML
     ScrollPane hasFavorites;
+    @FXML
+    Label shippingCost;
+    @FXML
+    Label checkoutShipping;
+    @FXML
+    Label checkoutPrice;
+    @FXML
+    Label labelCartProducts;
 
     String lastPane;
 
@@ -150,11 +157,12 @@ public class MainViewController implements Initializable {
             vboxCart.getChildren().add(new CartCard(shoppingItem, this));
             vboxCheckoutCart.getChildren().add(new CartCard(shoppingItem, this));
         }
-        labelCartTotal.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
-        din_varukorg_antal_varor.setText(
-                iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
-        din_varukorg_totalt_kostnad.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
-        betalning_total_kostnad.setText("Totalt:  " + Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
+        shippingCost.setText(shippingCost() + " kr");
+        labelCartProducts.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
+        labelCartTotal.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + shippingCost() + " kr");
+        din_varukorg_antal_varor.setText(iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
+        din_varukorg_totalt_kostnad.setText(Math.round((iMatDataHandler.getShoppingCart().getTotal() + shippingCost())*100.0)/100.0 + " kr");
+        betalning_total_kostnad.setText("Totalt:  " + Math.round((iMatDataHandler.getShoppingCart().getTotal() + shippingCost())*100.0)/100.0 + " kr");
     }
 
     private void generateStuff() {
@@ -180,6 +188,7 @@ public class MainViewController implements Initializable {
         closeCheckout();
         closeCart();
         closeAccount();
+        refreshOffers();
         anchorPaneStart.toFront();
         anchorPaneCategory.toBack();
         anchorPaneLists.toBack();
@@ -205,6 +214,15 @@ public class MainViewController implements Initializable {
     public void closeHelpCheckout(){
         paneHelpCheckout.toBack();
         closeHelpCheckout.toBack();
+    }
+    @FXML
+    public int shippingCost(){
+        int shipping = 29;
+        long total = Math.round(iMatDataHandler.getShoppingCart().getTotal());
+        if ( total> 500 || total == 0){
+            shipping = 0;
+        }
+        return shipping;
     }
 
 
@@ -540,6 +558,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void closeCheckout() {
         paneCheckout.toBack();
+        refreshOffers();
     }
 
     @FXML
@@ -549,6 +568,8 @@ public class MainViewController implements Initializable {
         checkout_varukorg_pane.toFront();
         closeCart();
         closeAccount();
+        checkoutShipping.setText(shippingCost() + " kr");
+        checkoutPrice.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     @FXML

@@ -48,6 +48,7 @@ public class CartCard extends AnchorPane {
     @FXML
     public void increaseItem() {
         parentController.iMatDataHandler.getShoppingCart().addProduct(product);
+        parentController.refreshOffers();
     }
 
     @FXML
@@ -57,10 +58,12 @@ public class CartCard extends AnchorPane {
         if (count > 0) {
             parentController.iMatDataHandler.getShoppingCart().addProduct(product, count);
         }
+        parentController.refreshOffers();
     }
 
     @FXML
     public void removeItem() {
         parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
+        parentController.refreshOffers();
     }
 }
