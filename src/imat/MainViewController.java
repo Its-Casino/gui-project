@@ -30,7 +30,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 import se.chalmers.cse.dat216.project.User;
 import java.util.regex.*;
-
+import java.lang.Math;
 public class MainViewController implements Initializable {
 
     @FXML
@@ -150,10 +150,11 @@ public class MainViewController implements Initializable {
             vboxCart.getChildren().add(new CartCard(shoppingItem, this));
             vboxCheckoutCart.getChildren().add(new CartCard(shoppingItem, this));
         }
-        labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        labelCartTotal.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
         din_varukorg_antal_varor.setText(
                 iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
-        din_varukorg_totalt_kostnad.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        din_varukorg_totalt_kostnad.setText(Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
+        betalning_total_kostnad.setText("Totalt:  " + Math.round(iMatDataHandler.getShoppingCart().getTotal()*100.0)/100.0 + " kr");
     }
 
     private void generateStuff() {
