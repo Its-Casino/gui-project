@@ -2999,53 +2999,6 @@
                   <URL value="@imat_app.css" />
                </stylesheets>
             </AnchorPane>
-            <AnchorPane fx:id="paneFavorites" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #efefef;" stylesheets="@imat_app.css">
-               <children>
-                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Favoritprodukter" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
-                  <Line endX="410.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="108.0" />
-                  <AnchorPane layoutX="50.0" layoutY="176.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="176.0">
-                     <children>
-                        <AnchorPane prefHeight="600.0" prefWidth="1440.0" style="-fx-background-color: #efefef;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                           <children>
-                              <Label alignment="CENTER" text="Du har inte lagt till några varor i favoriter än!" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-                                 <font>
-                                    <Font name="Poppins Medium" size="26.0" />
-                                 </font>
-                              </Label>
-                              <AnchorPane onMouseClicked="#openCategories" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #6B6B6B; -fx-background-radius: 5px;" AnchorPane.leftAnchor="570.0" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="200.0">
-                                 <children>
-                                    <Label alignment="CENTER" layoutX="65.0" layoutY="19.0" text="Hitta varor" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <font>
-                                          <Font name="Poppins Bold" size="26.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <effect>
-                                    <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
-                                       <color>
-                                          <Color opacity="0.25" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                        <ScrollPane fx:id="hasFavorites" fitToWidth="true" hbarPolicy="NEVER" prefHeight="600.0" prefWidth="1440.0" style="-fx-border-color: #efefef; -fx-background-color: transparent;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-                           <content>
-                              <FlowPane fx:id="flowFavorites" alignment="TOP_CENTER" hgap="40.0" prefWrapLength="0.0" rowValignment="TOP" style="-fx-background-color: #efefef;" styleClass="rounded" vgap="40.0">
-                                 <padding>
-                                    <Insets left="40.0" right="40.0" />
-                                 </padding>
-                              </FlowPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="paneStart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: efefef;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="34.0" layoutY="19.0" prefHeight="874.0" prefWidth="1440.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
@@ -3123,6 +3076,53 @@
                   <URL value="@imat_app.css" />
                   <URL value="@scroll-bar.css" />
                </stylesheets>
+            </AnchorPane>
+            <AnchorPane fx:id="paneFavorites" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="1440.0" style="-fx-background-color: #efefef;" stylesheets="@imat_app.css">
+               <children>
+                  <Label alignment="CENTER" layoutX="545.0" layoutY="50.0" style="-fx-font-size: 48; -fx-font-weight: bold;" styleClass="default-font" text="Favoritprodukter" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+                  <Line endX="410.0" stroke="#6b6b6b" strokeWidth="10.0" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="108.0" />
+                  <AnchorPane layoutX="50.0" layoutY="176.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="176.0">
+                     <children>
+                        <ScrollPane fx:id="hasFavorites" fitToWidth="true" hbarPolicy="NEVER" prefHeight="600.0" prefWidth="1440.0" style="-fx-border-color: #efefef; -fx-background-color: transparent;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                           <content>
+                              <FlowPane fx:id="flowFavorites" alignment="TOP_CENTER" hgap="40.0" prefWrapLength="0.0" rowValignment="TOP" style="-fx-background-color: #efefef;" styleClass="rounded" vgap="40.0">
+                                 <padding>
+                                    <Insets left="40.0" right="40.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                        <AnchorPane prefHeight="600.0" prefWidth="1440.0" style="-fx-background-color: #efefef;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" text="Du har inte lagt till några varor i favoriter än!" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+                                 <font>
+                                    <Font name="Poppins Medium" size="26.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane onMouseClicked="#openCategories" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #6B6B6B; -fx-background-radius: 5px;" AnchorPane.leftAnchor="570.0" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="65.0" layoutY="19.0" text="Hitta varor" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Poppins Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow height="10.0" offsetY="4.0" radius="2.0" width="0.0">
+                                       <color>
+                                          <Color opacity="0.25" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
             </AnchorPane>
          </children>
       </AnchorPane>
