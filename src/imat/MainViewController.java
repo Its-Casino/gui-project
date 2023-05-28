@@ -772,7 +772,7 @@ public class MainViewController implements Initializable {
                 iMatDataHandler.getCustomer().setPhoneNumber(leveransadress_hemtelefon.getText());
         }
         iMatDataHandler.placeOrder(true);
-        openThanks();
+        // openThanks();
     }
 
     public void backToStart(){
