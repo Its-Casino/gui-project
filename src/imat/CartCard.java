@@ -37,41 +37,30 @@ public class CartCard extends AnchorPane {
         }
         this.product = sItem.getProduct();
         this.sItem = sItem;
+        count = sItem.getAmount();
         this.parentController = parentController;
         this.labelProductName.setText(product.getName());
         this.labelProductCost.setText(sItem.getTotal() + " kr");
+        this.labelProductCount.setText(((Integer) count.intValue()).toString());
         this.imageItem.setImage(parentController.iMatDataHandler.getFXImage(product));
-        update();
-    }
-
-    public void update() {
-        this.labelProductCount.setText(((Double) sItem.getAmount()).toString());
-        this.labelProductCost.setText(sItem.getTotal() + " kr");
     }
 
     @FXML
     public void increaseItem() {
         parentController.iMatDataHandler.getShoppingCart().addProduct(product);
-        update();
     }
 
     @FXML
     public void decreaseItem() {
-        for (ShoppingItem shoppingItem : parentController.iMatDataHandler.getShoppingCart().getItems()) {
-            if (shoppingItem.getProduct() == product) {
-                shoppingItem.setAmount(shoppingItem.getAmount() - 1);
-            }
-            if (sItem.getAmount() == 0) {
-                parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
-            }
+        count = sItem.getAmount() - 1;
+        parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
+        if (count > 0) {
+            parentController.iMatDataHandler.getShoppingCart().addProduct(product, count);
         }
-        parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, true);
-        update();
     }
 
     @FXML
     public void removeItem() {
         parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
-        update();
     }
 }

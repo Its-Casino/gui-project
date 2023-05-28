@@ -31,6 +31,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
@@ -56,7 +57,7 @@ public class MainViewController implements Initializable {
     @FXML
     FlowPane flowCategories;
     @FXML
-    FlowPane flowCart;
+    VBox vboxCart;
     @FXML
     VBox vboxCheckoutCart;
     @FXML
@@ -126,15 +127,17 @@ public class MainViewController implements Initializable {
         refreshCategories();
         generateStuff();
         openStart();
+        updateCart();
     }
 
     void updateCart() {
-        flowCart.getChildren().clear();
+        vboxCart.getChildren().clear();
         for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
-            flowCart.getChildren().add(new CartCard(shoppingItem, this));
+            vboxCart.getChildren().add(new CartCard(shoppingItem, this));
         }
         vboxCheckoutCart.getChildren().clear();
-        vboxCheckoutCart.getChildren().addAll(flowCart.getChildren());
+        vboxCheckoutCart.getChildren().addAll(vboxCart.getChildren());
+        vboxCart.getChildren().addAll(vboxCheckoutCart.getChildren());
         labelCartTotal.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
         din_varukorg_antal_varor.setText(
                 iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
@@ -155,7 +158,6 @@ public class MainViewController implements Initializable {
         iMatDataHandler.getShoppingCart().addShoppingCartListener(evt -> {
             updateCart();
         });
-        updateCart();
         labelWelcome.setText("Hej " + currentUser.getUserName() + "!");
     }
 
@@ -333,16 +335,9 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void openCart() {
-        lastPane = "Cart";
-        flowCart.getChildren().clear();
-        for (ShoppingItem shoppingItem : iMatDataHandler.getShoppingCart().getItems()) {
-            flowCart.getChildren().add(new CartCard(shoppingItem, this));
-        }
         closeAccount();
         closeCheckout();
-        paneCheckout.toBack();
         paneCart.toFront();
-        paneAccount.toBack();
     }
 
     @FXML
@@ -615,8 +610,10 @@ public class MainViewController implements Initializable {
     private TextField leveransadress_hemtelefon;
     @FXML
     private CheckBox stall_kassorna_checkbox;
-    @FXML private Button complete_history_button;
-    @FXML private Button complete_shop_button;
+    @FXML
+    private Button complete_history_button;
+    @FXML
+    private Button complete_shop_button;
 
     @FXML
     private ComboBox<String> leveranstid_dag;
@@ -643,8 +640,10 @@ public class MainViewController implements Initializable {
 
     @FXML
     private TextField betalning_kortnummer;
-    @FXML private TextField betalning_manad;
-    @FXML private TextField betalning_ar;
+    @FXML
+    private TextField betalning_manad;
+    @FXML
+    private TextField betalning_ar;
     @FXML
     private TextField betalning_cvc;
     @FXML
@@ -775,14 +774,15 @@ public class MainViewController implements Initializable {
         // openThanks();
     }
 
-    public void backToStart(){
+    public void backToStart() {
         checkout_betalning_pane.toBack();
         checkout_leveranstid_pane.toBack();
         checkout_leveransadress_pane.toBack();
         paneCheckout.toBack();
         paneStart.toFront();
     }
-    public void goTohistory(){
+
+    public void goTohistory() {
         checkout_betalning_pane.toBack();
         checkout_leveranstid_pane.toBack();
         checkout_leveransadress_pane.toBack();
@@ -898,8 +898,8 @@ public class MainViewController implements Initializable {
     public void check_if_payment_valid() {
         if (valid_kortnummer && valid_input_mm && valid_input_aa && valid_cvc) {
             betalning_button.setDisable(false);
-        }
-        else betalning_button.setDisable(true);
+        } else
+            betalning_button.setDisable(true);
     }
 
     void generateCheckout() {
@@ -925,10 +925,9 @@ public class MainViewController implements Initializable {
             sparaadresscheckbox();
         });
 
-
         TextFormatter<String> valid_manad = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
-            if(newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
+            if (newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
                 return change;
             }
             return null;
@@ -937,7 +936,7 @@ public class MainViewController implements Initializable {
 
         TextFormatter<String> valid_ar = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
-            if(newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
+            if (newText.isEmpty() || newText.length() <= 2 && newText.matches("^\\d+$")) {
                 return change;
             }
             return null;
@@ -988,8 +987,6 @@ public class MainViewController implements Initializable {
             return null;
         });
         leveransadress_postort.setTextFormatter(onlyLetters_postort);
-
-
 
         TextFormatter<String> phoneNumberFormatter = new TextFormatter<>(change -> {
             String newText = change.getControlNewText();
@@ -1114,7 +1111,8 @@ public class MainViewController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_hemtelefon = true;
                 leveransadress_hemtelefon.setStyle("-fx-border-color: rgba(0,128,0,0)");
-                if (hasLetter(newValue) || hasSpecialCharacter(newValue) || newValue.length() < 10 && newValue.length() > 1) {
+                if (hasLetter(newValue) || hasSpecialCharacter(newValue)
+                        || newValue.length() < 10 && newValue.length() > 1) {
                     leveransadress_hemtelefon.setStyle("-fx-border-color: red");
                     valid_hemtelefon = false;
                 }
@@ -1125,33 +1123,35 @@ public class MainViewController implements Initializable {
         betalning_ar.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-            valid_input_aa = true;
-                if(newValue.equals("")) {
+                valid_input_aa = true;
+                if (newValue.equals("")) {
                     valid_input_aa = false;
                     betalning_manad_ar_field.setStyle("-fx-border-color: red");
                     check_if_payment_valid();
                     return;
                 }
-            if(valid_input_aa && valid_input_mm) betalning_manad_ar_field.setStyle("-fx-border-color: green");
-            if(Integer.parseInt(newValue) < 23) {
-                valid_input_aa = false;
-                betalning_manad_ar_field.setStyle("-fx-border-color: red");
-            }
-            check_if_payment_valid();
+                if (valid_input_aa && valid_input_mm)
+                    betalning_manad_ar_field.setStyle("-fx-border-color: green");
+                if (Integer.parseInt(newValue) < 23) {
+                    valid_input_aa = false;
+                    betalning_manad_ar_field.setStyle("-fx-border-color: red");
+                }
+                check_if_payment_valid();
             }
         });
         betalning_manad.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_input_mm = true;
-                if(newValue.equals("")) {
+                if (newValue.equals("")) {
                     valid_input_mm = false;
                     betalning_manad_ar_field.setStyle("-fx-border-color: red");
                     check_if_payment_valid();
                     return;
                 }
-                if(valid_input_mm && valid_input_aa) betalning_manad_ar_field.setStyle("-fx-border-color: green");
-                if(Integer.parseInt(newValue) > 12) {
+                if (valid_input_mm && valid_input_aa)
+                    betalning_manad_ar_field.setStyle("-fx-border-color: green");
+                if (Integer.parseInt(newValue) > 12) {
                     valid_input_mm = false;
                     betalning_manad_ar_field.setStyle("-fx-border-color: red");
                 }
@@ -1316,14 +1316,13 @@ public class MainViewController implements Initializable {
             }
         });
 
-
         betalning_cvc.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
                 valid_cvc = false;
                 betalning_cvc.setStyle("-fx-border-color: red");
                 String filteredText = newValue.replaceAll("[^0-9]", "");
-                if (filteredText.length() > 3 ) {
+                if (filteredText.length() > 3) {
                     filteredText = filteredText.substring(0, 3);
                 }
                 if (newValue.length() == 3) {

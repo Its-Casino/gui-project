@@ -75,48 +75,44 @@ public class ProductCard extends AnchorPane {
     @FXML
     public void addCurrentToCart() {
         parentController.iMatDataHandler.getShoppingCart().addProduct(product);
-        update();
+        this.productCount.setText(((Integer) count.intValue()).toString());
     }
 
     @FXML
     public void removeCurrentFromCart() {
-        for (ShoppingItem sItem : parentController.iMatDataHandler.getShoppingCart().getItems()) {
-            if (sItem.getProduct() == product) {
-                sItem.setAmount(sItem.getAmount() - 1);
-                parentController.iMatDataHandler.getShoppingCart().fireShoppingCartChanged(sItem, isCache());
-            }
-            if (sItem.getAmount() == 0) {
-                parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
-            }
+        if (count > 0) {
+            parentController.iMatDataHandler.getShoppingCart().removeProduct(product);
+            count--;
         }
-        update();
+        if (count > 0) {
+            parentController.iMatDataHandler.getShoppingCart().addProduct(product, count);
+        }
+        this.productCount.setText(((Integer) count.intValue()).toString());
     }
-    @FXML
-        public void toggleFavorite() {
-            if (!favorite) {
-                parentController.iMatDataHandler.addFavorite(product);
-                parentController.hasFavorites.toFront();
-            }
-            else {
-                System.out.println("PING");
-                parentController.iMatDataHandler.removeFavorite(product);
-                if (parentController.iMatDataHandler.favorites().size() == 0){
-                    parentController.hasFavorites.toBack();
-                }
-                parentController.populateFavorites();
-            }
-            favorite = !favorite;
-            if (favorite) {
-                Image image;
-                image = new Image(getClass().getResource("resources/like_filled.png").toString());
-                imageFavorite.setImage(image);
-            }
-            else {
-                Image image;
-                image = new Image(getClass().getResource("resources/like_hollow.png").toString());
-                imageFavorite.setImage(image);
-            }
-            parentController.refreshOffers();
-        }
-}
 
+    @FXML
+    public void toggleFavorite() {
+        if (!favorite) {
+            parentController.iMatDataHandler.addFavorite(product);
+            parentController.hasFavorites.toFront();
+        } else {
+            System.out.println("PING");
+            parentController.iMatDataHandler.removeFavorite(product);
+            if (parentController.iMatDataHandler.favorites().size() == 0) {
+                parentController.hasFavorites.toBack();
+            }
+            parentController.populateFavorites();
+        }
+        favorite = !favorite;
+        if (favorite) {
+            Image image;
+            image = new Image(getClass().getResource("resources/like_filled.png").toString());
+            imageFavorite.setImage(image);
+        } else {
+            Image image;
+            image = new Image(getClass().getResource("resources/like_hollow.png").toString());
+            imageFavorite.setImage(image);
+        }
+        parentController.refreshOffers();
+    }
+}
