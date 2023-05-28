@@ -789,9 +789,7 @@
                                   </Label>
                                   <CheckBox fx:id="betalning_spara_betalning" layoutX="428.0" layoutY="404.0" mnemonicParsing="false" onAction="#sparabetalningcheckbox" />
                                   <Label fx:id="betalning_antal_varor" layoutX="634.0" layoutY="157.0" styleClass="default-font-small" text="12 varor" />
-                                  <Label layoutX="817.0" layoutY="157.0" styleClass="default-font-small" text="205 kr" />
-                                  <Label layoutX="634.0" layoutY="186.0" styleClass="default-font-small" text="moms" />
-                                  <Label fx:id="betalning_moms" layoutX="841.0" layoutY="186.0" styleClass="default-font-small" text="0 kr" />
+                                  <Label fx:id="betalning_total_kostnad_small" layoutX="817.0" layoutY="157.0" styleClass="default-font-small" text="205 kr" />
                         <Button layoutX="673.0" layoutY="381.0" mnemonicParsing="false" onAction="#backfrompayment" prefHeight="51.0" prefWidth="166.0" text="Tillbaka">
                            <cursor>
                               <Cursor fx:constant="CLOSED_HAND" />
@@ -903,7 +901,7 @@
                               <String fx:value="button-primary" />
                           </styleClass>
                       </Button>
-                      <ImageView fitHeight="51.0" fitWidth="155.0" layoutX="643.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                      <ImageView fitHeight="51.0" fitWidth="155.0" layoutX="643.0" layoutY="24.0" onMouseClicked="#backToStart" pickOnBounds="true" preserveRatio="true">
                           <image>
                               <Image url="@resources/iMat_logo_png.png" />
                           </image>

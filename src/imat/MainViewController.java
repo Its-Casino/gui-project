@@ -110,6 +110,8 @@ public class MainViewController implements Initializable {
     ImageView answerThreeExpand;
     @FXML
     ScrollPane hasFavorites;
+    @FXML Label betalning_total_kostnad_small;
+
 
     String lastPane;
 
@@ -141,6 +143,9 @@ public class MainViewController implements Initializable {
         din_varukorg_antal_varor.setText(
                 iMatDataHandler.getShoppingCart().getItems().size() + " varor klara för leverans hem till din dörr!");
         din_varukorg_totalt_kostnad.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        betalning_total_kostnad.setText("Totalt:  " + iMatDataHandler.getShoppingCart().getTotal() + " kr");
+        betalning_antal_varor.setText(iMatDataHandler.getShoppingCart().getItems().size() + " varor");
+        betalning_total_kostnad_small.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
     private void generateStuff() {
@@ -830,6 +835,7 @@ public class MainViewController implements Initializable {
     }
 
     public void continuetopayment() {
+        check_if_payment_valid();
         checkout_betalning_pane.toFront();
     }
 
@@ -986,7 +992,7 @@ public class MainViewController implements Initializable {
     }
 
     public void check_if_payment_valid() {
-        if (valid_kortnummer && valid_input_mm && valid_input_aa && valid_cvc) {
+        if (valid_kortnummer && valid_input_mm && valid_input_aa && valid_cvc && (iMatDataHandler.getShoppingCart().getTotal() > 0)) {
             betalning_button.setDisable(false);
         }
         else betalning_button.setDisable(true);
